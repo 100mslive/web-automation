@@ -19,10 +19,10 @@ jobs:
       with:
         node-version: '14'
         cache: 'npm'
-    - run: rm -rf node_modules
-    - run: npm cache clean --force
+#     - run: rm -rf node_modules
+#     - run: npm cache clean --force
 #     - run: npm install
-#     - run: npm ci
+    - run: npm ci
     - run: npx playwright install
     - run: npm run qa-us
     - run: npm run allure:generate
