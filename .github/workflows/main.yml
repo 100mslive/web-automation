@@ -19,8 +19,8 @@ jobs:
       with:
         node-version: '14'
         cache: 'npm'
-    - run: npm cache clean --force
-    - run: npm install
+    - run: npm update & npm cache clean --force
+#     - run: npm install
     - run: npm ci
     - run: npx playwright install
     - run: npm run qa-us
