@@ -38,9 +38,7 @@ exports.PreviewPage = class PreviewPage {
 
 
   async gotoPreviewPage(page, url) {
-    // this.page = await this.browser();
-    // let page = await context.newPage() 
-    await page.goto(url);
+    await page.goto(url)
   }
 
 

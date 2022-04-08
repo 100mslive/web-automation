@@ -95,12 +95,27 @@ const config = {
     //     channel: 'msedge',
     //   },
     // },
+<<<<<<< HEAD
     //  {
     //   name: 'Google Chrome',
     //   use: {
     //     channel: 'chrome',
     //   },
     // },
+=======
+     {
+      name: 'Google Chrome',
+      use: {
+        channel: 'chrome',
+        launchOptions:{
+          args:[
+              "--use-fake-device-for-media-stream",
+              "--use-fake-ui-for-media-stream",
+          ]
+      }
+      },
+    },
+>>>>>>> a4e0e13 (git ci changes)
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
