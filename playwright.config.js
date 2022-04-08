@@ -52,7 +52,7 @@ const config = {
   },
 
   /* Configure projects for major browsers */
-//   projects: [
+  projects: [
 //      {
 //       name: 'chromium',
 //       use: {
