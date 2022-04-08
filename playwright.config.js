@@ -54,18 +54,18 @@ const config = {
 
   /* Configure projects for major browsers */
   projects: [
-     {
-      name: 'chromium',
-      use: {
-        ...devices['Desktop Chrome'],
-        launchOptions:{
-          args:[
-              "--use-fake-device-for-media-stream",
-              "--use-fake-ui-for-media-stream",
-          ]
-      },
-      },
-    },
+//      {
+//       name: 'chromium',
+//       use: {
+//         ...devices['Desktop Chrome'],
+//         launchOptions:{
+//           args:[
+//               "--use-fake-device-for-media-stream",
+//               "--use-fake-ui-for-media-stream",
+//           ]
+//       },
+//       },
+//     },
 
     // {
     //   name: 'firefox',
@@ -101,19 +101,19 @@ const config = {
     //   use: {
     //     channel: 'msedge',
     //   },
-    // },
-//      {
-//       name: 'Google Chrome',
-//       use: {
-//         channel: 'chrome',
-//         launchOptions:{
-//           args:[
-//               "--use-fake-device-for-media-stream",
-//               "--use-fake-ui-for-media-stream",
-//           ]
-//       },
-//       },
 //     },
+     {
+      name: 'Google Chrome',
+      use: {
+        channel: 'chrome',
+        launchOptions:{
+          args:[
+              "--use-fake-device-for-media-stream",
+              "--use-fake-ui-for-media-stream",
+          ]
+      },
+      },
+    },
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
