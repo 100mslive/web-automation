@@ -59,22 +59,22 @@ jobs:
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: allure-history
 
-#     - name: Send custom test result
-#       id: slack
-#       uses: slackapi/slack-github-action@v1.18.0
-#       with:
-#         payload: |
-#           {
-#             "text": "GitHub build result: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}",
-#             "blocks": [
-#               {
-#                 "type": "section",
-#                 "text": {
-#                   "type": "mrkdwn",
-#                   "text": "GitHub build result: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}"
-#                 }
-#               }
-#             ]
-#           }
-#       env:
-#         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    - name: Send custom test result
+      id: slack
+      uses: slackapi/slack-github-action@v1.18.0
+      with:
+        payload: |
+          {
+            "text": "GitHub build result: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}",
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "GitHub build result: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}"
+                }
+              }
+            ]
+          }
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
