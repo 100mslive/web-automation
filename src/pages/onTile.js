@@ -19,6 +19,9 @@ exports.Ontile = class Ontile {
 
     this.name_onTile = 'div[data-testid=participant_tile]:nth-child(?) div:nth-child(2)';
 
+    this.first_person_img = 'div[data-testid="first_person_img"]';
+
+
   }
   
 

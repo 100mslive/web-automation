@@ -49,6 +49,9 @@ exports.BottomCenter = class BottomCenter {
 
     this.full_screen_btn = 'div[data-testid="full_screen_btn"]';
     this.mute_all_btn = 'div[data-testid="mute_all_btn"]';
+    this.mute_all_apply_btn = 'text=Apply';
+
+
     this.ui_settings_btn = 'div[data-testid="ui_settings_btn"]';
     this.device_settings_btn = 'div[data-testid="device_settings_btn"]';
     this.stats_for_nreds_btn = 'div[data-testid="stats_for_nreds_btn"]';

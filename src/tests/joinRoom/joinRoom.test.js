@@ -1,8 +1,8 @@
 const { test, expect } = require('@playwright/test');
-const { PreviewPage } = require('../pages/previewPage.js');
-const { BottomCenter } = require('../pages/bottomCenter.js');
-const PageMethods = require('../utils/PageMethods.js');
-const { RoomLeave } = require('../pages/roomLeave.js');
+const { PreviewPage } = require('../../pages/previewPage.js');
+const { BottomCenter } = require('../../pages/bottomCenter.js');
+const PageMethods = require('../../utils/PageMethods.js');
+const { RoomLeave } = require('../../pages/roomLeave.js');
 let previewPage= new PreviewPage();
 let pageMethods= new PageMethods();
 let bottomCenter= new BottomCenter();
@@ -106,23 +106,14 @@ test(`Verify Join Mic-Off Cam-Off`, async ({page}) => {
 
 test(`Measure Join Time`, async ({page}) => {
   await previewPage.gotoMeetingRoom(page, url, name, "on", "on")
-
-  //Leave room and join again
   await bottomCenter.leaveRoom(page);
-  //join again to goto preview page
   await pageMethods.clickElement(page, roomLeave.join_again_btn, "join_again_btn")
-  //Calculate Join time from preview page
   console.log("Calculating Join Time");
-  //Get Start time
   const in_time_total = await roomLeave.getStartJoinTime(page);  
-  //Join room again 
-  await previewPage.gotoMeetingRoom(page, url, "on", "on")
-  //Get End time
+  await previewPage.gotoMeetingRoom(page, url, name, "off", "off")
   const out_time_total = await roomLeave.getEndJoinTime(page);
-  //Difference of inTime and outTime
   var diff= out_time_total-in_time_total;
   console.log("Join Time Difference = "+ diff);
-  //condition for failing
   expect(diff).toBeLessThan(5000);
 });
 

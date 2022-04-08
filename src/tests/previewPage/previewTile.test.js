@@ -15,7 +15,7 @@ test.afterEach(async ({page}) => {
 });
 
 
-test(`Verify MicBtn on off`, async ({page}) => {
+test.only(`Verify MicBtn on off`, async ({page}) => {
   let result = await pageMethods.isElementVisible(page, previewPage.preview_audio_on_btn, "preview_audio_on_btn visibility-")
   pageMethods.assertResult(result, "preview_audio_on_btn")
   await pageMethods.clickElement(page, previewPage.preview_audio_btn, "preview_audio_btn")

@@ -53,6 +53,7 @@ exports.PreviewPage = class PreviewPage {
   async gotoMeetingRoom(page, url, name, mic, cam) {
     await this.gotoPreviewPage(page,url);
     if(cam == "off"){
+      //repair this
         await page.waitForSelector(this.preview_video_btn);
         await page.locator(this.preview_video_btn).click()
     }
