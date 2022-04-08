@@ -22,6 +22,7 @@ jobs:
     - run: npm cache clean --force
     - run: npm install
     - run: npx playwright install --with-deps
+    - run: playwright test src/tests
     - run: npm run qa-us
     - run: npm run allure:generate
   
