@@ -27,6 +27,7 @@ jobs:
     - run: npm run allure:generate
   
     - uses: actions/upload-artifact@master
+      if: always()
       with:
         name: allure-results
         path: allure-results
@@ -62,6 +63,7 @@ jobs:
     - name: Send custom test result
       id: slack
       uses: slackapi/slack-github-action@v1.18.0
+      if: always()
       with:
         payload: |
           {
