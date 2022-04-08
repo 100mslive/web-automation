@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: microsoft/playwright-github-action@v1.5.1
     - uses: actions/checkout@v2
     - name: Use Node.js
       uses: actions/setup-node@v2
@@ -25,7 +24,7 @@ jobs:
     - run: npx playwright install
 #  --with-deps
 #     - run: ./node_modules/.bin/playwright test src/tests
-    - run: xvfb-run -- npm run qa-us
+    - run: npm run qa-us
     - run: npm run allure:generate
   
     - uses: actions/upload-artifact@master
