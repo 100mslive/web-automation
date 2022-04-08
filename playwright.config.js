@@ -53,12 +53,12 @@ const config = {
 
   /* Configure projects for major browsers */
   projects: [
-    //  {
-    //   name: 'chromium',
-    //   use: {
-    //     ...devices['Desktop Chrome'],
-    //   },
-    // },
+     {
+      name: 'chromium',
+      use: {
+        ...devices['Desktop Chrome'],
+      },
+    },
 
     // {
     //   name: 'firefox',
@@ -95,12 +95,12 @@ const config = {
     //     channel: 'msedge',
     //   },
     // },
-     {
-      name: 'Google Chrome',
-      use: {
-        channel: 'chrome',
-      },
-    },
+//      {
+//       name: 'Google Chrome',
+//       use: {
+//         channel: 'chrome',
+//       },
+//     },
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
