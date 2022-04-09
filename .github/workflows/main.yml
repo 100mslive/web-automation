@@ -18,11 +18,10 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '14'
-#     - run: rm -rf node_modules
+    - run: rm -rf node_modules
     - run: npm cache clean --force
     - run: npm install
-    - run: npx playwright install
-#  --with-deps
+    - run: npx playwright install --with-deps
 #     - run: ./node_modules/.bin/playwright test src/tests
     - run: npm run qa-us
     - run: npm run allure:generate
