@@ -23,7 +23,7 @@ jobs:
     - run: npm install
     - run: npx playwright install --with-deps
 #     - run: ./node_modules/.bin/playwright test src/tests
-    - run: npm run qa-us
+    - run: npm qa-us
     - run: npm run allure:generate
   
     - uses: actions/upload-artifact@master
