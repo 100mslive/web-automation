@@ -27,12 +27,15 @@ test.afterEach(async ({page}) => {
 
 
 test(`Verify greeting tile for first participant`, async ({page}) => {
+  await previewPage.gotoMeetingRoom(page, url, name, mic, cam)
   result = await pageMethods.isElementVisible(page, ontile.first_person_img, "first_person_img visibility-")
   pageMethods.assertResult(result, "first_person_img")
+    await bottomCenter.endRoom(page);
 
 })
 
 test(`Verify room URL`, async ({page}) => {
+  await previewPage.gotoMeetingRoom(page, url, name, mic, cam)
       const currentURL = page.url();
       console.log("currentURL: " + currentURL);
       if(currentURL === url){
@@ -41,6 +44,7 @@ test(`Verify room URL`, async ({page}) => {
       else{
         console.log("URL Match: " + false);
       }
+    await bottomCenter.endRoom(page);
 })
 
 test(`Verify Join peers`, async ({context}) => {

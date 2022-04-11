@@ -178,8 +178,8 @@ test(`Start and Stop Rtmp Recording`, async ({page, context}) => {
   pageMethods.assertResult(result, "record_status_dropdown")
   await pageMethods.clickElement(page, topRight.record_status_dropdown, "record_status_dropdown")
 
-  result = await pageMethods.isElementVisible(page, topRight.recording_rtmp, "recording_rtmp visibility-")
-  pageMethods.assertResult(result, "recording_rtmp")
+  result = await pageMethods.isElementVisible(page, topRight.browser_recording, "browser_recording visibility-")
+  pageMethods.assertResult(result, "browser_recording")
 
   result = await pageMethods.isElementVisible(page, topRight.streaming_rtmp, "streaming_rtmp visibility-")
   pageMethods.assertResult(result, "streaming_rtmp")
