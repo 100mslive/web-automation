@@ -21,7 +21,6 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npx playwright install
-    - run: cd src
     - run: npm run qa-us
     - run: npm run allure:generate
   
