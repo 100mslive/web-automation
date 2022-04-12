@@ -24,16 +24,17 @@ test.afterEach(async ({page}) => {
     await page.close()
 });
 
-test(`Verify Raise Hand Brb icons`, async ({page}) => {
+test.skip(`Verify Raise Hand Brb icons`, async ({page}) => {
 
   result = await pageMethods.isElementVisible(page, bottomRight.raise_hand_btn, "raise_hand_btn visibility-")
   pageMethods.assertResult(result, "raise_hand_btn")
 
   result = await pageMethods.isElementVisible(page, bottomRight.brb_btn, "brb_btn visibility-")
   pageMethods.assertResult(result, "brb_btn")
+  await pageMethods.clickElement(page, bottomRight.brb_btn, "brb_btn")
 })  
 
-test(`Verify Raise Hand Brb on Tile`, async ({page}) => {
+test.skip(`Verify Raise Hand Brb on Tile`, async ({page}) => {
 
     for(let i=0; i<3; i++){
       result = await pageMethods.isElementVisible(page, bottomRight.raise_hand_btn, "raise_hand_btn visibility-")

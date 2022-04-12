@@ -10,8 +10,8 @@ exports.BottomRight = class BottomRight {
    */
 
   constructor() {
-    this.raise_hand_btn = '[data-testid="raise_hand_btn"] >> nth=1';
-    this.brb_btn = '[data-testid="brb_btn"] >> nth=1';
+    this.raise_hand_btn = '[data-testid="raise_hand_btn"]';
+    this.brb_btn = '[data-testid="brb_btn"]';
     this.chat_btn = 'button[data-testid="chat_btn"]';
   }
   
