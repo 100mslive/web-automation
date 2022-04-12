@@ -1,4 +1,4 @@
-name: Web Automation
+name: ci
 
 on:
   workflow_dispatch:
@@ -18,16 +18,13 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '14'
-    - run: rm -rf node_modules
-    - run: npm cache clean --force
-    - run: npm install
+        cache: 'npm'
+    - run: npm ci
     - run: npx playwright install
-#     - run: ./node_modules/.bin/playwright test src/tests
     - run: npm run qa-us
     - run: npm run allure:generate
   
     - uses: actions/upload-artifact@master
-      if: always()
       with:
         name: allure-results
         path: allure-results
@@ -61,19 +58,19 @@ jobs:
         PUBLISH_DIR: allure-history
 
     - name: Send custom test result
+      if: always()
       id: slack
       uses: slackapi/slack-github-action@v1.18.0
-      if: always()
       with:
         payload: |
           {
-            "text": "GitHub build result: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}",
+            "text": "Dashboard build result: ${{ job.status }}\n https://100mslive.github.io/selfserve-automation/${{github.run_number}}/",
             "blocks": [
               {
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "GitHub build result: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}"
+                  "text": "Dashboard build result: ${{ job.status }}\n https://100mslive.github.io/selfserve-automation/${{github.run_number}}/"
                 }
               }
             ]
