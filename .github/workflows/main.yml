@@ -64,13 +64,13 @@ jobs:
       with:
         payload: |
           {
-            "text": "Dashboard build result: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}/",
+            "text": "Web-Automation build result: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}/",
             "blocks": [
               {
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "Dashboard build result: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}/"
+                  "text": "Web-Automation build result: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}/"
                 }
               }
             ]
