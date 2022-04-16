@@ -1,4 +1,4 @@
-const { devices } = require('@playwright/test');
+const { devices, PlaywrightTestConfig } = require('@playwright/test');
 const env = process.env.APP_ENV
 const envPath = process.env.ENV_PATH
 require('dotenv').config({path:envPath});
@@ -13,9 +13,9 @@ require('dotenv').config();
  * @see https://playwright.dev/docs/test-configuration
  * @type {import('@playwright/test').PlaywrightTestConfig}
  */
-const config = {
+const config: PlaywrightTestConfig = {
   //globalSetup: require.resolve('./global-setup'),
-  testDir: './tests/**',
+//   testDir: ["./tests/**/"],
   testMatch: ["**.test.js"],
   /* Maximum time one test can run for. */
   timeout: 100 * 1000,
