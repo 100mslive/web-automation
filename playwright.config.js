@@ -1,4 +1,5 @@
-const { devices, PlaywrightTestConfig } = require('@playwright/test');
+const { devices } = require('@playwright/test');
+import { PlaywrightTestConfig } from "@playwright/test";
 const env = process.env.APP_ENV
 const envPath = process.env.ENV_PATH
 require('dotenv').config({path:envPath});
