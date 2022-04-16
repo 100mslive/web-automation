@@ -18,8 +18,8 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '14'
-        cache: 'npm'
-    - run: npm cache clean --force
+#         cache: 'npm'
+#     - run: npm cache clean --force
     - run: npm ci
     - run: npx playwright install
     - run: npm run qa-us
@@ -58,23 +58,23 @@ jobs:
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: allure-history
 
-    - name: Send custom test result
-      if: always()
-      id: slack
-      uses: slackapi/slack-github-action@v1.18.0
-      with:
-        payload: |
-          {
-            "text": "Web-Automation build result: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}/",
-            "blocks": [
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "Web-Automation build result: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}/"
-                }
-              }
-            ]
-          }
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#     - name: Send custom test result
+#       if: always()
+#       id: slack
+#       uses: slackapi/slack-github-action@v1.18.0
+#       with:
+#         payload: |
+#           {
+#             "text": "Web-Automation build result: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}/",
+#             "blocks": [
+#               {
+#                 "type": "section",
+#                 "text": {
+#                   "type": "mrkdwn",
+#                   "text": "Web-Automation build result: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}/"
+#                 }
+#               }
+#             ]
+#           }
+#       env:
+#         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
