@@ -2,7 +2,6 @@
   "name": "web-automation",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "qa-in": "APP_ENV=qa ENV_PATH=env/.env.qa-in playwright test src/tests/previewPage/previewTile.test.js --headed",
     "qa-us": "APP_ENV=qa ENV_PATH=env/.env.qa-in playwright test --config=playwright.config.js",
