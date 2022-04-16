@@ -15,8 +15,8 @@ require('dotenv').config();
  */
 const config = {
   //globalSetup: require.resolve('./global-setup'),
-  testDir: './tests/**/',
-  testMatch: 'previewTile.test.js',
+  testDir: './tests/**',
+  testMatch: '**.test.js',
   /* Maximum time one test can run for. */
   timeout: 100 * 1000,
   expect: {
