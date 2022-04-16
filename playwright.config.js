@@ -1,5 +1,4 @@
 const { devices } = require('@playwright/test');
-import { PlaywrightTestConfig } from "@playwright/test";
 const env = process.env.APP_ENV
 const envPath = process.env.ENV_PATH
 require('dotenv').config({path:envPath});
@@ -14,7 +13,7 @@ require('dotenv').config();
  * @see https://playwright.dev/docs/test-configuration
  * @type {import('@playwright/test').PlaywrightTestConfig}
  */
-const config: PlaywrightTestConfig = {
+const config = {
   //globalSetup: require.resolve('./global-setup'),
 //   testDir: ["./tests/**/"],
   testMatch: ["**.test.js"],
