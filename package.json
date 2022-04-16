@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "qa-in": "APP_ENV=qa ENV_PATH=env/.env.qa-in playwright test src/tests/previewPage/previewTile.test.js --headed",
-    "qa-us": "APP_ENV=qa ENV_PATH=env/.env.qa-in playwright test tests/**/test.js",
-    "prod-in": "APP_ENV=prod ENV_PATH=env/.env.prod-in playwright test src/tests",
-    "prod-us": "APP_ENV=prod ENV_PATH=env/.env.prod-in playwright test src/tests/previewPage/settingNetwork.test.js --headed",
+    "qa-in": "APP_ENV=qa ENV_PATH=env/.env.qa-in playwright test ",
+    "qa-us": "APP_ENV=qa ENV_PATH=env/.env.qa-us playwright test ",
+    "qa-eu": "APP_ENV=qa ENV_PATH=env/.env.qa-eu playwright test ",
+    "prod-in": "APP_ENV=prod ENV_PATH=env/.env.prod-in playwright test ",
+    "prod-us": "APP_ENV=prod ENV_PATH=env/.env.prod-us playwright test ",
+    "prod-eu": "APP_ENV=prod ENV_PATH=env/.env.prod-eu playwright test ",
     "allure:generate": "npx allure generate .ConfigurationsTest/allure-results --clean",
     "allure:open": "npx allure open .ConfigurationsTest/allure-report"
   },
