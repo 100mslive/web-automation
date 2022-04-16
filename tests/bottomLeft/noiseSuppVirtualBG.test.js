@@ -24,7 +24,7 @@ test.afterEach(async ({page}) => {
     await page.close()
 });
 
-  test(`Verify noise supp and virtual bg visibility`, async ({page}) => {
+test(`Verify noise supp and virtual bg visibility`, async ({page}) => {
     result = await pageMethods.isElementVisible(page, bottomLeft.virtual_bg_btn, "virtual_bg_btn visibility-")
     pageMethods.assertResult(result, "virtual_bg_btn")
 

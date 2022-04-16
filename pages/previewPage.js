@@ -30,9 +30,11 @@ exports.PreviewPage = class PreviewPage {
     this.preview_tile = 'video[data-testid="preview_tile"]'; 
     this.preview_avatar_tile = 'div[data-testid="preview_avatar_tile"]'; 
     
+
+
     this.dialoge_cross_icon = 'button[data-testid="dialoge_cross_icon"]'; 
-    // this.preview_video_off_btn = 'data-testid="video_off_btn"'; 
-    // this.preview_video_off_btn = 'data-testid="video_off_btn"'; 
+    this.dialoge_select_settings = 'div[data-testid="dialog_select_?"]'; 
+    this.preview_setting_btn_list = ["Video", "Microphone", "Speaker"]; 
 
   }
 

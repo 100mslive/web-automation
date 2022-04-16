@@ -27,8 +27,18 @@ exports.TopRight = class TopRight {
 
 
     this.participant_number = 'div[data-testid="participant_?"]';
+    this.participant_setting = 'div[data-testid="participant_?"] button';
+    this.participant_role_heading = 'p[data-testid="role_?"]';
+    this.dialog_select_change_role_to = 'div[data-testid="dialog_select_Change role to"]';
 
-    this.participant_role_heading = 'div[role="group"] div p:nth-child(1)';
+    this.role_list = ["audio", "audio-video", "audio-video-sshare", "hms-viewer", "screenshare", "video", "viewer"];
+    this.setting_role_peer0 = 'div[role="group"]:nth-child(?) button';
+
+    this.peerlist_network = 'div[data-testid="participant_?"] span[data-testid="tile_network"]';
+
+
+    this.dialog_confirm = 'text=Confirm';
+    this.dialog_accept = 'text=Accept';
 
   }
 

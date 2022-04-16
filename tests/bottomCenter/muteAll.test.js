@@ -4,10 +4,11 @@ const { BottomCenter } = require('../../pages/bottomCenter.js');
 const { BottomLeft } = require('../../pages/bottomLeft.js');
 const { TopRight } = require('../../pages/TopRight.js');
 const PageMethods = require('../../utils/PageMethods.js');
+const { Ontile } = require('../../pages/onTile.js');
 let previewPage= new PreviewPage();
 let pageMethods= new PageMethods();
 let bottomCenter= new BottomCenter();
-let bottomLeft= new BottomLeft();
+let ontile= new Ontile();
 let topRight= new TopRight();
 
 let url=process.env.audio_video_screenshare_url;
@@ -15,7 +16,7 @@ let name=process.env.peer_name + "1";
 let mic = "on"
 let cam = "on"
 
-test.beforeEach(async ({page}) => {
+test.beforeEach(async () => {
   // await previewPage.gotoMeetingRoom(page, url, name, mic, cam)
 });
 
@@ -51,6 +52,10 @@ test(`Mute All`, async ({context}) => {
     pageMethods.assertResult(result, "meeting_video_off_btn")
   }
 
+  for(let i=1; i<5; i++){
+    result = await pageMethods.isElementVisible(pages[1], ontile.mute_ontile.replace("?",i), "mute_ontile visibility-")
+    pageMethods.assertResult(result, "mute_ontile")
+  }
   await bottomCenter.endRoom(pages[1]);
 })  
  

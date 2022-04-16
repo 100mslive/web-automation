@@ -66,5 +66,32 @@ test(`Verify Join peers`, async ({context}) => {
   }
   await pageMethods.clickElement(pages[0], topRight.participant_number.replace("?","0"), "participant_number")
   await bottomCenter.endRoom(pages[0]);
+})
 
+test(`Verify network on tile and peerlist`, async ({context}) => {
+  name=process.env.peer_name + "1";
+  pages1 = await context.newPage();
+  await previewPage.gotoMeetingRoom(pages1, url, name, mic, cam)
+
+  name = process.env.peer_name + 2;
+  pages2 = await context.newPage();
+  await previewPage.gotoMeetingRoom(pages2, url, name, mic, cam)
+
+  for(let i=0; i<=1; i++){
+    result = await pageMethods.isElementVisible(pages1, ontile.network_ontile.replace("?",i), "network_ontile visibility-")
+    pageMethods.assertResult(result, "network_ontile")
+    await pageMethods.clickElement(pages1, topRight.participant_list, "participant_list")
+    result = await pageMethods.isElementVisible(pages1, topRight.peerlist_network.replace("?",i), "network_ontile visibility-")
+    pageMethods.assertResult(result, "network_ontile")
+    await pages1.locator('html').click();
+  }
+  for(let i=0; i<=1; i++){
+    result = await pageMethods.isElementVisible(pages2, ontile.network_ontile.replace("?",i), "network_ontile visibility-")
+    pageMethods.assertResult(result, "network_ontile")
+    await pageMethods.clickElement(pages2, topRight.participant_list, "participant_list")
+    result = await pageMethods.isElementVisible(pages2, topRight.peerlist_network.replace("?",i), "network_ontile visibility-")
+    pageMethods.assertResult(result, "network_ontile")
+    await pages2.locator('html').click();
+  }
+  await bottomCenter.endRoom(pages1);
 })

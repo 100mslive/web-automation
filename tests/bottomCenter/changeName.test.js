@@ -47,21 +47,10 @@ test(`Change name check`, async ({page}) => {
   await expect(page.locator((topRight.participant_number).replace("?","0"))).toContainText("peer_2");
   await pageMethods.clickElement(page, topRight.participant_number.replace("?","0"), "participant_list")
 
-  result = await pageMethods.isElementVisible(page, ontile.name_onTile.replace("?","1"), "name_onTile visibility-")
+  result = await pageMethods.isElementVisible(page, ontile.name_onTile.replace("?","0"), "name_onTile visibility-")
   pageMethods.assertResult(result, "name_onTile")
 
-  result = await expect(page.locator(ontile.name_onTile.replace("?","1"))).toContainText("peer_2");
+  result = await expect(page.locator(ontile.name_onTile.replace("?","0"))).toContainText("peer_2");
   pageMethods.assertResult(result, "name_onTile")
 
 })  
-
-// test(`Test`, async ({page}) => {
-
-//   // result = await pageMethods.isElementVisible(page, ontile.name_onTile.replace("?","1"), "name_onTile visibility-")
-//   // pageMethods.assertResult(result, "name_onTile")
-
-//   // value = await page.locator(ontile.name_onTile.replace("?","1")).innerText();
-//   const title = await page.innerText(ontile.name_onTile.replace("?","1"))
-//   console.log(title);
-
-// })
