@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: npm cache clean –force
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
