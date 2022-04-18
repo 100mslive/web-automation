@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": { 
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "qa-in": "APP_ENV=qa ENV_PATH=web-automation/env/.env.qa-in playwright test ",
+    "qa-in": "APP_ENV=qa ENV_PATH=env/.env.qa-in playwright test ",
     "qa-us": "APP_ENV=qa ENV_PATH=env/.env.qa-us playwright test ",
     "qa-eu": "APP_ENV=qa ENV_PATH=env/.env.qa-eu playwright test ",
     "prod-in": "APP_ENV=prod ENV_PATH=env/.env.prod-in playwright test ",
