@@ -1,8 +1,8 @@
 // @ts-check
 const { devices } = require('@playwright/test');
-// const env = process.env.APP_ENV
-// const envPath = process.env.ENV_PATH
-// require('dotenv').config({path:envPath});
+const env = process.env.APP_ENV
+const envPath = process.env.ENV_PATH
+require('dotenv').config({path:envPath});
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -33,8 +33,8 @@ const config = {
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
-//   workers: 1,
+  // workers: process.env.CI ? 1 : undefined,
+  workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: process.env.CI ? 'allure-playwright' : 'github',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
