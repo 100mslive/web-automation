@@ -15,8 +15,8 @@ require('dotenv').config();
  */
 const config = {
   //globalSetup: require.resolve('./global-setup'),
-  // testDir: './tests/**',
-  testMatch: 'tests/**/**.test.js',
+  testDir: 'tests',
+  testMatch: '**.test.js',
   /* Maximum time one test can run for. */
   timeout: 100 * 1000,
   expect: {
@@ -32,7 +32,7 @@ const config = {
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
-  workers: 1,
+//   workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: process.env.CI ? 'allure-playwright' : 'github',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
