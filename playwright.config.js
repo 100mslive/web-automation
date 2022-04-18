@@ -16,7 +16,7 @@ const { devices } = require('@playwright/test');
  */
 const config = {
   //globalSetup: require.resolve('./global-setup'),
-  // testDir: './tests/**',
+  testDir: './tests',
   testMatch: '**.test.js',
  
   /* Maximum time one test can run for. */
