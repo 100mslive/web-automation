@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
+  "scripts": { 
+    "test": "echo \"Error: no test specified\" && exit 1",
     "qa-in": "APP_ENV=qa ENV_PATH=env/.env.qa-in playwright test --config=playwright.config.js",
     "qa-us": "APP_ENV=qa ENV_PATH=env/.env.qa-us playwright test ",
     "qa-eu": "APP_ENV=qa ENV_PATH=env/.env.qa-eu playwright test ",
