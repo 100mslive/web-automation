@@ -1,13 +1,14 @@
+// @ts-check
 const { devices } = require('@playwright/test');
-const env = process.env.APP_ENV
-const envPath = process.env.ENV_PATH
-require('dotenv').config({path:envPath});
-
+// const env = process.env.APP_ENV
+// const envPath = process.env.ENV_PATH
+// require('dotenv').config({path:envPath});
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-require('dotenv').config();
+// require('dotenv').config();
+
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -15,8 +16,9 @@ require('dotenv').config();
  */
 const config = {
   //globalSetup: require.resolve('./global-setup'),
-  testDir: './tests/**',
+  // testDir: './tests/**',
   testMatch: '**.test.js',
+ 
   /* Maximum time one test can run for. */
   timeout: 100 * 1000,
   expect: {

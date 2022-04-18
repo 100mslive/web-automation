@@ -8,21 +8,17 @@ on:
     branches: [main]
 
 jobs:
-  e2e-test:
-  
+  test:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v2
+      = uses: actions/setup-node@v2
         with:
-          node-version: "14"
-          cache: "npm"
-      - run: npm cache clean --force
+          node-version: "14.x"
       - run: npm ci
-      - run: npx playwright install
-      # --with-deps
+      - run: npx playwright install --with-deps
       - run: npm run qa-in
       - run: npm run allure:generate
 
