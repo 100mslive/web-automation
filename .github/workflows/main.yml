@@ -20,6 +20,14 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps
       - run: npm run qa-in --verbose
+      
+      - name: Archive npm failure logs
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: npm-logs
+          path: ~/.npm/_logs
+          
       - run: npm run allure:generate
 
       - uses: actions/upload-artifact@master
