@@ -19,7 +19,7 @@ jobs:
           node-version: "14.x"
       - run: npm ci
       - run: npx playwright install --with-deps
-      - run: npm run qa-in
+      - run: npx playwright test
       - run: npm run allure:generate
 
       - uses: actions/upload-artifact@master
