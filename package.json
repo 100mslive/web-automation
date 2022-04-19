@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": { 
-    "qa-in": "npx playwright test --config=playwright.config.js",
+    "qa-in": "playwright test --config=playwright.config.js",
     "qa-us": "APP_ENV=qa ENV_PATH=env/.env.qa-us playwright test ",
     "qa-eu": "APP_ENV=qa ENV_PATH=env/.env.qa-eu playwright test ",
     "prod-in": "APP_ENV=prod ENV_PATH=env/.env.prod-in playwright test ",
