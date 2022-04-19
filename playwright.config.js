@@ -20,7 +20,7 @@ const config = {
 //   testMatch: '**.test.js',
  
   /* Maximum time one test can run for. */
-  timeout: 100 * 1000,
+  timeout: 200 * 1000,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
@@ -33,8 +33,8 @@ const config = {
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
-//   workers: 1,
+  // workers: process.env.CI ? 1 : undefined,
+  workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: process.env.CI ? 'allure-playwright' : 'github',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -52,23 +52,23 @@ const config = {
     screenshot: 'only-on-failure',
     video: 'on-first-retry',
     permissions: ['microphone', 'camera'],
+    launchOptions:{
+      args:[
+          "--use-fake-device-for-media-stream",
+          "--use-fake-ui-for-media-stream",
+      ]
+  },
     
   },
 
   /* Configure projects for major browsers */
   projects: [
-//      {
-//       name: 'chromium',
-//       use: {
-//         ...devices['Desktop Chrome'],
-//         launchOptions:{
-//           args:[
-//               "--use-fake-device-for-media-stream",
-//               "--use-fake-ui-for-media-stream",
-//           ]
-//       },
-//       },
-//     },
+    //  {
+    //   name: 'chromium',
+    //   use: {
+    //     ...devices['Desktop Chrome'],
+    //   },
+    // },
 
     // {
     //   name: 'firefox',
@@ -91,6 +91,7 @@ const config = {
     //     ...devices['Pixel 5'],
     //   },
     // },
+    
     // {
     //   name: 'Mobile Safari',
     //   use: {
@@ -105,18 +106,14 @@ const config = {
     //     channel: 'msedge',
     //   },
 //     },
+
      {
       name: 'Google Chrome',
       use: {
         channel: 'chrome',
-        launchOptions:{
-          args:[
-              "--use-fake-device-for-media-stream",
-              "--use-fake-ui-for-media-stream",
-          ]
-      },
       },
     },
+
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */

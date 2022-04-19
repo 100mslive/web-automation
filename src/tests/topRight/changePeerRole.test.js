@@ -15,7 +15,7 @@ let name;
 let  mic = "on"
 let cam = "on"
 
-test(`Change peer Role`, async ({context}) => {
+test.only(`Change peer Role`, async ({context}) => {
 
   name=process.env.peer_name + "1";
   pages1 = await context.newPage();
