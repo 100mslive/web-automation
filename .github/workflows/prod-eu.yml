@@ -1,17 +1,12 @@
-name: web-Automation
+name: web-Automation PROD-EU
 
 on:
-  workflow_dispatch:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-  repository_dispatch:
-    types: [automation]
+#   schedule:
+#     - cron:  '0 */12 * * *'
 
 jobs:
   test:
-    timeout-minutes: 60
+    timeout-minutes: 35
     runs-on: ubuntu-latest
 
     steps:
@@ -22,19 +17,9 @@ jobs:
           node-version: "14.x"
       - run: npm ci
       - run: npx playwright install --with-deps
-#       - run: npx playwright install
-#       - uses: microsoft/playwright-github-action@v1
-      - name: Test
-        run: npm run qa-in
-#       - run: npx playwright test --config=playwright.config.js
-      
-      - name: Archive npm failure logs
-        uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: npm-logs
-          path: ~/.npm/_logs
-          
+      - name: Test on PROD-EU
+        run: npm run prod-eu
+
       - run: npm run allure:generate
 
       - uses: actions/upload-artifact@master
@@ -77,13 +62,13 @@ jobs:
         with:
           payload: |
             {
-              "text": "Web-Automation build result: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}/",
+              "text": "Web-Automation build result PROD-EU: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}/",
               "blocks": [
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Web-Automation build result: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}/"
+                    "text": "Web-Automation build result PROD-EU: ${{ job.status }}\n https://100mslive.github.io/web-automation/${{github.run_number}}/"
                   }
                 }
               ]
