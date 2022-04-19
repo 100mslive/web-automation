@@ -1,9 +1,7 @@
 // @ts-check
 const { devices } = require('@playwright/test');
-const APP_ENV='qa' 
-const ENV_PATH='env/.env.qa-in'
 const env = process.env.APP_ENV
-const envPath = 'env/.env.qa-in'
+const envPath = process.env.ENV_PATH
 require('dotenv').config({path:envPath});
 /**
  * Read environment variables from file.
