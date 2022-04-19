@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
-const { PreviewPage } = require('../../pages/previewPage.js');
-const PageMethods = require('../../utils/PageMethods.js');
+const { PreviewPage } = require('../pages/previewPage.js');
+const PageMethods = require('../utils/PageMethods.js');
 let previewPage= new PreviewPage();
 let pageMethods= new PageMethods();
 let name=process.env.peer_name + "1";
