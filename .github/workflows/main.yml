@@ -20,18 +20,18 @@ jobs:
           node-version: "14.x"
 #       - run: npm ci
       - run: npx playwright install --with-deps
-      - run: npx playwright install
+#       - run: npx playwright install
 #       - uses: microsoft/playwright-github-action@v1
       - name: Install and test
         run: npm ci && npm run qa-in
 #       - run: npx playwright test --config=playwright.config.js
       
-      - name: Archive npm failure logs
-        uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: npm-logs
-          path: ~/.npm/_logs
+#       - name: Archive npm failure logs
+#         uses: actions/upload-artifact@v2
+#         if: failure()
+#         with:
+#           name: npm-logs
+#           path: ~/.npm/_logs
           
       - run: npm run allure:generate
 
