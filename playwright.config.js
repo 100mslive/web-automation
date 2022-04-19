@@ -16,7 +16,7 @@ require('dotenv').config({path:envPath});
  */
 const config = {
   //globalSetup: require.resolve('./global-setup'),
-  testDir: './tests',
+  testDir: './src/tests',
 //   testMatch: '**.test.js',
  
   /* Maximum time one test can run for. */
