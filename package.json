@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": { 
-    "qa-in": "playwright test",
+    "qa-in": "APP_ENV=qa ENV_PATH=env/.env.qa-in npx playwright test",
     "qa-us": "APP_ENV=qa ENV_PATH=env/.env.qa-us playwright test ",
     "qa-eu": "APP_ENV=qa ENV_PATH=env/.env.qa-eu playwright test ",
     "prod-in": "APP_ENV=prod ENV_PATH=env/.env.prod-in playwright test ",
@@ -20,7 +20,6 @@
     "@playwright/test": "^1.21.0",
     "allure-commandline": "^2.17.2",
     "allure-playwright": "^2.0.0-beta.15",
-    "playwright": "^1.19.2"
   },
   "dependencies": {
     "dotenv": "^16.0.0",
