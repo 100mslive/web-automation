@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: "14.x"
       - run: npm ci
-      - run: npx playwright install --with-deps
+      - run: npx playwright install
       - name: Test on QA-IN
         run: npm run qa-in
 
