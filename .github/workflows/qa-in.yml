@@ -8,6 +8,8 @@ on:
     branches: [main]
   repository_dispatch:
     types: [automation]
+  schedule:
+    - cron: "0 0 0 * * ?"
 
 jobs:
   test:
