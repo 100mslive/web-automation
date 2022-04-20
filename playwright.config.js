@@ -52,13 +52,6 @@ const config = {
     screenshot: 'only-on-failure',
     video: 'on-first-retry',
     permissions: ['microphone', 'camera'],
-    launchOptions:{
-      args:[
-          "--use-fake-device-for-media-stream",
-          "--use-fake-ui-for-media-stream",
-      ]
-  },
-    
   },
 
   /* Configure projects for major browsers */
@@ -111,6 +104,12 @@ const config = {
       name: 'Google Chrome',
       use: {
         channel: 'chrome',
+        launchOptions:{
+        args:[
+          "--use-fake-device-for-media-stream",
+          "--use-fake-ui-for-media-stream",
+        ]
+      },
       },
     },
 
