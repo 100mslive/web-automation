@@ -2,18 +2,23 @@ name: web-Automation QA-IN
 
 on:
   workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "Log level"
+        required: true
+        default: "warning"
+  schedule:
+    - cron: "0 1 * * *"
   push:
     branches: [main]
   pull_request:
     branches: [main]
   repository_dispatch:
     types: [automation]
-  schedule:
-    - cron: "0 1 * * *"
 
 jobs:
   test:
-    timeout-minutes: 60
+    timeout-minutes: 35
     runs-on: ubuntu-latest
 
     steps:
@@ -23,16 +28,9 @@ jobs:
         with:
           node-version: "14.x"
       - run: npm ci
-      - run: npx playwright install
+      - run: npx playwright install --with-deps
       - name: Test on QA-IN
         run: npm run qa-in
-
-      # - name: Archive npm failure logs
-      #   uses: actions/upload-artifact@v2
-      #   if: failure()
-      #   with:
-      #     name: npm-logs
-      #     path: ~/.npm/_logs
 
       - run: npm run allure:generate
 
