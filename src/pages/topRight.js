@@ -31,7 +31,7 @@ exports.TopRight = class TopRight {
     this.participant_role_heading = 'p[data-testid="role_?"]';
     this.dialog_select_change_role_to = 'div[data-testid="dialog_select_Change role to"]';
 
-    this.role_list = ["audio", "audio-video", "audio-video-sshare", "hms-viewer", "screenshare", "video", "viewer"];
+    this.role_list = ["audio", "audio-video", "audio-video-sshare", "hls-viewer", "screenshare", "video", "viewer"];
     this.setting_role_peer0 = 'div[role="group"]:nth-child(?) button';
 
     this.peerlist_network = 'div[data-testid="participant_?"] span[data-testid="tile_network"]';

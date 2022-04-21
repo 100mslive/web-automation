@@ -24,7 +24,8 @@ test.afterEach(async ({page}) => {
     await page.close()
 });
 
-test(`white board check`, async ({page}) => {
+//not present in prod
+test.skip(`white board check`, async ({page}) => {
 
   result = await pageMethods.isElementVisible(page, bottomLeft.white_board_btn, "white_board_btn visibility-")
   pageMethods.assertResult(result, "white_board_btn")

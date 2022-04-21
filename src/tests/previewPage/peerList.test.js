@@ -20,8 +20,7 @@ test.beforeEach(async () => {
   // await previewPage.gotoPreviewPage(page, url)
 });
 
-test.afterEach(async ({page}) => {
-    await page.close()
+test.afterEach(async () => {
 });
 
 
@@ -63,5 +62,5 @@ test(`Verify Peerlist in Preview Page`, async ({context}) => {
   }
   await pageMethods.clickElement(pages[0], topRight.participant_number.replace("?","1"), "participant_number")
   await bottomCenter.endRoom(pages[1]);
-
+  await pages[0].close()
 })

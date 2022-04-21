@@ -30,11 +30,12 @@ test(`Change peer Role`, async ({context}) => {
       await pageMethods.clickElement(pages1, topRight.participant_list, "participant_list")
       await pageMethods.clickElement(pages1, topRight.participant_setting.replace("?",1), "participant_setting")
       await pageMethods.clickElement(pages1, topRight.dialog_select_change_role_to, "dialog_select_change_role_to")
-
+      
       await pages1.locator('select').selectOption(topRight.role_list[i]);
       await pageMethods.clickElement(pages1, topRight.dialog_confirm, "dialog_confirm")
 
         //page2 check
+        pages2.waitForTimeout(2000)
         result = await pageMethods.isElementVisible(pages2, topRight.dialog_accept, "dialog_accept visibility-")
         pageMethods.assertResult(result, "dialog_accept")
         await pageMethods.clickElement(pages2, topRight.dialog_accept, "dialog_accept")
