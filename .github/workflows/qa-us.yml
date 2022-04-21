@@ -1,6 +1,14 @@
 name: web-Automation QA-US
 
 on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "Log level"
+        required: true
+        default: "warning"
+      tags:
+        description: "Playwright web-Automation"
   schedule:
     - cron: "0 3 * * *"
 
