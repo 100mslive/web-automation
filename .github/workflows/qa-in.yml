@@ -27,12 +27,12 @@ jobs:
       - name: Test on QA-IN
         run: npm run qa-in
 
-      - name: Archive npm failure logs
-        uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: npm-logs
-          path: ~/.npm/_logs
+      # - name: Archive npm failure logs
+      #   uses: actions/upload-artifact@v2
+      #   if: failure()
+      #   with:
+      #     name: npm-logs
+      #     path: ~/.npm/_logs
 
       - run: npm run allure:generate
 
