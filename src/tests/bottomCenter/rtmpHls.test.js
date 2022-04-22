@@ -24,7 +24,7 @@ test.afterEach(async ({page}) => {
     await page.close()
 });
 
-test(`Start and Stop Browser Recording`, async ({page}) => {
+test.only(`Start and Stop Browser Recording`, async ({page}) => {
 
   result = await pageMethods.isElementVisible(page, bottomCenter.more_settings_btn, "more_settings_btn visibility-")
   pageMethods.assertResult(result, "more_settings_btn")
@@ -42,7 +42,7 @@ test(`Start and Stop Browser Recording`, async ({page}) => {
   pageMethods.assertResult(result, "rtmp_recording_start_btn")
   await pageMethods.clickElement(page, bottomCenter.rtmp_recording_start_btn, "rtmp_recording_start_btn")
 
-  await page.waitForTimeout(50000)
+  await page.waitForTimeout(150000)
 
   result = await pageMethods.isElementVisible(page, topRight.record_status_dropdown, "record_status_dropdown visibility-")
   pageMethods.assertResult(result, "record_status_dropdown")
@@ -54,14 +54,14 @@ test(`Start and Stop Browser Recording`, async ({page}) => {
  
   await pageMethods.clickElement(page, bottomCenter.more_settings_btn, "more_settings_btn")
   await pageMethods.clickElement(page, bottomCenter.streaming_recording_btn, "streaming_recording_btn")
-
+  page.waitForTimeout(2000)
   result = await pageMethods.isElementVisible(page, bottomCenter.rtmp_recording_stop_btn, "rtmp_recording_stop_btn visibility-")
   pageMethods.assertResult(result, "rtmp_recording_stop_btn")
   await pageMethods.clickElement(page, bottomCenter.rtmp_recording_stop_btn, "rtmp_recording_stop_btn")
   
 })  
 
-test(`Start and Stop HLS`, async ({page}) => {
+test.only(`Start and Stop HLS`, async ({page}) => {
 
   result = await pageMethods.isElementVisible(page, bottomCenter.more_settings_btn, "more_settings_btn visibility-")
   pageMethods.assertResult(result, "more_settings_btn")
@@ -98,7 +98,7 @@ test(`Start and Stop HLS`, async ({page}) => {
   
 })  
 
-test(`Start and Stop Rtmp`, async ({page, context}) => {
+test.only(`Start and Stop Rtmp`, async ({page, context}) => {
 
   result = await pageMethods.isElementVisible(page, bottomCenter.more_settings_btn, "more_settings_btn visibility-")
   pageMethods.assertResult(result, "more_settings_btn")
@@ -146,7 +146,7 @@ test(`Start and Stop Rtmp`, async ({page, context}) => {
   
 })  
 
-test(`Start and Stop Rtmp Recording`, async ({page, context}) => {
+test.only(`Start and Stop Rtmp Recording`, async ({page, context}) => {
 
   result = await pageMethods.isElementVisible(page, bottomCenter.more_settings_btn, "more_settings_btn visibility-")
   pageMethods.assertResult(result, "more_settings_btn")
@@ -195,7 +195,7 @@ test(`Start and Stop Rtmp Recording`, async ({page, context}) => {
   
 })  
 
-test(`Start and Stop HLS Recording`, async ({page}) => {
+test.only(`Start and Stop HLS Recording`, async ({page}) => {
 
   result = await pageMethods.isElementVisible(page, bottomCenter.more_settings_btn, "more_settings_btn visibility-")
   pageMethods.assertResult(result, "more_settings_btn")
