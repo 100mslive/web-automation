@@ -33,15 +33,15 @@ test(`Verify noise supp and virtual bg visibility`, async ({page}) => {
 })
 
 
-test(`Verify noise supp and virtual bg action`, async ({page}) => {
+test.only(`Verify noise supp and virtual bg action`, async ({page}) => {
   for(let i=0; i<3; i++){
+    page.waitForTimeout(3000)
     result = await pageMethods.isElementVisible(page, bottomLeft.virtual_bg_btn, "virtual_bg_btn visibility-")
     pageMethods.assertResult(result, "virtual_bg_btn")
     await pageMethods.clickElement(page, bottomLeft.virtual_bg_btn, "raise_hand_btn")
-    page.waitForTimeout(2000)
+    page.waitForTimeout(3000)
     result = await pageMethods.isElementVisible(page, bottomLeft.noise_supp_btn, "noise_supp_btn visibility-")
     pageMethods.assertResult(result, "noise_supp_btn")
     await pageMethods.clickElement(page, bottomLeft.noise_supp_btn, "noise_supp_btn")
-    page.waitForTimeout(2000)
   }
 })
