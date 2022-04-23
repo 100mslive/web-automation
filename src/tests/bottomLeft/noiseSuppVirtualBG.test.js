@@ -34,7 +34,7 @@ test(`Verify noise supp and virtual bg visibility`, async ({page}) => {
 
 
 test(`Verify noise supp and virtual bg action`, async ({page}) => {
-  for(let i=0; i<3; i++){
+  for(let i=0; i<1; i++){
     page.waitForTimeout(5000)
     result = await pageMethods.isElementVisible(page, bottomLeft.virtual_bg_btn, "virtual_bg_btn visibility-")
     pageMethods.assertResult(result, "virtual_bg_btn")
