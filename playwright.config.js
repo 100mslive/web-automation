@@ -104,12 +104,12 @@ const config = {
       name: 'Google Chrome',
       use: {
         channel: 'chrome',
-//         launchOptions:{
-//         args:[
-//           "--use-fake-device-for-media-stream",
-//           "--use-fake-ui-for-media-stream",
-//         ]
-//       },
+        launchOptions:{
+        args:[
+          "--use-fake-device-for-media-stream",
+          "--use-fake-ui-for-media-stream",
+        ]
+      },
       },
     },
 
