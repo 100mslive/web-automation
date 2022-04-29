@@ -14,6 +14,7 @@ let url=process.env.audio_video_screenshare_url;
 let name=process.env.peer_name + "1";
 let mic = "off"
 let cam = "on"
+var beam_wait_timeout = Number(process.env.beam_wait_timeout);
 
 test.beforeEach(async ({page}) => {
   await previewPage.gotoMeetingRoom(page, url, name, mic, cam)
@@ -24,7 +25,7 @@ test.afterEach(async ({page}) => {
     await page.close()
 });
 
-test(`Start and Stop Browser Recording`, async ({page}) => {
+test.only(`Start and Stop Browser Recording`, async ({page}) => {
 
   result = await pageMethods.isElementVisible(page, bottomCenter.more_settings_btn, "more_settings_btn visibility-")
   pageMethods.assertResult(result, "more_settings_btn")
@@ -42,7 +43,7 @@ test(`Start and Stop Browser Recording`, async ({page}) => {
   pageMethods.assertResult(result, "rtmp_recording_start_btn")
   await pageMethods.clickElement(page, bottomCenter.rtmp_recording_start_btn, "rtmp_recording_start_btn")
 
-  await page.waitForTimeout(150000)
+  await page.waitForTimeout(beam_wait_timeout)
 
   result = await pageMethods.isElementVisible(page, topRight.record_status_dropdown, "record_status_dropdown visibility-")
   pageMethods.assertResult(result, "record_status_dropdown")
@@ -79,7 +80,7 @@ test(`Start and Stop HLS`, async ({page}) => {
   pageMethods.assertResult(result, "rtmp_recording_start_btn")
   await pageMethods.clickElement(page, bottomCenter.rtmp_recording_start_btn, "rtmp_recording_start_btn")
 
-  await page.waitForTimeout(50000)
+  await page.waitForTimeout(60000)
 
   result = await pageMethods.isElementVisible(page, topRight.record_status_dropdown, "record_status_dropdown visibility-")
   pageMethods.assertResult(result, "record_status_dropdown")
@@ -119,7 +120,7 @@ test(`Start and Stop Rtmp`, async ({page, context}) => {
   pageMethods.assertResult(result, "rtmp_recording_start_btn")
   await pageMethods.clickElement(page, bottomCenter.rtmp_recording_start_btn, "rtmp_recording_start_btn")
 
-  await page.waitForTimeout(50000)
+  await page.waitForTimeout(60000)
 
   result = await pageMethods.isElementVisible(page, topRight.record_status_dropdown, "record_status_dropdown visibility-")
   pageMethods.assertResult(result, "record_status_dropdown")
@@ -172,7 +173,7 @@ test(`Start and Stop Rtmp Recording`, async ({page, context}) => {
   pageMethods.assertResult(result, "rtmp_recording_start_btn")
   await pageMethods.clickElement(page, bottomCenter.rtmp_recording_start_btn, "rtmp_recording_start_btn")
 
-  await page.waitForTimeout(50000)
+  await page.waitForTimeout(60000)
 
   result = await pageMethods.isElementVisible(page, topRight.record_status_dropdown, "record_status_dropdown visibility-")
   pageMethods.assertResult(result, "record_status_dropdown")
@@ -217,7 +218,7 @@ test(`Start and Stop HLS Recording`, async ({page}) => {
   pageMethods.assertResult(result, "rtmp_recording_start_btn")
   await pageMethods.clickElement(page, bottomCenter.rtmp_recording_start_btn, "rtmp_recording_start_btn")
 
-  await page.waitForTimeout(50000)
+  await page.waitForTimeout(60000)
 
   result = await pageMethods.isElementVisible(page, topRight.record_status_dropdown, "record_status_dropdown visibility-")
   pageMethods.assertResult(result, "record_status_dropdown")

@@ -28,21 +28,21 @@ test(`Verify noise supp and virtual bg visibility`, async ({page}) => {
     result = await pageMethods.isElementVisible(page, bottomLeft.virtual_bg_btn, "virtual_bg_btn visibility-")
     pageMethods.assertResult(result, "virtual_bg_btn")
 
-//     result = await pageMethods.isElementVisible(page, bottomLeft.noise_supp_btn, "noise_supp_btn visibility-")
-//     pageMethods.assertResult(result, "noise_supp_btn")
+    result = await pageMethods.isElementVisible(page, bottomLeft.noise_supp_btn, "noise_supp_btn visibility-")
+    pageMethods.assertResult(result, "noise_supp_btn")
 })
 
 
-// test(`Verify noise supp`, async ({page}) => {
-//   for(let i=0; i<3; i++){
-//     page.waitForTimeout(3000)
-//     result = await pageMethods.isElementVisible(page, bottomLeft.noise_supp_btn, "noise_supp_btn visibility-")
-//     pageMethods.assertResult(result, "noise_supp_btn")
-//     await pageMethods.clickElement(page, bottomLeft.noise_supp_btn, "noise_supp_btn")
-//   }
-// })
+test.skip(`Verify noise supp`, async ({page}) => {
+  for(let i=0; i<3; i++){
+    page.waitForTimeout(3000)
+    result = await pageMethods.isElementVisible(page, bottomLeft.noise_supp_btn, "noise_supp_btn visibility-")
+    pageMethods.assertResult(result, "noise_supp_btn")
+    await pageMethods.clickElement(page, bottomLeft.noise_supp_btn, "noise_supp_btn")
+  }
+})
 
-test(`Verify virtual bg action`, async ({page}) => {
+test.skip(`Verify virtual bg action`, async ({page}) => {
   for(let i=0; i<3; i++){
     page.waitForTimeout(3000)
     result = await pageMethods.isElementVisible(page, bottomLeft.virtual_bg_btn, "virtual_bg_btn visibility-")
