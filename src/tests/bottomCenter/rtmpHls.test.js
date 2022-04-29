@@ -25,7 +25,7 @@ test.afterEach(async ({page}) => {
     await page.close()
 });
 
-test.only(`Start and Stop Browser Recording`, async ({page}) => {
+test(`Start and Stop Browser Recording`, async ({page}) => {
 
   result = await pageMethods.isElementVisible(page, bottomCenter.more_settings_btn, "more_settings_btn visibility-")
   pageMethods.assertResult(result, "more_settings_btn")
