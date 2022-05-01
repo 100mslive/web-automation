@@ -20,7 +20,7 @@ const config = {
 //   testMatch: '**.test.js',
  
   /* Maximum time one test can run for. */
-  timeout: 250 * 1000,
+  timeout: 450 * 1000,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
