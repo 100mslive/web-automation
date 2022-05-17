@@ -1,44 +1,32 @@
-const { test, expect } = require('@playwright/test');
-const { PreviewPage } = require('../../pages/previewPage.js');
-const { BottomCenter } = require('../../pages/bottomCenter.js');
-const PageMethods = require('../../utils/PageMethods.js');
-const { RoomLeave } = require('../../pages/roomLeave.js');
-let previewPage= new PreviewPage();
-let pageMethods= new PageMethods();
-let bottomCenter= new BottomCenter();
-let roomLeave= new RoomLeave();
+/* eslint-disable no-undef */
+const { test } = require('@playwright/test');
+const PageWrapper = require('../../utils/PageWrapper.js');
 
 let url=process.env.audio_video_screenshare_url;
 let name=process.env.peer_name + "1";
 let  mic = "on"
 let cam = "on"
 
-test.beforeEach(async ({page}) => {
-  await previewPage.gotoMeetingRoom(page, url, name, mic, cam)
+test.beforeEach(async ({page: nativePage}) => {
+  page = new PageWrapper(nativePage);
+  await page.preview.gotoMeetingRoom(url, name, mic, cam)
 });
 
-test.afterEach(async ({page}) => {
+test.afterEach(async () => {
     await page.close()
 });
 
-test(`Verify leave room`, async ({page}) => {
-  await previewPage.gotoMeetingRoom(page, url, "on", "on")
-  await bottomCenter.leaveRoom(page);
-  result = await pageMethods.isElementVisible(page, roomLeave.join_again_btn, "join_again_btn visibility-")
-  expect(result).toBe(true);
-  result = await pageMethods.isElementVisible(page, roomLeave.go_to_dashboard_btn, "go_to_dashboard_btn visibility-")
-  expect(result).toBe(true);
-  await pageMethods.clickElement(page, roomLeave.join_again_btn, "join_again_btn")
-
+//leave and join again
+test(`Verify leave room`, async () => {
+  await page.bottomCenter.leaveRoom();
+  await page.assertVisible(page.roomLeave.go_to_dashboard_btn);
+  await page.click(page.roomLeave.join_again_btn)
+  await page.assertVisible(page.preview.preview_join_btn)
 });
 
-test(`Verify End room for all`, async ({page}) => {
-  await previewPage.gotoMeetingRoom(page, url, "on", "on")
-  await bottomCenter.endRoom(page);
-  result = await pageMethods.isElementVisible(page, roomLeave.join_again_btn, "join_again_btn visibility-")
-  expect(result).toBe(true);
-  result = await pageMethods.isElementVisible(page, roomLeave.go_to_dashboard_btn, "go_to_dashboard_btn visibility-")
-  expect(result).toBe(true);
-  await pageMethods.clickElement(page, roomLeave.join_again_btn, "join_again_btn")
-
+test(`Verify End room for all`, async () => {
+  await page.bottomCenter.endRoom();
+  await page.assertVisible(page.roomLeave.go_to_dashboard_btn)
+  await page.click(page.roomLeave.join_again_btn)
+  await page.assertVisible(page.preview.preview_join_btn)
 });

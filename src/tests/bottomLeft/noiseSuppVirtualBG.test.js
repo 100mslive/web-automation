@@ -1,52 +1,30 @@
-const { test, expect } = require('@playwright/test');
-const { PreviewPage } = require('../../pages/previewPage.js');
-const { BottomCenter } = require('../../pages/bottomCenter.js');
-const { BottomLeft } = require('../../pages/bottomLeft.js');
-const PageMethods = require('../../utils/PageMethods.js');
-const { Ontile } = require('../../pages/onTile.js');
-let previewPage= new PreviewPage();
-let pageMethods= new PageMethods();
-let bottomCenter= new BottomCenter();
-let bottomLeft= new BottomLeft();
-let onTile= new Ontile();
+/* eslint-disable no-undef */
+const { test } = require('@playwright/test');
+const PageWrapper = require('../../utils/PageWrapper.js');
 
 let url=process.env.audio_video_screenshare_url;
 let name=process.env.peer_name + "1";
-let mic = "on"
-let cam = "on"
+let mic = true;
+let cam = false;
 
-test.beforeEach(async ({page}) => {
-  await previewPage.gotoMeetingRoom(page, url, name, mic, cam)
+test.beforeEach(async ({page: nativePage}) => {
+  page = new PageWrapper(nativePage);
+  await page.preview.gotoMeetingRoom(url, name, mic, cam)
 });
 
-test.afterEach(async ({page}) => {
-    await bottomCenter.endRoom(page);
+test.afterEach(async () => {
+    await page.endRoom();
     await page.close()
 });
 
-test(`Verify noise supp and virtual bg visibility`, async ({page}) => {
-    result = await pageMethods.isElementVisible(page, bottomLeft.virtual_bg_btn, "virtual_bg_btn visibility-")
-    pageMethods.assertResult(result, "virtual_bg_btn")
-
-    result = await pageMethods.isElementVisible(page, bottomLeft.noise_supp_btn, "noise_supp_btn visibility-")
-    pageMethods.assertResult(result, "noise_supp_btn")
+test(`Verify noise supp and virtual bg visibility`, async () => {
+    await page.assertVisible(page.bottomLeft.virtual_bg_btn)
+    await page.assertVisible(page.bottomLeft.noise_supp_btn)
 })
 
-
-test.skip(`Verify noise supp`, async ({page}) => {
+test(`Verify noise supp`, async () => {
   for(let i=0; i<3; i++){
-    page.waitForTimeout(3000)
-    result = await pageMethods.isElementVisible(page, bottomLeft.noise_supp_btn, "noise_supp_btn visibility-")
-    pageMethods.assertResult(result, "noise_supp_btn")
-    await pageMethods.clickElement(page, bottomLeft.noise_supp_btn, "noise_supp_btn")
+    await page.click(page.bottomLeft.noise_supp_btn, page.bottomLeft.virtual_bg_btn)
   }
 })
 
-test.skip(`Verify virtual bg action`, async ({page}) => {
-  for(let i=0; i<3; i++){
-    page.waitForTimeout(3000)
-    result = await pageMethods.isElementVisible(page, bottomLeft.virtual_bg_btn, "virtual_bg_btn visibility-")
-    pageMethods.assertResult(result, "virtual_bg_btn")
-    await pageMethods.clickElement(page, bottomLeft.virtual_bg_btn, "virtual_bg_btn")
-  }
-})

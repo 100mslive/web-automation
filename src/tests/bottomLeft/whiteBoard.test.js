@@ -1,48 +1,30 @@
-const { test, expect } = require('@playwright/test');
-const { PreviewPage } = require('../../pages/previewPage.js');
-const { BottomCenter } = require('../../pages/bottomCenter.js');
-const { BottomLeft } = require('../../pages/bottomLeft.js');
-const { TopRight } = require('../../pages/topRight.js');
-const PageMethods = require('../../utils/PageMethods.js');
-let previewPage= new PreviewPage();
-let pageMethods= new PageMethods();
-let bottomCenter= new BottomCenter();
-let bottomLeft= new BottomLeft();
-let topRight= new TopRight();
+/* eslint-disable no-undef */
+
+const { test } = require('@playwright/test');
+const PageWrapper = require('../../utils/PageWrapper.js');
 
 let url=process.env.audio_video_screenshare_url;
 let name=process.env.peer_name + "1";
-let mic = "on"
-let cam = "on"
+let mic = true;
+let cam = false;
 
-test.beforeEach(async ({page}) => {
-  await previewPage.gotoMeetingRoom(page, url, name, mic, cam)
+test.beforeEach(async ({page: nativePage}) => {
+  page = new PageWrapper(nativePage);
+  await page.preview.gotoMeetingRoom(url, name, mic, cam)
 });
 
-test.afterEach(async ({page}) => {
-    await bottomCenter.endRoom(page);
+test.afterEach(async () => {
+    await page.endRoom();
     await page.close()
 });
 
 //not present in prod
-test.skip(`white board check`, async ({page}) => {
+test.skip(`white board check`, async () => {
 
-  result = await pageMethods.isElementVisible(page, bottomLeft.white_board_btn, "white_board_btn visibility-")
-  pageMethods.assertResult(result, "white_board_btn")
-  await pageMethods.clickElement(page, bottomLeft.white_board_btn, "white_board_btn")
-  await pageMethods.clickElement(page, bottomLeft.white_board_btn, "white_board_btn")
-  await pageMethods.clickElement(page, bottomLeft.white_board_btn, "white_board_btn")
-  
-  result = await pageMethods.isElementVisible(page, topRight.record_status_dropdown, "record_status_dropdown visibility-")
-  pageMethods.assertResult(result, "record_status_dropdown")
-  await pageMethods.clickElement(page, topRight.record_status_dropdown, "record_status_dropdown")
+  await page.click(page.bottomLeft.white_board_btn, page.bottomLeft.white_board_btn, page.bottomLeft.white_board_btn);
 
-  result = await pageMethods.isElementVisible(page, topRight.whiteboard_owner, "whiteboard_owner visibility-")
-  pageMethods.assertResult(result, "whiteboard_owner")
-
-  result = await pageMethods.isElementVisible(page, topRight.whiteboard_stop, "whiteboard_stop visibility-")
-  pageMethods.assertResult(result, "whiteboard_stop")
-  await pageMethods.clickElement(page, topRight.whiteboard_stop, "whiteboard_stop")
-
+  await page.click(page.topRight.record_status_dropdown);
+  await page.assertVisible(page.topRight.whiteboard_owner)
+  await page.click(page.topRight.whiteboard_stop);
 })  
 

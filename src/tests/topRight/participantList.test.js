@@ -1,60 +1,42 @@
-const { test, expect } = require('@playwright/test');
-const { PreviewPage } = require('../../pages/previewPage.js');
-const { BottomCenter } = require('../../pages/bottomCenter.js');
-const { BottomLeft } = require('../../pages/bottomLeft.js');
-const { TopRight } = require('../../pages/topRight.js');
-const PageMethods = require('../../utils/PageMethods.js');
-let previewPage= new PreviewPage();
-let pageMethods= new PageMethods();
-let bottomCenter= new BottomCenter();
-let bottomLeft= new BottomLeft();
-let topRight= new TopRight();
+/* eslint-disable no-undef */
+
+const { test } = require('@playwright/test');
+const PageWrapper = require('../../utils/PageWrapper.js');
 
 let url=process.env.audio_video_screenshare_url;
 let name=process.env.peer_name + "1";
-let mic = "off"
-let cam = "on"
+let mic = true;
+let cam = false;
 
-test.beforeEach(async ({page}) => {
-  await previewPage.gotoMeetingRoom(page, url, name, mic, cam)
+test.beforeEach(async ({page: nativePage}) => {
+  page = new PageWrapper(nativePage);
+  await page.preview.gotoMeetingRoom(url, name, mic, cam)
 });
 
-test.afterEach(async ({page}) => {
-    await bottomCenter.endRoom(page);
+test.afterEach(async () => {
+    await page.endRoom();
     await page.close()
 });
 
-test(`Verify My Name in Participant list`, async ({page}) => {
+test(`Verify My Number & Name in Participant list`, async () => {
+  await page.assertVisible(page.topRight.participant_list);
+  await page.hasText(page.topRight.participant_list, "1");
 
-  result = await pageMethods.isElementVisible(page, topRight.participant_list, "participant_list visibility-")
-  pageMethods.assertResult(result, "participant_list")
-  await pageMethods.clickElement(page, topRight.participant_list, "participant_list")
+  await page.click(page.topRight.participant_list);
+  const participant = page.topRight.participant_number.replace("?","0");
 
-  result = await pageMethods.isElementVisible(page, topRight.participant_number.replace("?","0"), "participant_number visibility-")
-  pageMethods.assertResult(result, "participant_number")
-
-  await expect(page.locator(topRight.participant_number.replace("?","0"))).toContainText(name);
-
-  await pageMethods.clickElement(page, topRight.participant_number.replace("?","0"), "participant_number")
-
+  await page.assertVisible(participant);
+  await page.hasText(participant, name);
+  await page.click('html');
 })  
 
-test(`Verify Number of participants`, async ({page}) => {
-  result = await pageMethods.isElementVisible(page, topRight.participant_list, "participant_list visibility-")
-  pageMethods.assertResult(result, "participant_list")
-  await expect(page.locator(topRight.participant_list)).toContainText("1");
-})  
 
-test(`Verify Number of multiple participants`, async ({page, context}) => {
-
+test(`Verify Number of multiple participants`, async ({context}) => {
   for(let i=2; i<=5; i++){
     name=process.env.peer_name + i;
-    const new_page = await context.newPage();
-    await new_page.waitForTimeout(3000)
-    await previewPage.gotoMeetingRoom(new_page, url, name, mic, cam)
+    const new_page = new PageWrapper(await context.newPage());
+    await page.timeout(3000)
+    await new_page.preview.gotoMeetingRoom(url, name, mic, cam)
   }
-
-  result = await pageMethods.isElementVisible(page, topRight.participant_list, "participant_list visibility-")
-  pageMethods.assertResult(result, "participant_list")
-  await expect(page.locator(topRight.participant_list)).toContainText("5");
-})  
+  await page.hasText(page.topRight.participant_list, "5");
+})

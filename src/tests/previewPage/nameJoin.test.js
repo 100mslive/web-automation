@@ -1,39 +1,34 @@
-// homepage.spec.js
+/* eslint-disable no-undef */
+
 const { test, expect } = require('@playwright/test');
-const { PreviewPage } = require('../../pages/previewPage.js');
-const PageMethods = require('../../utils/PageMethods.js');
-const { BottomCenter } = require('../../pages/bottomCenter.js');
-let bottomCenter= new BottomCenter();
-let previewPage= new PreviewPage();
-let pageMethods= new PageMethods();
+const PageWrapper = require('../../utils/PageWrapper.js');
+
+let url=process.env.audio_video_screenshare_url;
 let name=process.env.peer_name + "1";
 
-test.beforeEach(async ({page}) => {
-  await previewPage.gotoPreviewPage(page, previewPage.url_audio_video_ss)
+test.beforeEach(async ({page: nativePage}) => {
+  page = new PageWrapper(nativePage);
+  await page.preview.gotoPreviewPage(url)
 });
 
-test.afterEach(async ({page}) => {
+test.afterEach(async () => {
+    // await page.endRoom();
     await page.close()
 });
 
-
-test(`Verify Name Field`, async ({page}) => {
-  const result = await pageMethods.isElementVisible(page, previewPage.preview_name_field, "name_filed_visibility-")
-  console.log(result)
-  await previewPage.SendName(page, name);
+test(`Verify Name Field and Join Button and Room`, async () => {
+  await page.sendText(page.preview.preview_name_field, name);
+  await page.click(page.preview.preview_join_btn)
+  await page.endRoom();
 })
 
-test(`Verify Join Button`, async ({page}) => {
-  await previewPage.SendName(page, name);
-  const result = await pageMethods.isElementVisible(page, previewPage.preview_join_btn, "join btn visibility-")
-  console.log(result)
-  await pageMethods.clickElement(page, previewPage.preview_audio_btn, "preview_audio_btn")
+test(`Verify room URL`, async () => {
+  var currentURL = await page.getUrl();
+  currentURL = currentURL.replace("preview", "meeting")
+  console.log(currentURL)
+  expect(currentURL).toBe(url);
+  await page.close();
 })
+ 
 
-test(`Verify Join Room`, async ({page}) => {
-  await previewPage.SendName(page, name);
-  const result = await pageMethods.isElementVisible(page, previewPage.preview_join_btn, "join btn visibility-")
-  console.log(result)
-  await pageMethods.clickElement(page, previewPage.preview_join_btn, "preview_join_btn")
-  await bottomCenter.endRoom(page);
-})
+

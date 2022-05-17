@@ -1,19 +1,15 @@
-const { expect } = require('@playwright/test');
-const  PageMethods = require('../utils/PageMethods')
-const { PreviewPage } = require('./previewPage.js');
-let pageMethods = new PageMethods();
-let previewPage= new PreviewPage();
+/* eslint-disable no-undef */
 
 exports.BottomRight = class BottomRight {
    /**
    * @param {import('@playwright/test').Page} page
    */
 
-  constructor() {
-    this.raise_hand_btn = 'button[data-testid="raise_hand_btn"]';
-    this.brb_btn = 'button[data-testid="brb_btn"]';
-    this.chat_btn = 'button[data-testid="chat_btn"]';
+  constructor(page) {
+    this.page = page;
+    this.raise_hand_btn = '[data-testid="raise_hand_btn"]';
+    this.brb_btn = '[data-testid="brb_btn"]';
+    this.chat_btn = '[data-testid="chat_btn"]';
   }
-  
 
 }

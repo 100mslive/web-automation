@@ -1,21 +1,17 @@
-const { expect } = require('@playwright/test');
-const  PageMethods = require('../utils/PageMethods')
-const { PreviewPage } = require('./previewPage.js');
-let pageMethods = new PageMethods();
-let previewPage= new PreviewPage();
-
+/* eslint-disable no-undef */
 exports.RoomLeave = class RoomLeave {
    /**
    * @param {import('@playwright/test').Page} page
    */
 
-  constructor() {
+  constructor(page) {
+    this.page = page;
     this.join_again_btn = 'button[data-testid="join_again_btn"]';
     this.go_to_dashboard_btn = 'button[data-testid="go_to_dashboard_btn"]';
   
   }
 
-  async getStartJoinTime(page){
+  async getStartJoinTime(){
     //get time at preview page
     var today = new Date();
     var in_time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
@@ -28,7 +24,7 @@ exports.RoomLeave = class RoomLeave {
     console.log("In Time in sec = "+ in_time_total);
     return in_time_total;
 }
-async getEndJoinTime(page){    
+async getEndJoinTime(){    
   //get time after preview page
   var today = new Date();
   var out_time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();

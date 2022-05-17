@@ -1,6 +1,4 @@
-const { expect, default: test } = require('@playwright/test');
-const  PageMethods = require('../utils/PageMethods')
-let pageMethods = new PageMethods();
+/* eslint-disable no-undef */
 
 exports.PreviewPage = class PreviewPage {
 
@@ -8,8 +6,7 @@ exports.PreviewPage = class PreviewPage {
    * @param {import('@playwright/test').Page} page
    */
   constructor(page) {
-    
-    // this.page = page;
+    this.page = page;
     // this.name = process.env.peer_name;
     this.url_audio_video_ss = process.env.audio_video_screenshare_url;
     this.preview_name_field = 'input[data-testid="preview_name_field"]';
@@ -39,31 +36,21 @@ exports.PreviewPage = class PreviewPage {
   }
 
 
-  async gotoPreviewPage(page, url) {
-    await page.goto(url)
+  async gotoPreviewPage(url) {
+    await this.page.goto(url)
   }
 
-
-  async SendName(page, name){ 
-    await page.waitForSelector(this.preview_name_field); 
-    await pageMethods.sendText(page, this.preview_name_field, name)
-    console.log("Name: " + name )
-  }
-
-  async gotoMeetingRoom(page, url, name, mic, cam) {
-    await this.gotoPreviewPage(page,url);
-    if(cam == "off"){
-      //repair this
-        await page.waitForSelector(this.preview_video_btn);
-        await page.locator(this.preview_video_btn).click()
+  async gotoMeetingRoom(url, name, mic, cam) {
+    await this.gotoPreviewPage(url);
+    console.log("mic:", mic,  " cam:", cam)
+    if(!cam){
+      await this.page.click(this.preview_video_btn);
     }
-    if(mic == "off"){
-        await page.waitForSelector(this.preview_audio_btn);
-        await page.locator(this.preview_audio_btn).click()
+    if(!mic){
+      await this.page.click(this.preview_audio_btn);
     }
-    this.SendName(page, name)
-    await page.waitForSelector(this.preview_join_btn);
-    await pageMethods.clickElement(page, this.preview_join_btn, "preview_join_btn")
+    await this.page.sendText(this.preview_name_field, name);
+    await this.page.click(this.preview_join_btn);
   } 
 
 }

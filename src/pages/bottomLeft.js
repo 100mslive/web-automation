@@ -1,15 +1,11 @@
-const { expect } = require('@playwright/test');
-const  PageMethods = require('../utils/PageMethods')
-const { PreviewPage } = require('./previewPage.js');
-let pageMethods = new PageMethods();
-let previewPage= new PreviewPage();
-
+/* eslint-disable no-undef */
 exports.BottomLeft = class BottomLeft {
    /**
    * @param {import('@playwright/test').Page} page
    */
 
-  constructor() {
+  constructor(page) {
+    this.page = page;
     this.screenshare_audio = 'button[data-testid="screenshare_audio"]';
     this.audio_playlist = 'button[data-testid="audio_playlist"]';
     this.video_playlist = 'button[data-testid="video_playlist"]';

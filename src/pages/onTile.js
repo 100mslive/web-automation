@@ -1,15 +1,12 @@
-const { expect } = require('@playwright/test');
-const  PageMethods = require('../utils/PageMethods')
-const { PreviewPage } = require('./previewPage.js');
-let pageMethods = new PageMethods();
-let previewPage= new PreviewPage();
+/* eslint-disable no-undef */
 
 exports.Ontile = class Ontile {
    /**
    * @param {import('@playwright/test').Page} page
    */
 
-  constructor() {
+  constructor(page) {
+    this.page = page;
     this.participant_tile = 'div[data-testid="participant_tile"]:nth-child(?)';
 
     this.audio_mute_icon_onTile = 'div[data-testid="participant_audio_mute_icon"]';
@@ -25,6 +22,8 @@ exports.Ontile = class Ontile {
     this.mute_ontile = 'div[data-testid="participant_tile_?"] div[data-testid="participant_audio_mute_icon"]';
 
   }
-  
+  getNameOnTile(rowNumber){
+    return this.name_onTile.replace("?",rowNumber);
+  }
 
 }

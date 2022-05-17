@@ -1,15 +1,12 @@
-const { expect } = require('@playwright/test');
-const  PageMethods = require('../utils/PageMethods')
-const { PreviewPage } = require('./previewPage.js');
-let pageMethods = new PageMethods();
-let previewPage= new PreviewPage();
+/* eslint-disable no-undef */
 
 exports.TopRight = class TopRight {
    /**
    * @param {import('@playwright/test').Page} page
    */
 
-  constructor() {
+  constructor(page) {
+    this.page = page;
     this.pip_btn = 'button[data-testid="pip_btn"]';
     this.participant_list = 'div[data-testid="participant_list"]';
     this.record_status_dropdown = 'div[data-testid="record_status_dropdown"]';
@@ -22,8 +19,10 @@ exports.TopRight = class TopRight {
     this.whiteboard_stop = 'text=Stop';
 
     this.streaming_rtmp = 'div[role="menuitem"]:has-text("Streaming (RTMP)")';
-    this.browser_recording = 'div[role="menuitem"]:has-text("Recording (Browser)")';
     this.streaming_hls = 'div[role="menuitem"]:has-text("Streaming (HLS)")';
+    this.browser_recording = 'div[role="menuitem"]:has-text("Recording (Browser)")';
+    this.hls_recording = 'div[role="menuitem"]:has-text("Recording (HLS)")';
+    
 
 
     this.participant_number = 'div[data-testid="participant_?"]';
@@ -42,4 +41,13 @@ exports.TopRight = class TopRight {
 
   }
 
+  async openParticipantList(){
+    await this.page.click(this.participant_list);
+  }
+  async closeParticipantList(){
+    await this.page.click(this.getPeerLocator(0));
+  }
+  getPeerLocator(rowNumber){
+    return this.participant_number.replace("?", rowNumber);
+  }
 }

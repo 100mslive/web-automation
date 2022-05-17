@@ -1,15 +1,11 @@
-const { expect } = require('@playwright/test');
-const  PageMethods = require('../utils/PageMethods')
-const { PreviewPage } = require('../pages/previewPage.js');
-let pageMethods = new PageMethods();
-let previewPage= new PreviewPage();
-
+/* eslint-disable no-undef */
 exports.BottomCenter = class BottomCenter {
    /**
    * @param {import('@playwright/test').Page} page
    */
 
-  constructor() {
+  constructor(page) {
+    this.page = page;
     this.meeting_audio_btn = 'button[data-testid="audio_btn"]';
     this.meeting_audio_on_btn = 'button[data-testid="audio_btn"] > svg[data-testid="audio_on_btn"]';
     this.meeting_audio_off_btn = 'button[data-testid="audio_btn"] > svg[data-testid="audio_off_btn"]';
@@ -72,19 +68,11 @@ exports.BottomCenter = class BottomCenter {
   //   page.goto(url);
   // }
 
-  async leaveRoom(page) {
-    await page.waitForSelector(this.leave_room_btn);
-    await pageMethods.clickElement(page, this.leave_room_btn, "leave_room_btn")
-    await page.waitForSelector(this.just_leave_btn);
-    await pageMethods.clickElement(page, this.just_leave_btn, "just_leave_btn")
+  async leaveRoom() {
+    await this.page.click(this.leave_room_btn, this.just_leave_btn)
   }
 
-  async endRoom(page) {
-    await page.waitForSelector(this.leave_room_btn);
-    await pageMethods.clickElement(page, this.leave_room_btn, "leave_room_btn")
-    await page.waitForSelector(this.end_room_btn);
-    await pageMethods.clickElement(page, this.end_room_btn, "end_room_btn")
-    await page.waitForSelector(this.lock_end_room);
-    await pageMethods.clickElement(page, this.lock_end_room, "lock_end_room")
+  async endRoom() {
+    await this.page.click(this.leave_room_btn, this.end_room_btn, this.lock_end_room)
   }
 }

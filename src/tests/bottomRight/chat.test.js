@@ -1,24 +1,19 @@
-const { test, expect } = require('@playwright/test');
-const { PreviewPage } = require('../../pages/previewPage.js');
-const { BottomCenter } = require('../../pages/bottomCenter.js');
-const { BottomRight } = require('../../pages/bottomRight.js');
-const PageMethods = require('../../utils/PageMethods.js');
-let previewPage= new PreviewPage();
-let pageMethods= new PageMethods();
-let bottomCenter= new BottomCenter();
-let bottomRight= new BottomRight();
+/* eslint-disable no-undef */
 
-let url,name,result;
+const { test } = require('@playwright/test');
+const PageWrapper = require('../../utils/PageWrapper.js');
 
-test.beforeEach(async ({page}) => {
-  previewPage = new PreviewPage(page);
-  url=previewPage.url_audio_video_ss;
-  name=previewPage.name;
-  mic = "off"
-  cam = "off"
+let url=process.env.audio_video_screenshare_url;
+let name=process.env.peer_name + "1";
+let mic = true;
+let cam = false;
+
+test.beforeEach(async ({page: nativePage}) => {
+  page = new PageWrapper(nativePage);
+  await page.preview.gotoMeetingRoom(url, name, mic, cam)
 });
 
-test.afterEach(async ({page}) => {
-    await bottomCenter.leaveRoom(page);
+test.afterEach(async () => {
+    await page.endRoom();
     await page.close()
 });

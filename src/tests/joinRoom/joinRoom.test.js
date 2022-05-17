@@ -1,117 +1,93 @@
+/* eslint-disable no-undef */
+
 const { test, expect } = require('@playwright/test');
-const { PreviewPage } = require('../../pages/previewPage.js');
-const { BottomCenter } = require('../../pages/bottomCenter.js');
-const PageMethods = require('../../utils/PageMethods.js');
-const { RoomLeave } = require('../../pages/roomLeave.js');
-let previewPage= new PreviewPage();
-let pageMethods= new PageMethods();
-let bottomCenter= new BottomCenter();
-let roomLeave= new RoomLeave();
+const PageWrapper = require('../../utils/PageWrapper.js');
 
 let url=process.env.audio_video_screenshare_url;
 let name=process.env.peer_name + "1";
 
-test.beforeEach(async ({page}) => {
+test.beforeEach(async ({page: nativePage}) => {
+  page = new PageWrapper(nativePage);
 });
 
-test.afterEach(async ({page}) => {
-    await bottomCenter.endRoom(page);
+test.afterEach(async () => {
+    await page.endRoom();
     await page.close()
 });
 
-test(`Verify Join Mic-On Cam-On`, async ({page}) => {
-  mic = "on"
-  cam = "on"
-  console.log("mic:"+mic+ " cam:"+cam)
-  await previewPage.gotoMeetingRoom(page, url, name, mic, cam)
-  
-  result = await pageMethods.isElementVisible(page, bottomCenter.meeting_audio_on_btn, "meeting_audio_on_btn visibility-")
-  pageMethods.assertResult(result, "meeting_audio_on_btn")
-  await pageMethods.clickElement(page, bottomCenter.meeting_audio_btn, "meeting_audio_btn")
-  result = await pageMethods.isElementVisible(page, bottomCenter.meeting_audio_off_btn, "meeting_audio_off_btn visibility-")
-  pageMethods.assertResult(result, "meeting_audio_off_btn")
-  await pageMethods.clickElement(page, bottomCenter.meeting_audio_btn, "meeting_audio_btn")
 
-  result = await pageMethods.isElementVisible(page, bottomCenter.meeting_video_on_btn, "meeting_video_on_btn visibility-")
-  pageMethods.assertResult(result, "meeting_video_on_btn")
-  await pageMethods.clickElement(page, bottomCenter.meeting_video_btn, "meeting_video_btn")
-  result = await pageMethods.isElementVisible(page, bottomCenter.meeting_video_off_btn, "meeting_video_off_btn visibility-")
-  pageMethods.assertResult(result, "meeting_video_off_btn")
-  await pageMethods.clickElement(page, bottomCenter.meeting_video_btn, "meeting_video_btn")
+test(`Verify Join Mic-On Cam-On`, async () => {
+  mic = true
+  cam = true
+  await page.preview.gotoMeetingRoom(url, name, mic, cam)
+  
+  await page.assertVisible(page.bottomCenter.meeting_audio_on_btn)
+  await page.click(page.bottomCenter.meeting_audio_btn)
+  await page.assertVisible(page.bottomCenter.meeting_audio_off_btn)
+  await page.click(page.bottomCenter.meeting_audio_btn)
+
+  await page.assertVisible(page.bottomCenter.meeting_video_on_btn)
+  await page.click(page.bottomCenter.meeting_video_btn)
+  await page.assertVisible(page.bottomCenter.meeting_video_off_btn)
+  await page.click(page.bottomCenter.meeting_video_btn)
 })
 
-test(`Verify Join Mic-On Cam-Off`, async ({page}) => {
-  mic = "on"
-  cam = "off"
-  console.log("mic:"+mic+ " cam:"+cam)
-  await previewPage.gotoMeetingRoom(page, url, name, mic, cam)
-  
-  result = await pageMethods.isElementVisible(page, bottomCenter.meeting_audio_on_btn, "meeting_audio_on_btn visibility-")
-  pageMethods.assertResult(result, "meeting_audio_on_btn")
-  await pageMethods.clickElement(page, bottomCenter.meeting_audio_btn, "meeting_audio_btn")
-  result = await pageMethods.isElementVisible(page, bottomCenter.meeting_audio_off_btn, "meeting_audio_off_btn visibility-")
-  pageMethods.assertResult(result, "meeting_audio_off_btn")
-  await pageMethods.clickElement(page, bottomCenter.meeting_audio_btn, "meeting_audio_btn")
+test(`Verify Join Mic-On Cam-Off`, async () => {
+  mic = true
+  cam = false
+  await page.preview.gotoMeetingRoom(url, name, mic, cam)
 
-        result = await pageMethods.isElementVisible(page, bottomCenter.meeting_video_off_btn, "meeting_video_off_btn visibility-")
-        pageMethods.assertResult(result, "meeting_video_off_btn")
-        await pageMethods.clickElement(page, bottomCenter.meeting_video_btn, "meeting_video_btn")
-        result = await pageMethods.isElementVisible(page, bottomCenter.meeting_video_on_btn, "meeting_video_on_btn visibility-")
-        pageMethods.assertResult(result, "meeting_video_on_btn")
-        await pageMethods.clickElement(page, bottomCenter.meeting_video_btn, "meeting_video_btn")
+  await page.assertVisible(page.bottomCenter.meeting_audio_on_btn)
+  await page.click(page.bottomCenter.meeting_audio_btn)
+  await page.assertVisible(page.bottomCenter.meeting_audio_off_btn)
+  await page.click(page.bottomCenter.meeting_audio_btn)
+
+  await page.assertVisible(page.bottomCenter.meeting_video_off_btn)
+  await page.click(page.bottomCenter.meeting_video_btn)
+  await page.assertVisible(page.bottomCenter.meeting_video_on_btn)
+  await page.click(page.bottomCenter.meeting_video_btn)
 })
 
-test(`Verify Join Mic-Off Cam-On`, async ({page}) => {
-  mic = "off"
-  cam = "on"
-  console.log("mic:"+mic+ " cam:"+cam)
-  await previewPage.gotoMeetingRoom(page, url, name, mic, cam)
-  
-        result = await pageMethods.isElementVisible(page, bottomCenter.meeting_audio_off_btn, "meeting_audio_off_btn visibility-")
-        pageMethods.assertResult(result, "meeting_audio_off_btn")
-        await pageMethods.clickElement(page, bottomCenter.meeting_audio_btn, "meeting_audio_btn")
-        result = await pageMethods.isElementVisible(page, bottomCenter.meeting_audio_on_btn, "meeting_audio_on_btn visibility-")
-        pageMethods.assertResult(result, "meeting_audio_on_btn")
-        await pageMethods.clickElement(page, bottomCenter.meeting_audio_btn, "meeting_audio_btn")
+test(`Verify Join Mic-Off Cam-On`, async () => {
+  mic = false
+  cam = true
+  await page.preview.gotoMeetingRoom(url, name, mic, cam)
 
-  result = await pageMethods.isElementVisible(page, bottomCenter.meeting_video_on_btn, "meeting_video_on_btn visibility-")
-  pageMethods.assertResult(result, "meeting_video_on_btn")
-  await pageMethods.clickElement(page, bottomCenter.meeting_video_btn, "meeting_video_btn")
-  result = await pageMethods.isElementVisible(page, bottomCenter.meeting_video_off_btn, "meeting_video_off_btn visibility-")
-  pageMethods.assertResult(result, "meeting_video_off_btn")
-  await pageMethods.clickElement(page, bottomCenter.meeting_video_btn, "meeting_video_btn")
+  await page.assertVisible(page.bottomCenter.meeting_audio_off_btn)
+  await page.click(page.bottomCenter.meeting_audio_btn)
+  await page.assertVisible(page.bottomCenter.meeting_audio_on_btn)
+  await page.click(page.bottomCenter.meeting_audio_btn)
+
+  await page.assertVisible(page.bottomCenter.meeting_video_on_btn)
+  await page.click(page.bottomCenter.meeting_video_btn)
+  await page.assertVisible(page.bottomCenter.meeting_video_off_btn)
+  await page.click(page.bottomCenter.meeting_video_btn) 
 })
 
-test(`Verify Join Mic-Off Cam-Off`, async ({page}) => {
-  mic = "off"
-  cam = "off"
-  console.log("mic:"+mic+ " cam:"+cam)
-  await previewPage.gotoMeetingRoom(page, url, name, mic, cam)
+test(`Verify Join Mic-Off Cam-Off`, async () => {
+  mic = false
+  cam = false
+  await page.preview.gotoMeetingRoom(url, name, mic, cam)
   
-        result = await pageMethods.isElementVisible(page, bottomCenter.meeting_audio_off_btn, "meeting_audio_off_btn visibility-")
-        pageMethods.assertResult(result, "meeting_audio_off_btn")
-        await pageMethods.clickElement(page, bottomCenter.meeting_audio_btn, "meeting_audio_btn")
-        result = await pageMethods.isElementVisible(page, bottomCenter.meeting_audio_on_btn, "meeting_audio_on_btn visibility-")
-        pageMethods.assertResult(result, "meeting_audio_on_btn")
-        await pageMethods.clickElement(page, bottomCenter.meeting_audio_btn, "meeting_audio_btn")
+  await page.assertVisible(page.bottomCenter.meeting_audio_off_btn)
+  await page.click(page.bottomCenter.meeting_audio_btn)
+  await page.assertVisible(page.bottomCenter.meeting_audio_on_btn)
+  await page.click(page.bottomCenter.meeting_audio_btn)
 
-        result = await pageMethods.isElementVisible(page, bottomCenter.meeting_video_off_btn, "meeting_video_off_btn visibility-")
-        pageMethods.assertResult(result, "meeting_video_off_btn")
-        await pageMethods.clickElement(page, bottomCenter.meeting_video_btn, "meeting_video_btn")
-        result = await pageMethods.isElementVisible(page, bottomCenter.meeting_video_on_btn, "meeting_video_on_btn visibility-")
-        pageMethods.assertResult(result, "meeting_video_on_btn")
-        await pageMethods.clickElement(page, bottomCenter.meeting_video_btn, "meeting_video_btn")
+  await page.assertVisible(page.bottomCenter.meeting_video_off_btn)
+  await page.click(page.bottomCenter.meeting_video_btn)
+  await page.assertVisible(page.bottomCenter.meeting_video_on_btn)
+  await page.click(page.bottomCenter.meeting_video_btn)
 })
 
-
-test(`Measure Join Time`, async ({page}) => {
-  await previewPage.gotoMeetingRoom(page, url, name, "on", "on")
-  await bottomCenter.leaveRoom(page);
-  await pageMethods.clickElement(page, roomLeave.join_again_btn, "join_again_btn")
+test(`Measure Join Time`, async () => {
+  await page.preview.gotoMeetingRoom(url, name, true, true)
+  await page.endRoom();
+  await page.click(page.roomLeave.join_again_btn)
   console.log("Calculating Join Time");
-  const in_time_total = await roomLeave.getStartJoinTime(page);  
-  await previewPage.gotoMeetingRoom(page, url, name, "off", "off")
-  const out_time_total = await roomLeave.getEndJoinTime(page);
+  const in_time_total = await page.roomLeave.getStartJoinTime();  
+  await page.preview.gotoMeetingRoom(url, name, false, false)
+  const out_time_total = await page.roomLeave.getEndJoinTime();
   var diff= out_time_total-in_time_total;
   console.log("Join Time Difference = "+ diff);
   expect(diff).toBeLessThan(5000);
@@ -214,11 +190,3 @@ test(`Measure Join Time`, async ({page}) => {
 // }}
 // })
 
-
-//   test.only(`Verify Join Room `, async ({context}) => {
-//     // await browserUtils.launchBrowser()
-//     let page = await context.newPage 
-//     await page.goto('https://playwright.dev/');
-//     const title = page.locator('.navbar__inner .navbar__title');
-//     await expect(title).toHaveText('Playwright');
-// })
