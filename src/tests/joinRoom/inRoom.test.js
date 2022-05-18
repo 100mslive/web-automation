@@ -17,7 +17,7 @@ test.afterEach(async () => {
 test(`Verify greeting tile for first participant`, async ({page: nativePage}) => {
   page = new PageWrapper(nativePage);
   await page.preview.gotoMeetingRoom(url, name, mic, cam)
-  await page.assertVisible(page.ontile.first_person_img)
+  await page.assertVisible(page.tiles.first_person_img)
   await page.endRoom();
   await page.close()
 })
@@ -68,7 +68,7 @@ test(`Verify network on tile and peerlist`, async ({context}) => {
   await page1.timeout(2000);
 
   await page1.click(page1.topRight.participant_list, page1.topRight.peerlist_network.replace("?",1));
-  await page1.assertVisible(page1.ontile.network_ontile.replace("?",0));
+  await page1.assertVisible(page1.tiles.network_ontile.replace("?",0));
   await page1.endRoom();
   await context.close();
 })

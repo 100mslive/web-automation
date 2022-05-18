@@ -75,4 +75,56 @@ exports.BottomCenter = class BottomCenter {
   async endRoom() {
     await this.page.click(this.leave_room_btn, this.end_room_btn, this.lock_end_room)
   }
+
+  /**
+   * enabled = true => audio unmuted
+   * enabled = false => audio muted
+   * enabled = undefined => audio button not visible
+   */
+  async assertLocalAudioState(enabled) {
+    if (enabled) {
+      await this.page.assertVisible(this.meeting_audio_on_btn);
+    } else if (enabled === false) {
+      await this.page.assertVisible(this.meeting_audio_off_btn);
+    } else {
+      await this.page.assertNotVisible(this.meeting_audio_btn)
+    }
+  }
+
+  /**
+   * enabled = true => audio unmuted
+   * enabled = false => audio muted
+   * enabled = undefined => audio button not visible
+   */
+   async assertLocalVideoState(enabled) {
+    if (enabled) {
+      await this.page.assertVisible(this.meeting_video_on_btn);
+    } else if (enabled === false) {
+      await this.page.assertVisible(this.meeting_video_off_btn);
+    } else {
+      await this.page.assertNotVisible(this.meeting_video_btn)
+    }
+  }
+
+  /**
+   * TODO: take {source: string, type: "audio/video", state: true/false}
+   */
+  async muteAll() {
+    await this.openMoreSettings();
+    await this.page.click(this.mute_all_btn, this.mute_all_apply_btn);
+  }
+
+  async changeName(newName) {
+    await this.openMoreSettings();
+    await this.page.click(this.change_name_btn);
+    await this.page.sendText(this.change_name_field, newName);
+    await this.page.click(this.popup_change_btn);
+  }
+
+  /**
+   * @private
+   */
+  async openMoreSettings() {
+    await this.page.click(this.more_settings_btn);
+  }
 }

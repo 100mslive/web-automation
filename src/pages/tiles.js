@@ -1,13 +1,13 @@
 /* eslint-disable no-undef */
 
-exports.Ontile = class Ontile {
+exports.Tiles = class Tiles {
    /**
    * @param {import('@playwright/test').Page} page
    */
 
   constructor(page) {
     this.page = page;
-    this.participant_tile = 'div[data-testid="participant_tile"]:nth-child(?)';
+    this.participant_tile = 'div[data-testid="participant_tile_?"]';
 
     this.audio_mute_icon_onTile = 'div[data-testid="participant_audio_mute_icon"]';
     
@@ -22,8 +22,19 @@ exports.Ontile = class Ontile {
     this.mute_ontile = 'div[data-testid="participant_tile_?"] div[data-testid="participant_audio_mute_icon"]';
 
   }
-  getNameOnTile(rowNumber){
-    return this.name_onTile.replace("?",rowNumber);
+
+  async assertTilePresence(peerName, present) {
+    if (present) {
+      await this.page.assertVisible(this.participant_tile.replace("?", peerName));
+    } else {
+      await this.page.assertNotVisible(this.participant_tile.replace("?", peerName));
+    }
+  }
+
+  async assertAudioState(peerName, enabled) {
+    if (!enabled) {
+      await this.page.assertVisible(this.mute_ontile.replace("?", peerName));
+    }
   }
 
 }

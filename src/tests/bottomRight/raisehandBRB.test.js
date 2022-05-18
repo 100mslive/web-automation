@@ -28,11 +28,11 @@ test.skip(`Verify Raise Hand Brb on Tile`, async () => {
 
     for(let i=0; i<3; i++){
       await page.click(page.bottomRight.raise_hand_btn);
-      await page.assertVisible(page.onTile.raiseHand_icon_onTile)
-      await page.assertNotVisible(page.onTile.brb_icon_onTile)
+      await page.assertVisible(page.tiles.raiseHand_icon_onTile)
+      await page.assertNotVisible(page.tiles.brb_icon_onTile)
 
       await page.click(page.bottomRight.brb_btn);
-      await page.assertVisible(page.onTile.brb_icon_onTile)
-      await page.assertNotVisible(page.onTile.raiseHand_icon_onTile)
+      await page.assertVisible(page.tiles.brb_icon_onTile)
+      await page.assertNotVisible(page.tiles.raiseHand_icon_onTile)
     }
 })

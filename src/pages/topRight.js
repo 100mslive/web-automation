@@ -26,6 +26,7 @@ exports.TopRight = class TopRight {
 
 
     this.participant_number = 'div[data-testid="participant_?"]';
+    this.participant_name = 'div[data-testid="participant_?"]';
     this.participant_setting = 'div[data-testid="participant_?"] button';
     this.participant_role_heading = 'p[data-testid="role_?"]';
     this.dialog_select_change_role_to = 'div[data-testid="dialog_select_Change role to"]';
@@ -41,13 +42,27 @@ exports.TopRight = class TopRight {
 
   }
 
+  async assertPeerInPeerList(peerName, present) {
+    await this.openParticipantList();
+    if (present) {
+      await this.page.assertVisible(this.participant_name.replace("?", peerName));
+    } else {
+      await this.page.assertNotVisible(this.participant_name.replace("?", peerName));
+    }
+    await this.closeParticipantList();
+  }
+
+  /**
+   * @private
+   */
   async openParticipantList(){
     await this.page.click(this.participant_list);
   }
+
+  /**
+   * @private
+   */
   async closeParticipantList(){
-    await this.page.click(this.getPeerLocator(0));
-  }
-  getPeerLocator(rowNumber){
-    return this.participant_number.replace("?", rowNumber);
+    await this.page.click("html");
   }
 }
