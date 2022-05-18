@@ -30,7 +30,7 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps
       - name: Test on QA-IN
-        run: npm run qa-in
+        run: PWDEBUG=console npm run qa-in
 
       - run: npm run allure:generate
 
