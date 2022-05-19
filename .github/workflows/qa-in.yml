@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: "17.x"
       - run: npm ci
-      - run: npx playwright install --with-deps
+      - run: npx playwright install
       - name: Test on QA-IN
         run: npm run qa-in
 
@@ -52,13 +52,13 @@ jobs:
         with:
           payload: |
             {
-              "text": "Web-Automation build result QA-IN: ${{ job.status }}\n https://web-automation-reports-git-qa-in-100mslive.vercel.app/",
+              "text": "Web-Automation build result QA-IN: ${{ job.status }}\n https://web-automation-git-qa-in-100mslive.vercel.app/",
               "blocks": [
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Web-Automation build result QA-IN: ${{ job.status }}\n https://web-automation-reports-git-qa-in-100mslive.vercel.app/"
+                    "text": "Web-Automation build result QA-IN: ${{ job.status }}\n https://web-automation-git-qa-in-100mslive.vercel.app/"
                   }
                 }
               ]
