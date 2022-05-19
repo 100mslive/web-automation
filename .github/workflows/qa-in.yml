@@ -26,11 +26,11 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: "14.x"
+          node-version: "17.x"
       - run: npm ci
       - run: npx playwright install --with-deps
       - name: Test on QA-IN
-        run: PWDEBUG=console npm run qa-in
+        run: npm run qa-in
 
       - run: npm run allure:generate
 
