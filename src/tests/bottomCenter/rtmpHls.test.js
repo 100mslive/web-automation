@@ -1,10 +1,8 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
 const { test } = require('@playwright/test');
 const PageWrapper = require('../../utils/PageWrapper.js');
 
-var beam_wait_timeout = Number(process.env.beam_wait_timeout);
-
+let beam_wait_timeout = Number(process.env.beam_wait_timeout);
+let page;
 test.beforeEach(async ({page: nativePage}) => {
   page = await PageWrapper.openMeetingPage(nativePage);
 });

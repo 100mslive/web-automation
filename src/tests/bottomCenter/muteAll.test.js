@@ -9,7 +9,7 @@ test.afterEach(async () => {
 });
 
 test(`Mute All`, async ({context}) => {
-  var pages = await PageWrapper.openPages(context, 5);
+  let pages = await PageWrapper.openPages(context, 5);
   await pages[0].timeout(5000)
   await pages[0].bottomCenter.muteAll();
 

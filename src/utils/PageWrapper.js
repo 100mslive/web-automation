@@ -39,7 +39,7 @@ class PageWrapper{
         const pages = [];
         const promises= [];
         for(let i=0; i<n; i++) {
-          joinConfig ||= {};
+          joinConfig = joinConfig || {};
           joinConfig.name = process.env.peer_name + i;
           pages[i]= new PageWrapper(await context.newPage());
           promises.push(pages[i].gotoMeetingRoom(joinConfig));
@@ -49,8 +49,8 @@ class PageWrapper{
     }
 
     async gotoMeetingRoom({url, name, mic, cam} = {}) {
-        url ||= process.env.audio_video_screenshare_url;
-        name ||= "peer_0";
+        url = url || process.env.audio_video_screenshare_url;
+        name = name || "peer_0";
         if (mic === undefined) {
             mic = true;
         }

@@ -1,7 +1,6 @@
-/* eslint-disable no-undef */
 const { test } = require('@playwright/test');
 const PageWrapper = require('../../utils/PageWrapper.js');
-
+let page;
 test.beforeEach(async ({page: nativePage}) => {
   page = await PageWrapper.openMeetingPage(nativePage);
 });
@@ -14,7 +13,7 @@ test.afterEach(async () => {
 test.skip(`Change self Role`, async () => {
 //Chech abscence and prescence of tracks
 //change role permission not present
-  for(i=0; i<=5; i++){
+  for(let i=0; i<=5; i++){
     if(i==3)continue
       await page.click(page.bottomCenter.more_settings_btn, page.bottomCenter.change_my_role_btn)
 
