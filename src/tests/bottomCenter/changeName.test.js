@@ -25,7 +25,7 @@ test.only(`Change name check`, async () => {
   await page.topRight.assertPeerInPeerList(oldName, false);
   await page.tiles.assertTilePresence(oldName, false);
   
-  await page.topRight.assertPeerInPeerList(newName, true);
+  await page.topRight.assertPeerInPeerList(newName, false);
   await page.tiles.assertTilePresence(newName, true);
   
   // const peerTileName = page.tiles.getNameOnTile(0);
