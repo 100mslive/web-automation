@@ -3,23 +3,19 @@
 const { test, expect } = require('@playwright/test');
 const PageWrapper = require('../../utils/PageWrapper.js');
 
-let url=process.env.audio_video_screenshare_url;
-let name=process.env.peer_name + "1";
 
-test.beforeEach(async ({page: nativePage}) => {
-  page = new PageWrapper(nativePage);
+test.beforeEach(async () => {
 });
 
 test.afterEach(async () => {
+  console.log("aftereach")
     await page.endRoom();
     await page.close()
 });
 
 
-test(`Verify Join Mic-On Cam-On`, async () => {
-  mic = true
-  cam = true
-  await page.preview.gotoMeetingRoom(url, name, mic, cam)
+test(`Verify Join Mic-On Cam-On`, async ({page: nativePage}) => {
+  page = await PageWrapper.openMeetingPage(nativePage, {mic:true, cam:true});
   
   await page.assertVisible(page.bottomCenter.meeting_audio_on_btn)
   await page.click(page.bottomCenter.meeting_audio_btn)
@@ -32,10 +28,8 @@ test(`Verify Join Mic-On Cam-On`, async () => {
   await page.click(page.bottomCenter.meeting_video_btn)
 })
 
-test(`Verify Join Mic-On Cam-Off`, async () => {
-  mic = true
-  cam = false
-  await page.preview.gotoMeetingRoom(url, name, mic, cam)
+test(`Verify Join Mic-On Cam-Off`, async ({page: nativePage}) => {
+  page = await PageWrapper.openMeetingPage(nativePage, {mic:true, cam:false});
 
   await page.assertVisible(page.bottomCenter.meeting_audio_on_btn)
   await page.click(page.bottomCenter.meeting_audio_btn)
@@ -48,10 +42,8 @@ test(`Verify Join Mic-On Cam-Off`, async () => {
   await page.click(page.bottomCenter.meeting_video_btn)
 })
 
-test(`Verify Join Mic-Off Cam-On`, async () => {
-  mic = false
-  cam = true
-  await page.preview.gotoMeetingRoom(url, name, mic, cam)
+test(`Verify Join Mic-Off Cam-On`, async ({page: nativePage}) => {
+  page = await PageWrapper.openMeetingPage(nativePage, {mic:false, cam:true});
 
   await page.assertVisible(page.bottomCenter.meeting_audio_off_btn)
   await page.click(page.bottomCenter.meeting_audio_btn)
@@ -64,10 +56,8 @@ test(`Verify Join Mic-Off Cam-On`, async () => {
   await page.click(page.bottomCenter.meeting_video_btn) 
 })
 
-test(`Verify Join Mic-Off Cam-Off`, async () => {
-  mic = false
-  cam = false
-  await page.preview.gotoMeetingRoom(url, name, mic, cam)
+test(`Verify Join Mic-Off Cam-Off`, async ({page: nativePage}) => {
+  page = await PageWrapper.openMeetingPage(nativePage, {mic:false, cam:false});
   
   await page.assertVisible(page.bottomCenter.meeting_audio_off_btn)
   await page.click(page.bottomCenter.meeting_audio_btn)
@@ -80,15 +70,15 @@ test(`Verify Join Mic-Off Cam-Off`, async () => {
   await page.click(page.bottomCenter.meeting_video_btn)
 })
 
-test(`Measure Join Time`, async () => {
-  await page.preview.gotoMeetingRoom(url, name, true, true)
+test(`Measure Join Time`, async ({page: nativePage}) => {
+  page = await PageWrapper.openMeetingPage(nativePage);
+
   await page.endRoom();
   await page.click(page.roomLeave.join_again_btn)
   console.log("Calculating Join Time");
-  const in_time_total = await page.roomLeave.getStartJoinTime();  
-  await page.preview.gotoMeetingRoom(url, name, false, false)
-  const out_time_total = await page.roomLeave.getEndJoinTime();
-  var diff= out_time_total-in_time_total;
+  const start = performance.now(); 
+  await page.gotoMeetingRoom();
+  const diff = performance.now()-start;
   console.log("Join Time Difference = "+ diff);
   expect(diff).toBeLessThan(5000);
 });

@@ -1,9 +1,16 @@
 const { test} = require('@playwright/test');
 const PageWrapper = require('../../utils/PageWrapper.js');
 
+
+test.beforeEach(async () => {
+});
+
+test.afterEach(async () => {
+});
+
 test(`Mute All`, async ({context}) => {
   var pages = await PageWrapper.openPages(context, 5);
-
+  await pages[0].timeout(5000)
   await pages[0].bottomCenter.muteAll();
 
   // peer tile has muted

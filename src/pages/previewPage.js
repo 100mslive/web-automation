@@ -42,7 +42,6 @@ exports.PreviewPage = class PreviewPage {
 
   async gotoMeetingRoom(url, name, mic, cam) {
     await this.gotoPreviewPage(url);
-    console.log("mic:", mic,  " cam:", cam)
     if(!cam){
       await this.page.click(this.preview_video_btn);
     }
@@ -51,6 +50,7 @@ exports.PreviewPage = class PreviewPage {
     }
     await this.page.sendText(this.preview_name_field, name);
     await this.page.click(this.preview_join_btn);
+    console.log("Joined room with : ", "mic:", mic,  " cam:", cam)
   } 
 
 }

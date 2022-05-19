@@ -2,14 +2,8 @@
 const { test } = require('@playwright/test');
 const PageWrapper = require('../../utils/PageWrapper.js');
 
-let url=process.env.audio_video_screenshare_url;
-let name=process.env.peer_name + "1";
-let  mic = "on"
-let cam = "on"
-
 test.beforeEach(async ({page: nativePage}) => {
-  page = new PageWrapper(nativePage);
-  await page.preview.gotoMeetingRoom(url, name, mic, cam)
+  page = await PageWrapper.openMeetingPage(nativePage);
 });
 
 test.afterEach(async () => {

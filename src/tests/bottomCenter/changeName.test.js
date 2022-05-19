@@ -12,7 +12,7 @@ test.afterEach(async () => {
     await page.close()
 });
 
-test(`Change name check`, async () => {
+test.only(`Change name check`, async () => {
   const oldName = page.localName;
   const newName = "peer_new_name";
 

@@ -20,3 +20,5 @@
 - Eslint for linting
 - Prettier for formatting
 - move to typscript(add this rule - no-floating-promises)
+- add new repo for reporting allure
+- update branch corresponding to env for which test was run

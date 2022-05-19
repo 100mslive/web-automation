@@ -19,7 +19,7 @@ on:
 jobs:
   test:
     timeout-minutes: 45
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
 
     steps:
       - run: npm cache clean --force

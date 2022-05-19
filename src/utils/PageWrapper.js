@@ -51,9 +51,13 @@ class PageWrapper{
     async gotoMeetingRoom({url, name, mic, cam} = {}) {
         url ||= process.env.audio_video_screenshare_url;
         name ||= "peer_0";
-        mic ||= true;
-        cam ||= true;
-        this.preview.gotoMeetingRoom(url, name, mic, cam);
+        if (mic === undefined) {
+            mic = true;
+        }
+        if (cam === undefined) {
+            cam = true;
+        }
+        await this.preview.gotoMeetingRoom(url, name, mic, cam);
         this.localName = name;
     }
 
