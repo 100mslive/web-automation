@@ -1,0 +1,599 @@
+{
+  "uid" : "45300df5bd4f187a",
+  "name" : "Verify Number of participants",
+  "fullName" : "Verify Number of participants",
+  "historyId" : "Google Chrome topRight/participantList.test.js Verify Number of participants",
+  "time" : {
+    "start" : 1652942714579,
+    "stop" : 1652942735620,
+    "duration" : 21041
+  },
+  "status" : "failed",
+  "statusMessage" : "expect(received).toContainText(expected)\n\nExpected string: \"1\"\nReceived string: \"3\"\nCall log:\n  - expect.toContainText with timeout 10000ms\n  - waiting for selector \"div[data-testid=\"participant_list\"]\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"2\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n",
+  "statusTrace" : "\n    at /home/runner/work/web-automation/web-automation/src/tests/topRight/participantList.test.js:45:57",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "expect(received).toContainText(expected)\n\nExpected string: \"1\"\nReceived string: \"3\"\nCall log:\n  - expect.toContainText with timeout 10000ms\n  - waiting for selector \"div[data-testid=\"participant_list\"]\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"2\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n  -   selector resolved to <div type=\"button\" id=\"radix-:rg:\" data-state=\"closed…>…</div>\n  -   unexpected value \"3\"\n",
+    "statusTrace" : "\n    at /home/runner/work/web-automation/web-automation/src/tests/topRight/participantList.test.js:45:57",
+    "steps" : [ {
+      "name" : "Before Hooks",
+      "time" : {
+        "start" : 1652942714580,
+        "stop" : 1652942721206,
+        "duration" : 6626
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "beforeEach hook",
+        "time" : {
+          "start" : 1652942714581,
+          "stop" : 1652942721205,
+          "duration" : 6624
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "browserContext.newPage",
+          "time" : {
+            "start" : 1652942714662,
+            "stop" : 1652942714696,
+            "duration" : 34
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.goto(https://qaroy1.qa-app.100ms.live/meeting/yee-yuc-clv)",
+          "time" : {
+            "start" : 1652942714698,
+            "stop" : 1652942716471,
+            "duration" : 1773
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(button[data-testid=\"audio_btn\"])",
+          "time" : {
+            "start" : 1652942716472,
+            "stop" : 1652942720041,
+            "duration" : 3569
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "locator.click(button[data-testid=\"audio_btn\"])",
+          "time" : {
+            "start" : 1652942720042,
+            "stop" : 1652942720111,
+            "duration" : 69
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(input[data-testid=\"preview_name_field\"])",
+          "time" : {
+            "start" : 1652942720113,
+            "stop" : 1652942720131,
+            "duration" : 18
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(button[data-testid=\"preview_join_btn\"])",
+          "time" : {
+            "start" : 1652942720114,
+            "stop" : 1652942720132,
+            "duration" : 18
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(input[data-testid=\"preview_name_field\"])",
+          "time" : {
+            "start" : 1652942720131,
+            "stop" : 1652942720137,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForTimeout",
+          "time" : {
+            "start" : 1652942720133,
+            "stop" : 1652942721134,
+            "duration" : 1001
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "locator.fill(input[data-testid=\"preview_name_field\"])",
+          "time" : {
+            "start" : 1652942720138,
+            "stop" : 1652942720162,
+            "duration" : 24
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(button[data-testid=\"preview_join_btn\"])",
+          "time" : {
+            "start" : 1652942721134,
+            "stop" : 1652942721140,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "locator.click(button[data-testid=\"preview_join_btn\"])",
+          "time" : {
+            "start" : 1652942721140,
+            "stop" : 1652942721205,
+            "duration" : 65
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 11,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 12,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1652942721206,
+        "stop" : 1652942722207,
+        "duration" : 1001
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(div[data-testid=\"participant_list\"])",
+      "time" : {
+        "start" : 1652942722208,
+        "stop" : 1652942722250,
+        "duration" : 42
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652942722252,
+        "stop" : 1652942722265,
+        "duration" : 13
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "expect.toContainText",
+        "time" : {
+          "start" : 1652942722256,
+          "stop" : 1652942732263,
+          "duration" : 10007
+        },
+        "status" : "failed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "After Hooks",
+      "time" : {
+        "start" : 1652942732264,
+        "stop" : 1652942735619,
+        "duration" : 3355
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "afterEach hook",
+        "time" : {
+          "start" : 1652942732265,
+          "stop" : 1652942735589,
+          "duration" : 3324
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "page.waitForSelector(button[data-testid=\"leave_room_btn\"])",
+          "time" : {
+            "start" : 1652942732267,
+            "stop" : 1652942732275,
+            "duration" : 8
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForTimeout",
+          "time" : {
+            "start" : 1652942732276,
+            "stop" : 1652942733277,
+            "duration" : 1001
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(button[data-testid=\"leave_room_btn\"])",
+          "time" : {
+            "start" : 1652942733278,
+            "stop" : 1652942733284,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "locator.click(button[data-testid=\"leave_room_btn\"])",
+          "time" : {
+            "start" : 1652942733286,
+            "stop" : 1652942733355,
+            "duration" : 69
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(button[data-testid=\"end_room_btn\"])",
+          "time" : {
+            "start" : 1652942733355,
+            "stop" : 1652942733361,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForTimeout",
+          "time" : {
+            "start" : 1652942733362,
+            "stop" : 1652942734362,
+            "duration" : 1000
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(button[data-testid=\"end_room_btn\"])",
+          "time" : {
+            "start" : 1652942734363,
+            "stop" : 1652942734371,
+            "duration" : 8
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "locator.click(button[data-testid=\"end_room_btn\"])",
+          "time" : {
+            "start" : 1652942734372,
+            "stop" : 1652942734442,
+            "duration" : 70
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(button[data-testid=\"lock_end_room\"])",
+          "time" : {
+            "start" : 1652942734443,
+            "stop" : 1652942734448,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForTimeout",
+          "time" : {
+            "start" : 1652942734449,
+            "stop" : 1652942735450,
+            "duration" : 1001
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(button[data-testid=\"lock_end_room\"])",
+          "time" : {
+            "start" : 1652942735451,
+            "stop" : 1652942735459,
+            "duration" : 8
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "locator.click(button[data-testid=\"lock_end_room\"])",
+          "time" : {
+            "start" : 1652942735459,
+            "stop" : 1652942735572,
+            "duration" : 113
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.close",
+          "time" : {
+            "start" : 1652942735573,
+            "stop" : 1652942735589,
+            "duration" : 16
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 13,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "browserContext.close",
+        "time" : {
+          "start" : 1652942735593,
+          "stop" : 1652942735596,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 15,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "bc9816b3822dc682",
+      "name" : "stdout",
+      "source" : "bc9816b3822dc682.txt",
+      "type" : "text/plain",
+      "size" : 18
+    }, {
+      "uid" : "dfc74b0636294051",
+      "name" : "stdout",
+      "source" : "dfc74b0636294051.txt",
+      "type" : "text/plain",
+      "size" : 13
+    }, {
+      "uid" : "8a68e70e789fc455",
+      "name" : "stdout",
+      "source" : "8a68e70e789fc455.txt",
+      "type" : "text/plain",
+      "size" : 26
+    }, {
+      "uid" : "1ea29e408e8abc48",
+      "name" : "stdout",
+      "source" : "1ea29e408e8abc48.txt",
+      "type" : "text/plain",
+      "size" : 33
+    }, {
+      "uid" : "3bb9e9b421328360",
+      "name" : "stdout",
+      "source" : "3bb9e9b421328360.txt",
+      "type" : "text/plain",
+      "size" : 33
+    }, {
+      "uid" : "7f7b85b0a6986386",
+      "name" : "stdout",
+      "source" : "7f7b85b0a6986386.txt",
+      "type" : "text/plain",
+      "size" : 24
+    }, {
+      "uid" : "5363c27bb64a5b0",
+      "name" : "stdout",
+      "source" : "5363c27bb64a5b0.txt",
+      "type" : "text/plain",
+      "size" : 22
+    }, {
+      "uid" : "db79010a607b0186",
+      "name" : "stdout",
+      "source" : "db79010a607b0186.txt",
+      "type" : "text/plain",
+      "size" : 23
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 33,
+    "attachmentsCount" : 8,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Google Chrome"
+  }, {
+    "name" : "suite",
+    "value" : "topRight/participantList.test.js"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "45300df5bd4f187a.json",
+  "parameterValues" : [ ]
+}
