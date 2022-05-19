@@ -1,0 +1,1810 @@
+{
+  "uid" : "6f72223995e7aa07",
+  "name" : "Mute All",
+  "fullName" : "Mute All",
+  "historyId" : "Google Chrome bottomCenter/muteAll.test.js Mute All",
+  "time" : {
+    "start" : 1652924115432,
+    "stop" : 1652924162763,
+    "duration" : 47331
+  },
+  "status" : "failed",
+  "statusMessage" : "page.waitForSelector: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for selector \"div[data-testid=\"participant_tile_1\"] div[data-testid=\"participant_audio_mute_icon\"]\" to be visible\n============================================================",
+  "statusTrace" : "page.waitForSelector: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for selector \"div[data-testid=\"participant_tile_1\"] div[data-testid=\"participant_audio_mute_icon\"]\" to be visible\n============================================================\n    at PageMethods.isElementVisible (/home/runner/work/web-automation/web-automation/src/utils/PageMethods.js:14:20)\n    at /home/runner/work/web-automation/web-automation/src/tests/bottomCenter/muteAll.test.js:56:14\n    at /home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/workerRunner.js:385:9\n    at TestInfoImpl._runFn (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/testInfo.js:176:7)\n    at /home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/workerRunner.js:341:26\n    at TimeoutManager.runWithTimeout (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/timeoutManager.js:72:7)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/testInfo.js:164:26)\n    at WorkerRunner._runTest (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/workerRunner.js:323:5)\n    at WorkerRunner.runTestGroup (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/workerRunner.js:196:11)\n    at process.<anonymous> (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/worker.js:94:5)",
+  "flaky" : false,
+  "newFailed" : true,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "page.waitForSelector: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for selector \"div[data-testid=\"participant_tile_1\"] div[data-testid=\"participant_audio_mute_icon\"]\" to be visible\n============================================================",
+    "statusTrace" : "page.waitForSelector: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for selector \"div[data-testid=\"participant_tile_1\"] div[data-testid=\"participant_audio_mute_icon\"]\" to be visible\n============================================================\n    at PageMethods.isElementVisible (/home/runner/work/web-automation/web-automation/src/utils/PageMethods.js:14:20)\n    at /home/runner/work/web-automation/web-automation/src/tests/bottomCenter/muteAll.test.js:56:14\n    at /home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/workerRunner.js:385:9\n    at TestInfoImpl._runFn (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/testInfo.js:176:7)\n    at /home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/workerRunner.js:341:26\n    at TimeoutManager.runWithTimeout (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/timeoutManager.js:72:7)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/testInfo.js:164:26)\n    at WorkerRunner._runTest (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/workerRunner.js:323:5)\n    at WorkerRunner.runTestGroup (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/workerRunner.js:196:11)\n    at process.<anonymous> (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/worker.js:94:5)",
+    "steps" : [ {
+      "name" : "Before Hooks",
+      "time" : {
+        "start" : 1652924115432,
+        "stop" : 1652924115522,
+        "duration" : 90
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "beforeEach hook",
+        "time" : {
+          "start" : 1652924115434,
+          "stop" : 1652924115436,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "browserContext.newPage",
+      "time" : {
+        "start" : 1652924115524,
+        "stop" : 1652924115559,
+        "duration" : 35
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.goto(https://qaroy1.qa-app.100ms.live/meeting/vkb-yrl-vkx)",
+      "time" : {
+        "start" : 1652924115561,
+        "stop" : 1652924117100,
+        "duration" : 1539
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(input[data-testid=\"preview_name_field\"])",
+      "time" : {
+        "start" : 1652924117101,
+        "stop" : 1652924119371,
+        "duration" : 2270
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"preview_join_btn\"])",
+      "time" : {
+        "start" : 1652924117101,
+        "stop" : 1652924119373,
+        "duration" : 2272
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(input[data-testid=\"preview_name_field\"])",
+      "time" : {
+        "start" : 1652924119372,
+        "stop" : 1652924119390,
+        "duration" : 18
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1652924119381,
+        "stop" : 1652924120382,
+        "duration" : 1001
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.fill(input[data-testid=\"preview_name_field\"])",
+      "time" : {
+        "start" : 1652924119390,
+        "stop" : 1652924119415,
+        "duration" : 25
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"preview_join_btn\"])",
+      "time" : {
+        "start" : 1652924120383,
+        "stop" : 1652924120391,
+        "duration" : 8
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.click(button[data-testid=\"preview_join_btn\"])",
+      "time" : {
+        "start" : 1652924120392,
+        "stop" : 1652924120632,
+        "duration" : 240
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "browserContext.newPage",
+      "time" : {
+        "start" : 1652924120632,
+        "stop" : 1652924120675,
+        "duration" : 43
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.goto(https://qaroy1.qa-app.100ms.live/meeting/vkb-yrl-vkx)",
+      "time" : {
+        "start" : 1652924120675,
+        "stop" : 1652924121394,
+        "duration" : 719
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(input[data-testid=\"preview_name_field\"])",
+      "time" : {
+        "start" : 1652924121395,
+        "stop" : 1652924122701,
+        "duration" : 1306
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"preview_join_btn\"])",
+      "time" : {
+        "start" : 1652924121396,
+        "stop" : 1652924122702,
+        "duration" : 1306
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(input[data-testid=\"preview_name_field\"])",
+      "time" : {
+        "start" : 1652924122701,
+        "stop" : 1652924122719,
+        "duration" : 18
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1652924122702,
+        "stop" : 1652924123703,
+        "duration" : 1001
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.fill(input[data-testid=\"preview_name_field\"])",
+      "time" : {
+        "start" : 1652924122719,
+        "stop" : 1652924122734,
+        "duration" : 15
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"preview_join_btn\"])",
+      "time" : {
+        "start" : 1652924123704,
+        "stop" : 1652924123711,
+        "duration" : 7
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.click(button[data-testid=\"preview_join_btn\"])",
+      "time" : {
+        "start" : 1652924123712,
+        "stop" : 1652924123904,
+        "duration" : 192
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "browserContext.newPage",
+      "time" : {
+        "start" : 1652924123904,
+        "stop" : 1652924123934,
+        "duration" : 30
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.goto(https://qaroy1.qa-app.100ms.live/meeting/vkb-yrl-vkx)",
+      "time" : {
+        "start" : 1652924123934,
+        "stop" : 1652924124713,
+        "duration" : 779
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(input[data-testid=\"preview_name_field\"])",
+      "time" : {
+        "start" : 1652924124714,
+        "stop" : 1652924126020,
+        "duration" : 1306
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"preview_join_btn\"])",
+      "time" : {
+        "start" : 1652924124714,
+        "stop" : 1652924126023,
+        "duration" : 1309
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(input[data-testid=\"preview_name_field\"])",
+      "time" : {
+        "start" : 1652924126020,
+        "stop" : 1652924126033,
+        "duration" : 13
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1652924126024,
+        "stop" : 1652924127024,
+        "duration" : 1000
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.fill(input[data-testid=\"preview_name_field\"])",
+      "time" : {
+        "start" : 1652924126034,
+        "stop" : 1652924126055,
+        "duration" : 21
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"preview_join_btn\"])",
+      "time" : {
+        "start" : 1652924127025,
+        "stop" : 1652924127031,
+        "duration" : 6
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.click(button[data-testid=\"preview_join_btn\"])",
+      "time" : {
+        "start" : 1652924127032,
+        "stop" : 1652924127340,
+        "duration" : 308
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "browserContext.newPage",
+      "time" : {
+        "start" : 1652924127342,
+        "stop" : 1652924127388,
+        "duration" : 46
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.goto(https://qaroy1.qa-app.100ms.live/meeting/vkb-yrl-vkx)",
+      "time" : {
+        "start" : 1652924127388,
+        "stop" : 1652924128076,
+        "duration" : 688
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(input[data-testid=\"preview_name_field\"])",
+      "time" : {
+        "start" : 1652924128077,
+        "stop" : 1652924129501,
+        "duration" : 1424
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"preview_join_btn\"])",
+      "time" : {
+        "start" : 1652924128077,
+        "stop" : 1652924129506,
+        "duration" : 1429
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(input[data-testid=\"preview_name_field\"])",
+      "time" : {
+        "start" : 1652924129502,
+        "stop" : 1652924129518,
+        "duration" : 16
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1652924129507,
+        "stop" : 1652924130507,
+        "duration" : 1000
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.fill(input[data-testid=\"preview_name_field\"])",
+      "time" : {
+        "start" : 1652924129519,
+        "stop" : 1652924129536,
+        "duration" : 17
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"preview_join_btn\"])",
+      "time" : {
+        "start" : 1652924130508,
+        "stop" : 1652924130522,
+        "duration" : 14
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.click(button[data-testid=\"preview_join_btn\"])",
+      "time" : {
+        "start" : 1652924130523,
+        "stop" : 1652924130844,
+        "duration" : 321
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "browserContext.newPage",
+      "time" : {
+        "start" : 1652924130845,
+        "stop" : 1652924130915,
+        "duration" : 70
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.goto(https://qaroy1.qa-app.100ms.live/meeting/vkb-yrl-vkx)",
+      "time" : {
+        "start" : 1652924130915,
+        "stop" : 1652924131832,
+        "duration" : 917
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(input[data-testid=\"preview_name_field\"])",
+      "time" : {
+        "start" : 1652924131833,
+        "stop" : 1652924133641,
+        "duration" : 1808
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"preview_join_btn\"])",
+      "time" : {
+        "start" : 1652924131833,
+        "stop" : 1652924133657,
+        "duration" : 1824
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(input[data-testid=\"preview_name_field\"])",
+      "time" : {
+        "start" : 1652924133644,
+        "stop" : 1652924133673,
+        "duration" : 29
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1652924133658,
+        "stop" : 1652924134660,
+        "duration" : 1002
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.fill(input[data-testid=\"preview_name_field\"])",
+      "time" : {
+        "start" : 1652924133674,
+        "stop" : 1652924133714,
+        "duration" : 40
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"preview_join_btn\"])",
+      "time" : {
+        "start" : 1652924134661,
+        "stop" : 1652924134923,
+        "duration" : 262
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.click(button[data-testid=\"preview_join_btn\"])",
+      "time" : {
+        "start" : 1652924134923,
+        "stop" : 1652924135429,
+        "duration" : 506
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1652924135430,
+        "stop" : 1652924136429,
+        "duration" : 999
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"more_settings_btn\"])",
+      "time" : {
+        "start" : 1652924136430,
+        "stop" : 1652924136489,
+        "duration" : 59
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652924136507,
+        "stop" : 1652924136540,
+        "duration" : 33
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "page.waitForTimeout",
+        "time" : {
+          "start" : 1652924136522,
+          "stop" : 1652924137525,
+          "duration" : 1003
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"more_settings_btn\"])",
+      "time" : {
+        "start" : 1652924137526,
+        "stop" : 1652924137572,
+        "duration" : 46
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.click(button[data-testid=\"more_settings_btn\"])",
+      "time" : {
+        "start" : 1652924137573,
+        "stop" : 1652924137862,
+        "duration" : 289
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1652924137862,
+        "stop" : 1652924138862,
+        "duration" : 1000
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(div[data-testid=\"mute_all_btn\"])",
+      "time" : {
+        "start" : 1652924138863,
+        "stop" : 1652924138883,
+        "duration" : 20
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652924138884,
+        "stop" : 1652924138921,
+        "duration" : 37
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "page.waitForTimeout",
+        "time" : {
+          "start" : 1652924138909,
+          "stop" : 1652924139930,
+          "duration" : 1021
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForSelector(div[data-testid=\"mute_all_btn\"])",
+      "time" : {
+        "start" : 1652924139939,
+        "stop" : 1652924139969,
+        "duration" : 30
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.click(div[data-testid=\"mute_all_btn\"])",
+      "time" : {
+        "start" : 1652924139969,
+        "stop" : 1652924140313,
+        "duration" : 344
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1652924140314,
+        "stop" : 1652924141315,
+        "duration" : 1001
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(text=Apply)",
+      "time" : {
+        "start" : 1652924141316,
+        "stop" : 1652924141340,
+        "duration" : 24
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652924141341,
+        "stop" : 1652924141367,
+        "duration" : 26
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "page.waitForTimeout",
+        "time" : {
+          "start" : 1652924141345,
+          "stop" : 1652924142347,
+          "duration" : 1002
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForSelector(text=Apply)",
+      "time" : {
+        "start" : 1652924142348,
+        "stop" : 1652924142368,
+        "duration" : 20
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.click(text=Apply)",
+      "time" : {
+        "start" : 1652924142368,
+        "stop" : 1652924142476,
+        "duration" : 108
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1652924142485,
+        "stop" : 1652924143488,
+        "duration" : 1003
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"audio_btn\"] > svg[data-testid=\"audio_off_btn\"])",
+      "time" : {
+        "start" : 1652924143488,
+        "stop" : 1652924143776,
+        "duration" : 288
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652924143779,
+        "stop" : 1652924143980,
+        "duration" : 201
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "page.waitForTimeout",
+        "time" : {
+          "start" : 1652924143781,
+          "stop" : 1652924144810,
+          "duration" : 1029
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"video_btn\"] > svg[data-testid=\"video_off_btn\"])",
+      "time" : {
+        "start" : 1652924144810,
+        "stop" : 1652924144819,
+        "duration" : 9
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652924144820,
+        "stop" : 1652924144834,
+        "duration" : 14
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "page.waitForTimeout",
+        "time" : {
+          "start" : 1652924144823,
+          "stop" : 1652924145824,
+          "duration" : 1001
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"audio_btn\"] > svg[data-testid=\"audio_off_btn\"])",
+      "time" : {
+        "start" : 1652924145827,
+        "stop" : 1652924145835,
+        "duration" : 8
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652924145836,
+        "stop" : 1652924145856,
+        "duration" : 20
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "page.waitForTimeout",
+        "time" : {
+          "start" : 1652924145840,
+          "stop" : 1652924146841,
+          "duration" : 1001
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"video_btn\"] > svg[data-testid=\"video_off_btn\"])",
+      "time" : {
+        "start" : 1652924146843,
+        "stop" : 1652924146853,
+        "duration" : 10
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652924146854,
+        "stop" : 1652924146864,
+        "duration" : 10
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "page.waitForTimeout",
+        "time" : {
+          "start" : 1652924146857,
+          "stop" : 1652924147859,
+          "duration" : 1002
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"audio_btn\"] > svg[data-testid=\"audio_off_btn\"])",
+      "time" : {
+        "start" : 1652924147860,
+        "stop" : 1652924147871,
+        "duration" : 11
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652924147873,
+        "stop" : 1652924147902,
+        "duration" : 29
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "page.waitForTimeout",
+        "time" : {
+          "start" : 1652924147878,
+          "stop" : 1652924148879,
+          "duration" : 1001
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"video_btn\"] > svg[data-testid=\"video_off_btn\"])",
+      "time" : {
+        "start" : 1652924148880,
+        "stop" : 1652924148898,
+        "duration" : 18
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652924148899,
+        "stop" : 1652924148921,
+        "duration" : 22
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "page.waitForTimeout",
+        "time" : {
+          "start" : 1652924148904,
+          "stop" : 1652924149907,
+          "duration" : 1003
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"audio_btn\"] > svg[data-testid=\"audio_off_btn\"])",
+      "time" : {
+        "start" : 1652924149912,
+        "stop" : 1652924149922,
+        "duration" : 10
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652924149923,
+        "stop" : 1652924149935,
+        "duration" : 12
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "page.waitForTimeout",
+        "time" : {
+          "start" : 1652924149927,
+          "stop" : 1652924150929,
+          "duration" : 1002
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"video_btn\"] > svg[data-testid=\"video_off_btn\"])",
+      "time" : {
+        "start" : 1652924150930,
+        "stop" : 1652924150939,
+        "duration" : 9
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652924150941,
+        "stop" : 1652924150954,
+        "duration" : 13
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "page.waitForTimeout",
+        "time" : {
+          "start" : 1652924150944,
+          "stop" : 1652924151947,
+          "duration" : 1003
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForSelector(div[data-testid=\"participant_tile_1\"] div[data-testid=\"participant_audio_mute_icon\"])",
+      "time" : {
+        "start" : 1652924151948,
+        "stop" : 1652924161951,
+        "duration" : 10003
+      },
+      "status" : "failed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "After Hooks",
+      "time" : {
+        "start" : 1652924161952,
+        "stop" : 1652924162763,
+        "duration" : 811
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "afterEach hook",
+        "time" : {
+          "start" : 1652924161952,
+          "stop" : 1652924162007,
+          "duration" : 55
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "browserContext.newPage",
+          "time" : {
+            "start" : 1652924161953,
+            "stop" : 1652924161994,
+            "duration" : 41
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.close",
+          "time" : {
+            "start" : 1652924161994,
+            "stop" : 1652924162007,
+            "duration" : 13
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "browserContext.close",
+        "time" : {
+          "start" : 1652924162601,
+          "stop" : 1652924162726,
+          "duration" : 125
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "810dc18fd0aaa380",
+      "name" : "screenshot",
+      "source" : "810dc18fd0aaa380.png",
+      "type" : "image/png",
+      "size" : 39385
+    }, {
+      "uid" : "7e566a8687d0ce62",
+      "name" : "screenshot",
+      "source" : "7e566a8687d0ce62.png",
+      "type" : "image/png",
+      "size" : 45363
+    }, {
+      "uid" : "a0d9ba52a939bedb",
+      "name" : "screenshot",
+      "source" : "a0d9ba52a939bedb.png",
+      "type" : "image/png",
+      "size" : 44761
+    }, {
+      "uid" : "51c4fbbd55aac075",
+      "name" : "screenshot",
+      "source" : "51c4fbbd55aac075.png",
+      "type" : "image/png",
+      "size" : 45540
+    }, {
+      "uid" : "9c2ea9ffcfaa6bad",
+      "name" : "screenshot",
+      "source" : "9c2ea9ffcfaa6bad.png",
+      "type" : "image/png",
+      "size" : 35350
+    }, {
+      "uid" : "6ed82c16d509582c",
+      "name" : "stdout",
+      "source" : "6ed82c16d509582c.txt",
+      "type" : "text/plain",
+      "size" : 18
+    }, {
+      "uid" : "8a5dd9ffbd84a0b8",
+      "name" : "stdout",
+      "source" : "8a5dd9ffbd84a0b8.txt",
+      "type" : "text/plain",
+      "size" : 13
+    }, {
+      "uid" : "a04de1476199cdc8",
+      "name" : "stdout",
+      "source" : "a04de1476199cdc8.txt",
+      "type" : "text/plain",
+      "size" : 26
+    }, {
+      "uid" : "20c3ba79c607bcb5",
+      "name" : "stdout",
+      "source" : "20c3ba79c607bcb5.txt",
+      "type" : "text/plain",
+      "size" : 18
+    }, {
+      "uid" : "d286042decd0ebc4",
+      "name" : "stdout",
+      "source" : "d286042decd0ebc4.txt",
+      "type" : "text/plain",
+      "size" : 13
+    }, {
+      "uid" : "1d1dcc12f6c3268e",
+      "name" : "stdout",
+      "source" : "1d1dcc12f6c3268e.txt",
+      "type" : "text/plain",
+      "size" : 26
+    }, {
+      "uid" : "443759dcdbeb8e03",
+      "name" : "stdout",
+      "source" : "443759dcdbeb8e03.txt",
+      "type" : "text/plain",
+      "size" : 18
+    }, {
+      "uid" : "1a18491b3a78ab3a",
+      "name" : "stdout",
+      "source" : "1a18491b3a78ab3a.txt",
+      "type" : "text/plain",
+      "size" : 13
+    }, {
+      "uid" : "2c1a2540dae748c7",
+      "name" : "stdout",
+      "source" : "2c1a2540dae748c7.txt",
+      "type" : "text/plain",
+      "size" : 26
+    }, {
+      "uid" : "5de09d8a242bf6cb",
+      "name" : "stdout",
+      "source" : "5de09d8a242bf6cb.txt",
+      "type" : "text/plain",
+      "size" : 18
+    }, {
+      "uid" : "14526630632f7782",
+      "name" : "stdout",
+      "source" : "14526630632f7782.txt",
+      "type" : "text/plain",
+      "size" : 13
+    }, {
+      "uid" : "d43c7e1b707f1034",
+      "name" : "stdout",
+      "source" : "d43c7e1b707f1034.txt",
+      "type" : "text/plain",
+      "size" : 26
+    }, {
+      "uid" : "5711e5a7169f8c2e",
+      "name" : "stdout",
+      "source" : "5711e5a7169f8c2e.txt",
+      "type" : "text/plain",
+      "size" : 18
+    }, {
+      "uid" : "73d730bfeed12c77",
+      "name" : "stdout",
+      "source" : "73d730bfeed12c77.txt",
+      "type" : "text/plain",
+      "size" : 13
+    }, {
+      "uid" : "7b3d0f166816c023",
+      "name" : "stdout",
+      "source" : "7b3d0f166816c023.txt",
+      "type" : "text/plain",
+      "size" : 26
+    }, {
+      "uid" : "da7263fc17919d21",
+      "name" : "stdout",
+      "source" : "da7263fc17919d21.txt",
+      "type" : "text/plain",
+      "size" : 34
+    }, {
+      "uid" : "3f57a4c8187b7b38",
+      "name" : "stdout",
+      "source" : "3f57a4c8187b7b38.txt",
+      "type" : "text/plain",
+      "size" : 34
+    }, {
+      "uid" : "79719f97340ff576",
+      "name" : "stdout",
+      "source" : "79719f97340ff576.txt",
+      "type" : "text/plain",
+      "size" : 27
+    }, {
+      "uid" : "f00e85ac6b01b5a",
+      "name" : "stdout",
+      "source" : "f00e85ac6b01b5a.txt",
+      "type" : "text/plain",
+      "size" : 29
+    }, {
+      "uid" : "7a2afca16c445f41",
+      "name" : "stdout",
+      "source" : "7a2afca16c445f41.txt",
+      "type" : "text/plain",
+      "size" : 29
+    }, {
+      "uid" : "6ae295ca89a1b9f1",
+      "name" : "stdout",
+      "source" : "6ae295ca89a1b9f1.txt",
+      "type" : "text/plain",
+      "size" : 22
+    }, {
+      "uid" : "6b404ca5c53ed1a6",
+      "name" : "stdout",
+      "source" : "6b404ca5c53ed1a6.txt",
+      "type" : "text/plain",
+      "size" : 35
+    }, {
+      "uid" : "841aa332f135c1b4",
+      "name" : "stdout",
+      "source" : "841aa332f135c1b4.txt",
+      "type" : "text/plain",
+      "size" : 35
+    }, {
+      "uid" : "cca8352dba29b638",
+      "name" : "stdout",
+      "source" : "cca8352dba29b638.txt",
+      "type" : "text/plain",
+      "size" : 22
+    }, {
+      "uid" : "5e1a26c7a7fa5dbe",
+      "name" : "stdout",
+      "source" : "5e1a26c7a7fa5dbe.txt",
+      "type" : "text/plain",
+      "size" : 38
+    }, {
+      "uid" : "85317ca29f4a2a31",
+      "name" : "stdout",
+      "source" : "85317ca29f4a2a31.txt",
+      "type" : "text/plain",
+      "size" : 38
+    }, {
+      "uid" : "c9aca7a4b3e418a1",
+      "name" : "stdout",
+      "source" : "c9aca7a4b3e418a1.txt",
+      "type" : "text/plain",
+      "size" : 38
+    }, {
+      "uid" : "81c1d2331616a255",
+      "name" : "stdout",
+      "source" : "81c1d2331616a255.txt",
+      "type" : "text/plain",
+      "size" : 38
+    }, {
+      "uid" : "a1c3d517aa3e8a44",
+      "name" : "stdout",
+      "source" : "a1c3d517aa3e8a44.txt",
+      "type" : "text/plain",
+      "size" : 38
+    }, {
+      "uid" : "4720d6595d3bd548",
+      "name" : "stdout",
+      "source" : "4720d6595d3bd548.txt",
+      "type" : "text/plain",
+      "size" : 38
+    }, {
+      "uid" : "22f39fda3ed10285",
+      "name" : "stdout",
+      "source" : "22f39fda3ed10285.txt",
+      "type" : "text/plain",
+      "size" : 38
+    }, {
+      "uid" : "64de29a3f8691bb0",
+      "name" : "stdout",
+      "source" : "64de29a3f8691bb0.txt",
+      "type" : "text/plain",
+      "size" : 38
+    }, {
+      "uid" : "420db7e5e1fb3171",
+      "name" : "stdout",
+      "source" : "420db7e5e1fb3171.txt",
+      "type" : "text/plain",
+      "size" : 38
+    }, {
+      "uid" : "470c8c91bedf3fff",
+      "name" : "stdout",
+      "source" : "470c8c91bedf3fff.txt",
+      "type" : "text/plain",
+      "size" : 38
+    }, {
+      "uid" : "6b53e2ff331dd752",
+      "name" : "stdout",
+      "source" : "6b53e2ff331dd752.txt",
+      "type" : "text/plain",
+      "size" : 38
+    }, {
+      "uid" : "ec9080a678b21f3e",
+      "name" : "stdout",
+      "source" : "ec9080a678b21f3e.txt",
+      "type" : "text/plain",
+      "size" : 38
+    }, {
+      "uid" : "6b5803f3863906d",
+      "name" : "stdout",
+      "source" : "6b5803f3863906d.txt",
+      "type" : "text/plain",
+      "size" : 38
+    }, {
+      "uid" : "ea92f01cc19a8b25",
+      "name" : "stdout",
+      "source" : "ea92f01cc19a8b25.txt",
+      "type" : "text/plain",
+      "size" : 38
+    }, {
+      "uid" : "2587a25d8a1506bf",
+      "name" : "stdout",
+      "source" : "2587a25d8a1506bf.txt",
+      "type" : "text/plain",
+      "size" : 38
+    }, {
+      "uid" : "a4faa852eb322533",
+      "name" : "stdout",
+      "source" : "a4faa852eb322533.txt",
+      "type" : "text/plain",
+      "size" : 38
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 96,
+    "attachmentsCount" : 45,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Google Chrome"
+  }, {
+    "name" : "suite",
+    "value" : "bottomCenter/muteAll.test.js"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "232abc9ffaa3baec",
+      "status" : "failed",
+      "statusDetails" : "page.waitForSelector: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for selector \"div[data-testid=\"participant_tile_1\"] div[data-testid=\"participant_audio_mute_icon\"]\" to be visible\n============================================================",
+      "time" : {
+        "start" : 1652924043634,
+        "stop" : 1652924115065,
+        "duration" : 71431
+      }
+    }, {
+      "uid" : "ea1f963e76d868a6",
+      "status" : "failed",
+      "statusDetails" : "page.waitForSelector: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for selector \"div[data-testid=\"participant_tile_1\"] div[data-testid=\"participant_audio_mute_icon\"]\" to be visible\n============================================================",
+      "time" : {
+        "start" : 1652923997221,
+        "stop" : 1652924043275,
+        "duration" : 46054
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "2713028d7df49278",
+        "reportUrl" : "https://100mslive.github.io/web-automation/37//#testresult/2713028d7df49278",
+        "status" : "passed",
+        "time" : {
+          "start" : 1652886532682,
+          "stop" : 1652886576897,
+          "duration" : 44215
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "6f72223995e7aa07.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,845 @@
+{
+  "uid" : "b5c2e59dcdbcf9fc",
+  "name" : "Change name check",
+  "fullName" : "Change name check",
+  "historyId" : "Google Chrome bottomCenter/changeName.test.js Change name check",
+  "time" : {
+    "start" : 1652923798043,
+    "stop" : 1652923834082,
+    "duration" : 36039
+  },
+  "status" : "failed",
+  "statusMessage" : "expect(received).toContainText(expected)\n\nExpected string: \"peer_2\"\nReceived string: \"\"\nCall log:\n  - expect.toContainText with timeout 10000ms\n  - waiting for selector \"div[data-testid=\"participant_0\"]\"\n",
+  "statusTrace" : "\n    at /home/runner/work/web-automation/web-automation/src/tests/bottomCenter/changeName.test.js:47:78",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "expect(received).toContainText(expected)\n\nExpected string: \"peer_2\"\nReceived string: \"\"\nCall log:\n  - expect.toContainText with timeout 10000ms\n  - waiting for selector \"div[data-testid=\"participant_0\"]\"\n",
+    "statusTrace" : "\n    at /home/runner/work/web-automation/web-automation/src/tests/bottomCenter/changeName.test.js:47:78",
+    "steps" : [ {
+      "name" : "Before Hooks",
+      "time" : {
+        "start" : 1652923798044,
+        "stop" : 1652923803422,
+        "duration" : 5378
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "beforeEach hook",
+        "time" : {
+          "start" : 1652923798046,
+          "stop" : 1652923803422,
+          "duration" : 5376
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "browserContext.newPage",
+          "time" : {
+            "start" : 1652923798132,
+            "stop" : 1652923798172,
+            "duration" : 40
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.goto(https://qaroy1.qa-app.100ms.live/meeting/vkb-yrl-vkx)",
+          "time" : {
+            "start" : 1652923798174,
+            "stop" : 1652923799767,
+            "duration" : 1593
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(input[data-testid=\"preview_name_field\"])",
+          "time" : {
+            "start" : 1652923799768,
+            "stop" : 1652923802137,
+            "duration" : 2369
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(button[data-testid=\"preview_join_btn\"])",
+          "time" : {
+            "start" : 1652923799769,
+            "stop" : 1652923802147,
+            "duration" : 2378
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(input[data-testid=\"preview_name_field\"])",
+          "time" : {
+            "start" : 1652923802138,
+            "stop" : 1652923802179,
+            "duration" : 41
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForTimeout",
+          "time" : {
+            "start" : 1652923802148,
+            "stop" : 1652923803166,
+            "duration" : 1018
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "locator.fill(input[data-testid=\"preview_name_field\"])",
+          "time" : {
+            "start" : 1652923802180,
+            "stop" : 1652923802223,
+            "duration" : 43
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(button[data-testid=\"preview_join_btn\"])",
+          "time" : {
+            "start" : 1652923803166,
+            "stop" : 1652923803275,
+            "duration" : 109
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "locator.click(button[data-testid=\"preview_join_btn\"])",
+          "time" : {
+            "start" : 1652923803276,
+            "stop" : 1652923803421,
+            "duration" : 145
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 9,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 10,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1652923803423,
+        "stop" : 1652923804430,
+        "duration" : 1007
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"more_settings_btn\"])",
+      "time" : {
+        "start" : 1652923804430,
+        "stop" : 1652923804441,
+        "duration" : 11
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652923804443,
+        "stop" : 1652923804474,
+        "duration" : 31
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "page.waitForTimeout",
+        "time" : {
+          "start" : 1652923804460,
+          "stop" : 1652923805467,
+          "duration" : 1007
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"more_settings_btn\"])",
+      "time" : {
+        "start" : 1652923805468,
+        "stop" : 1652923805477,
+        "duration" : 9
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.click(button[data-testid=\"more_settings_btn\"])",
+      "time" : {
+        "start" : 1652923805477,
+        "stop" : 1652923805563,
+        "duration" : 86
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1652923805564,
+        "stop" : 1652923806568,
+        "duration" : 1004
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(div[data-testid=\"change_name_btn\"])",
+      "time" : {
+        "start" : 1652923806569,
+        "stop" : 1652923806576,
+        "duration" : 7
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652923806577,
+        "stop" : 1652923806585,
+        "duration" : 8
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "page.waitForTimeout",
+        "time" : {
+          "start" : 1652923806579,
+          "stop" : 1652923807583,
+          "duration" : 1004
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForSelector(div[data-testid=\"change_name_btn\"])",
+      "time" : {
+        "start" : 1652923807583,
+        "stop" : 1652923807597,
+        "duration" : 14
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.click(div[data-testid=\"change_name_btn\"])",
+      "time" : {
+        "start" : 1652923807598,
+        "stop" : 1652923807693,
+        "duration" : 95
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1652923807694,
+        "stop" : 1652923808699,
+        "duration" : 1005
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(input[data-testid=\"change_name_field\"])",
+      "time" : {
+        "start" : 1652923808699,
+        "stop" : 1652923808707,
+        "duration" : 8
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652923808708,
+        "stop" : 1652923808735,
+        "duration" : 27
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "page.waitForSelector(input[data-testid=\"change_name_field\"])",
+        "time" : {
+          "start" : 1652923808710,
+          "stop" : 1652923808738,
+          "duration" : 28
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "page.waitForTimeout",
+        "time" : {
+          "start" : 1652923808711,
+          "stop" : 1652923809728,
+          "duration" : 1017
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "locator.fill(input[data-testid=\"change_name_field\"])",
+      "time" : {
+        "start" : 1652923808738,
+        "stop" : 1652923808777,
+        "duration" : 39
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"popup_change_btn\"])",
+      "time" : {
+        "start" : 1652923809729,
+        "stop" : 1652923809736,
+        "duration" : 7
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652923809737,
+        "stop" : 1652923809754,
+        "duration" : 17
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "page.waitForTimeout",
+        "time" : {
+          "start" : 1652923809739,
+          "stop" : 1652923810747,
+          "duration" : 1008
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"popup_change_btn\"])",
+      "time" : {
+        "start" : 1652923810748,
+        "stop" : 1652923810760,
+        "duration" : 12
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.click(button[data-testid=\"popup_change_btn\"])",
+      "time" : {
+        "start" : 1652923810761,
+        "stop" : 1652923810813,
+        "duration" : 52
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1652923810814,
+        "stop" : 1652923811820,
+        "duration" : 1006
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(div[data-testid=\"participant_list\"])",
+      "time" : {
+        "start" : 1652923811820,
+        "stop" : 1652923811831,
+        "duration" : 11
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.click(div[data-testid=\"participant_list\"])",
+      "time" : {
+        "start" : 1652923811832,
+        "stop" : 1652923811900,
+        "duration" : 68
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toContainText",
+      "time" : {
+        "start" : 1652923811901,
+        "stop" : 1652923821909,
+        "duration" : 10008
+      },
+      "status" : "failed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "After Hooks",
+      "time" : {
+        "start" : 1652923821909,
+        "stop" : 1652923834083,
+        "duration" : 12174
+      },
+      "status" : "failed",
+      "steps" : [ {
+        "name" : "afterEach hook",
+        "time" : {
+          "start" : 1652923821909,
+          "stop" : 1652923832941,
+          "duration" : 11032
+        },
+        "status" : "failed",
+        "steps" : [ {
+          "name" : "page.waitForSelector(button[data-testid=\"leave_room_btn\"])",
+          "time" : {
+            "start" : 1652923821910,
+            "stop" : 1652923821918,
+            "duration" : 8
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForTimeout",
+          "time" : {
+            "start" : 1652923821919,
+            "stop" : 1652923822922,
+            "duration" : 1003
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(button[data-testid=\"leave_room_btn\"])",
+          "time" : {
+            "start" : 1652923822923,
+            "stop" : 1652923822931,
+            "duration" : 8
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "locator.click(button[data-testid=\"leave_room_btn\"])",
+          "time" : {
+            "start" : 1652923822932,
+            "stop" : 1652923832941,
+            "duration" : 10009
+          },
+          "status" : "failed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 4,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "browserContext.close",
+        "time" : {
+          "start" : 1652923833976,
+          "stop" : 1652923834010,
+          "duration" : 34
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 6,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "1ad9c4f303027c99",
+      "name" : "video",
+      "source" : "1ad9c4f303027c99.webm",
+      "type" : "video/webm",
+      "size" : 761547
+    }, {
+      "uid" : "7145083cce0ba8ed",
+      "name" : "trace",
+      "source" : "7145083cce0ba8ed.ZIP",
+      "type" : "application/zip",
+      "size" : 7072985
+    }, {
+      "uid" : "93f04a39cae116b3",
+      "name" : "screenshot",
+      "source" : "93f04a39cae116b3.png",
+      "type" : "image/png",
+      "size" : 41979
+    }, {
+      "uid" : "793a8ef69bf4662e",
+      "name" : "stdout",
+      "source" : "793a8ef69bf4662e.txt",
+      "type" : "text/plain",
+      "size" : 18
+    }, {
+      "uid" : "6b92e6e2a237930e",
+      "name" : "stdout",
+      "source" : "6b92e6e2a237930e.txt",
+      "type" : "text/plain",
+      "size" : 13
+    }, {
+      "uid" : "89bab17830be23fa",
+      "name" : "stdout",
+      "source" : "89bab17830be23fa.txt",
+      "type" : "text/plain",
+      "size" : 26
+    }, {
+      "uid" : "51912572452e8859",
+      "name" : "stdout",
+      "source" : "51912572452e8859.txt",
+      "type" : "text/plain",
+      "size" : 34
+    }, {
+      "uid" : "ffb9eac90d48def4",
+      "name" : "stdout",
+      "source" : "ffb9eac90d48def4.txt",
+      "type" : "text/plain",
+      "size" : 34
+    }, {
+      "uid" : "e5df0e8464a8010d",
+      "name" : "stdout",
+      "source" : "e5df0e8464a8010d.txt",
+      "type" : "text/plain",
+      "size" : 27
+    }, {
+      "uid" : "dcaa977c38671bf",
+      "name" : "stdout",
+      "source" : "dcaa977c38671bf.txt",
+      "type" : "text/plain",
+      "size" : 32
+    }, {
+      "uid" : "1e90392574deddcd",
+      "name" : "stdout",
+      "source" : "1e90392574deddcd.txt",
+      "type" : "text/plain",
+      "size" : 32
+    }, {
+      "uid" : "581c1cc868dba584",
+      "name" : "stdout",
+      "source" : "581c1cc868dba584.txt",
+      "type" : "text/plain",
+      "size" : 25
+    }, {
+      "uid" : "c25b5233e7c801d9",
+      "name" : "stdout",
+      "source" : "c25b5233e7c801d9.txt",
+      "type" : "text/plain",
+      "size" : 34
+    }, {
+      "uid" : "80c502373cf4142a",
+      "name" : "stdout",
+      "source" : "80c502373cf4142a.txt",
+      "type" : "text/plain",
+      "size" : 34
+    }, {
+      "uid" : "ebf0055dd13ec889",
+      "name" : "stdout",
+      "source" : "ebf0055dd13ec889.txt",
+      "type" : "text/plain",
+      "size" : 18
+    }, {
+      "uid" : "54744e3db3ce998e",
+      "name" : "stdout",
+      "source" : "54744e3db3ce998e.txt",
+      "type" : "text/plain",
+      "size" : 33
+    }, {
+      "uid" : "e6ab573624a49f37",
+      "name" : "stdout",
+      "source" : "e6ab573624a49f37.txt",
+      "type" : "text/plain",
+      "size" : 33
+    }, {
+      "uid" : "ffa1115c2eb4c5b7",
+      "name" : "stdout",
+      "source" : "ffa1115c2eb4c5b7.txt",
+      "type" : "text/plain",
+      "size" : 26
+    }, {
+      "uid" : "4275e98f14ceafee",
+      "name" : "stdout",
+      "source" : "4275e98f14ceafee.txt",
+      "type" : "text/plain",
+      "size" : 26
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 45,
+    "attachmentsCount" : 19,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Google Chrome"
+  }, {
+    "name" : "suite",
+    "value" : "bottomCenter/changeName.test.js"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "b5c2e59dcdbcf9fc.json",
+  "parameterValues" : [ ]
+}

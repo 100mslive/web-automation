@@ -1,0 +1,602 @@
+{
+  "uid" : "b3073a8ad973e606",
+  "name" : "Change self Role",
+  "fullName" : "Change self Role",
+  "historyId" : "Google Chrome bottomCenter/changeSelfRole.test.js Change self Role",
+  "time" : {
+    "start" : 1652923869985,
+    "stop" : 1652923902003,
+    "duration" : 32018
+  },
+  "status" : "failed",
+  "statusMessage" : "page.waitForSelector: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for selector \"div[data-testid=\"change_to_role_0\"]\" to be visible\n============================================================",
+  "statusTrace" : "page.waitForSelector: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for selector \"div[data-testid=\"change_to_role_0\"]\" to be visible\n============================================================\n    at PageMethods.isElementVisible (/home/runner/work/web-automation/web-automation/src/utils/PageMethods.js:14:20)\n    at /home/runner/work/web-automation/web-automation/src/tests/bottomCenter/changeSelfRole.test.js:40:16\n    at /home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/workerRunner.js:385:9\n    at TestInfoImpl._runFn (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/testInfo.js:176:7)\n    at /home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/workerRunner.js:341:26\n    at TimeoutManager.runWithTimeout (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/timeoutManager.js:72:7)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/testInfo.js:164:26)\n    at WorkerRunner._runTest (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/workerRunner.js:323:5)\n    at WorkerRunner.runTestGroup (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/workerRunner.js:196:11)\n    at process.<anonymous> (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/worker.js:94:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "page.waitForSelector: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for selector \"div[data-testid=\"change_to_role_0\"]\" to be visible\n============================================================",
+    "statusTrace" : "page.waitForSelector: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for selector \"div[data-testid=\"change_to_role_0\"]\" to be visible\n============================================================\n    at PageMethods.isElementVisible (/home/runner/work/web-automation/web-automation/src/utils/PageMethods.js:14:20)\n    at /home/runner/work/web-automation/web-automation/src/tests/bottomCenter/changeSelfRole.test.js:40:16\n    at /home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/workerRunner.js:385:9\n    at TestInfoImpl._runFn (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/testInfo.js:176:7)\n    at /home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/workerRunner.js:341:26\n    at TimeoutManager.runWithTimeout (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/timeoutManager.js:72:7)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/testInfo.js:164:26)\n    at WorkerRunner._runTest (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/workerRunner.js:323:5)\n    at WorkerRunner.runTestGroup (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/workerRunner.js:196:11)\n    at process.<anonymous> (/home/runner/work/web-automation/web-automation/node_modules/@playwright/test/lib/worker.js:94:5)",
+    "steps" : [ {
+      "name" : "Before Hooks",
+      "time" : {
+        "start" : 1652923869986,
+        "stop" : 1652923875624,
+        "duration" : 5638
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "beforeEach hook",
+        "time" : {
+          "start" : 1652923869987,
+          "stop" : 1652923875624,
+          "duration" : 5637
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "browserContext.newPage",
+          "time" : {
+            "start" : 1652923870076,
+            "stop" : 1652923870113,
+            "duration" : 37
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.goto(https://qaroy1.qa-app.100ms.live/meeting/vkb-yrl-vkx)",
+          "time" : {
+            "start" : 1652923870115,
+            "stop" : 1652923871616,
+            "duration" : 1501
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(input[data-testid=\"preview_name_field\"])",
+          "time" : {
+            "start" : 1652923871617,
+            "stop" : 1652923874398,
+            "duration" : 2781
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(button[data-testid=\"preview_join_btn\"])",
+          "time" : {
+            "start" : 1652923871618,
+            "stop" : 1652923874401,
+            "duration" : 2783
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(input[data-testid=\"preview_name_field\"])",
+          "time" : {
+            "start" : 1652923874399,
+            "stop" : 1652923874423,
+            "duration" : 24
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForTimeout",
+          "time" : {
+            "start" : 1652923874404,
+            "stop" : 1652923875404,
+            "duration" : 1000
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "locator.fill(input[data-testid=\"preview_name_field\"])",
+          "time" : {
+            "start" : 1652923874423,
+            "stop" : 1652923874440,
+            "duration" : 17
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(button[data-testid=\"preview_join_btn\"])",
+          "time" : {
+            "start" : 1652923875405,
+            "stop" : 1652923875412,
+            "duration" : 7
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "locator.click(button[data-testid=\"preview_join_btn\"])",
+          "time" : {
+            "start" : 1652923875413,
+            "stop" : 1652923875624,
+            "duration" : 211
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 9,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 10,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1652923875625,
+        "stop" : 1652923876625,
+        "duration" : 1000
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"more_settings_btn\"])",
+      "time" : {
+        "start" : 1652923876626,
+        "stop" : 1652923876636,
+        "duration" : 10
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652923876638,
+        "stop" : 1652923876648,
+        "duration" : 10
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "page.waitForTimeout",
+        "time" : {
+          "start" : 1652923876642,
+          "stop" : 1652923877645,
+          "duration" : 1003
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForSelector(button[data-testid=\"more_settings_btn\"])",
+      "time" : {
+        "start" : 1652923877646,
+        "stop" : 1652923877652,
+        "duration" : 6
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.click(button[data-testid=\"more_settings_btn\"])",
+      "time" : {
+        "start" : 1652923877653,
+        "stop" : 1652923877734,
+        "duration" : 81
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1652923877734,
+        "stop" : 1652923878735,
+        "duration" : 1001
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(div[data-testid=\"change_my_role_btn\"])",
+      "time" : {
+        "start" : 1652923878736,
+        "stop" : 1652923878743,
+        "duration" : 7
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1652923878743,
+        "stop" : 1652923878754,
+        "duration" : 11
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "page.waitForTimeout",
+        "time" : {
+          "start" : 1652923878746,
+          "stop" : 1652923879747,
+          "duration" : 1001
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForSelector(div[data-testid=\"change_my_role_btn\"])",
+      "time" : {
+        "start" : 1652923879747,
+        "stop" : 1652923879754,
+        "duration" : 7
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "locator.click(div[data-testid=\"change_my_role_btn\"])",
+      "time" : {
+        "start" : 1652923879754,
+        "stop" : 1652923879827,
+        "duration" : 73
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1652923879828,
+        "stop" : 1652923880828,
+        "duration" : 1000
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(div[data-testid=\"change_to_role_0\"])",
+      "time" : {
+        "start" : 1652923880829,
+        "stop" : 1652923890831,
+        "duration" : 10002
+      },
+      "status" : "failed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "After Hooks",
+      "time" : {
+        "start" : 1652923890832,
+        "stop" : 1652923902003,
+        "duration" : 11171
+      },
+      "status" : "failed",
+      "steps" : [ {
+        "name" : "afterEach hook",
+        "time" : {
+          "start" : 1652923890832,
+          "stop" : 1652923901857,
+          "duration" : 11025
+        },
+        "status" : "failed",
+        "steps" : [ {
+          "name" : "page.waitForSelector(button[data-testid=\"leave_room_btn\"])",
+          "time" : {
+            "start" : 1652923890833,
+            "stop" : 1652923890841,
+            "duration" : 8
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForTimeout",
+          "time" : {
+            "start" : 1652923890842,
+            "stop" : 1652923891843,
+            "duration" : 1001
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(button[data-testid=\"leave_room_btn\"])",
+          "time" : {
+            "start" : 1652923891844,
+            "stop" : 1652923891849,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "locator.click(button[data-testid=\"leave_room_btn\"])",
+          "time" : {
+            "start" : 1652923891852,
+            "stop" : 1652923901856,
+            "duration" : 10004
+          },
+          "status" : "failed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 4,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "browserContext.close",
+        "time" : {
+          "start" : 1652923901951,
+          "stop" : 1652923901971,
+          "duration" : 20
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 6,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "b740d9bef3a54237",
+      "name" : "screenshot",
+      "source" : "b740d9bef3a54237.png",
+      "type" : "image/png",
+      "size" : 51164
+    }, {
+      "uid" : "a78c30cfbc714d98",
+      "name" : "stdout",
+      "source" : "a78c30cfbc714d98.txt",
+      "type" : "text/plain",
+      "size" : 18
+    }, {
+      "uid" : "e3ecc6fc8f8117ef",
+      "name" : "stdout",
+      "source" : "e3ecc6fc8f8117ef.txt",
+      "type" : "text/plain",
+      "size" : 13
+    }, {
+      "uid" : "2d4fd62b75b2b802",
+      "name" : "stdout",
+      "source" : "2d4fd62b75b2b802.txt",
+      "type" : "text/plain",
+      "size" : 26
+    }, {
+      "uid" : "18b13b7e6ab2b53e",
+      "name" : "stdout",
+      "source" : "18b13b7e6ab2b53e.txt",
+      "type" : "text/plain",
+      "size" : 34
+    }, {
+      "uid" : "c7c7713957342478",
+      "name" : "stdout",
+      "source" : "c7c7713957342478.txt",
+      "type" : "text/plain",
+      "size" : 34
+    }, {
+      "uid" : "702ed3405aa6ce41",
+      "name" : "stdout",
+      "source" : "702ed3405aa6ce41.txt",
+      "type" : "text/plain",
+      "size" : 27
+    }, {
+      "uid" : "29a0c522ac7a3a07",
+      "name" : "stdout",
+      "source" : "29a0c522ac7a3a07.txt",
+      "type" : "text/plain",
+      "size" : 35
+    }, {
+      "uid" : "833c5243bdfb1d2a",
+      "name" : "stdout",
+      "source" : "833c5243bdfb1d2a.txt",
+      "type" : "text/plain",
+      "size" : 35
+    }, {
+      "uid" : "a6376651226e9616",
+      "name" : "stdout",
+      "source" : "a6376651226e9616.txt",
+      "type" : "text/plain",
+      "size" : 28
+    }, {
+      "uid" : "bbbf1f76146a467d",
+      "name" : "stdout",
+      "source" : "bbbf1f76146a467d.txt",
+      "type" : "text/plain",
+      "size" : 37
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 32,
+    "attachmentsCount" : 11,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Google Chrome"
+  }, {
+    "name" : "suite",
+    "value" : "bottomCenter/changeSelfRole.test.js"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "b3073a8ad973e606.json",
+  "parameterValues" : [ ]
+}
