@@ -1,9 +1,7 @@
-/* eslint-disable no-undef */
-
 const { test, expect } = require('@playwright/test');
 const PageWrapper = require('../../utils/PageWrapper.js');
 
-
+let page;
 test.beforeEach(async () => {
 });
 

@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 const { test } = require('@playwright/test');
 const PageWrapper = require('../../utils/PageWrapper.js');
 
@@ -7,18 +5,17 @@ let url=process.env.audio_video_screenshare_url;
 let name=process.env.peer_name + "1";
 let mic = true;
 let cam = false;
-
 test(`Change peer Role`, async ({context}) => {
 
   name=process.env.peer_name + "1";
-  page1 = new PageWrapper(await context.newPage())
+  let page1 = new PageWrapper(await context.newPage())
   await page1.preview.gotoMeetingRoom(url, name, mic, cam)
 
   name = process.env.peer_name + 2;
-  page2 = new PageWrapper(await context.newPage())
+  let page2 = new PageWrapper(await context.newPage())
   await page2.preview.gotoMeetingRoom(url, name, mic, cam)
 
-  for(i=0; i < page1.topRight.role_list.length; i++){
+  for(let i=0; i < page1.topRight.role_list.length; i++){
     if(i==2)continue
 
     await page1.click(page1.topRight.participant_list, page1.topRight.participant_setting.replace("?",1), page1.topRight.dialog_select_change_role_to)

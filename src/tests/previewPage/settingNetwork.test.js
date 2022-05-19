@@ -1,8 +1,6 @@
-/* eslint-disable no-undef */
-
 const { test } = require('@playwright/test');
 const PageWrapper = require('../../utils/PageWrapper.js');
-
+let page;
 let url=process.env.audio_video_screenshare_url;
 
 test.beforeEach(async ({page: nativePage}) => {

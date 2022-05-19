@@ -1,8 +1,6 @@
-/* eslint-disable no-undef */
-
 const { test, expect } = require('@playwright/test');
 const PageWrapper = require('../../utils/PageWrapper.js');
-
+let page;
 test.beforeEach(async () => {
 });
 
@@ -29,9 +27,8 @@ test(`Verify room URL`, async ({page: nativePage}) => {
 test.skip(`Verify Join peers`, async ({context}) => {
   var pages = [];
   for(let i=0; i<5; i++){
-    name = process.env.peer_name + i;
     pages[i]= new PageWrapper(await context.newPage());
-    await pages[i].preview.gotoMeetingRoom(url, name, mic, cam)
+    await pages[i].gotoMeetingRoom()
     pages[i].timeout(2000);
   }
 
