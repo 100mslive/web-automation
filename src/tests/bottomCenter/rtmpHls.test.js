@@ -13,7 +13,7 @@ test.afterEach(async () => {
 });
 
 
-test.describe('Beam tests @beam', () => {
+test.describe.only('Beam tests @beam', () => {
 //webhook implementation
 test(`Start and Stop Browser Recording`, async () => {
 

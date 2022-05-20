@@ -24,3 +24,10 @@
 - update branch corresponding to env for which test was run
 - common workflow file
 - prod should not 
+
+
+
+
+## External issues
+- beam race condition where state is desynced, starting hls gives already started error but room state shows started as false
+  (workaround to stop, run this in console - window.__hms.actions.stopHLSStreaming())

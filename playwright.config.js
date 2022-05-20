@@ -58,7 +58,7 @@ const config = {
     // Tell all tests to load signed-in state from 'storageState.json'.
     // storageState: `auth${env}.json`,
     screenshot: 'only-on-failure',
-    video: 'on-first-retry',
+    video: 'retain-on-failure',
     permissions: ['microphone', 'camera'],
   },
 
