@@ -26,7 +26,7 @@ test(`Verify Number & Name in Participant list`, async ({page: nativePage}) => {
 })  
 
 
-test.only(`Verify Number of multiple participants`, async ({context}) => {
+test(`Verify Number of multiple participants`, async ({context}) => {
   let pages = await PageWrapper.openPages(context, 5);
   for(let i=0; i<5; i++)
     await pages[i].hasText(pages[i].topRight.participant_list, "5");
