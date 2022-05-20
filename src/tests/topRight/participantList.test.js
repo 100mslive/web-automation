@@ -1,40 +1,34 @@
 const { test } = require('@playwright/test');
 const PageWrapper = require('../../utils/PageWrapper.js');
 
-let url=process.env.audio_video_screenshare_url;
-let name=process.env.peer_name + "1";
-let mic = true;
-let cam = false;
+let name=process.env.peer_name + "0";
 let page;
-test.beforeEach(async ({page: nativePage}) => {
-  page = new PageWrapper(nativePage);
-  await page.preview.gotoMeetingRoom(url, name, mic, cam)
+test.beforeEach(async () => {
 });
 
 test.afterEach(async () => {
-    await page.endRoom();
-    await page.close()
 });
 
-test(`Verify My Number & Name in Participant list`, async () => {
+test(`Verify Number & Name in Participant list`, async ({page: nativePage}) => {
+  page = await PageWrapper.openMeetingPage(nativePage);
   await page.assertVisible(page.topRight.participant_list);
   await page.hasText(page.topRight.participant_list, "1");
 
   await page.click(page.topRight.participant_list);
-  const participant = page.topRight.participant_number.replace("?","0");
+  const participant = page.topRight.participant_name.replace("?",page.localName);
 
   await page.assertVisible(participant);
   await page.hasText(participant, name);
   await page.click('html');
+  await page.endRoom();
+  await page.close();
 })  
 
 
 test(`Verify Number of multiple participants`, async ({context}) => {
-  for(let i=2; i<=5; i++){
-    name=process.env.peer_name + i;
-    const new_page = new PageWrapper(await context.newPage());
-    await page.timeout(3000)
-    await new_page.preview.gotoMeetingRoom(url, name, mic, cam)
-  }
-  await page.hasText(page.topRight.participant_list, "5");
+  let pages = await PageWrapper.openPages(context, 5);
+  for(let i=0; i<5; i++)
+    await pages[i].hasText(pages[i].topRight.participant_list, "5");
+  await pages[0].endRoom();
+  await context.close();
 })

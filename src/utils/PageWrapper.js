@@ -91,13 +91,17 @@ class PageWrapper{
         await expect(this.page.locator(elementId)).toContainText(text);
     }
 
+    /**
+     * @returns {String}
+     */
     async getText(elementId) {
         let text = this.page.locator(elementId).textContent();
         console.log("Text Found- ", text);
         return text;
     }
 
-    async goto(url) {
+    async goto({url}={}) {
+        url = url || process.env.audio_video_screenshare_url;
         await this.page.goto(url);
     }
 

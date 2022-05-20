@@ -6,7 +6,7 @@ let name=process.env.peer_name + "1";
 let page;
 test.beforeEach(async ({page: nativePage}) => {
   page = new PageWrapper(nativePage);
-  await page.preview.gotoPreviewPage(url)
+  await page.preview.gotoPreviewPage();
 });
 
 test.afterEach(async () => {

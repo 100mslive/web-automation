@@ -24,35 +24,29 @@ test(`Verify room URL`, async ({page: nativePage}) => {
 })
 
 //publishing role and non publishing roll
-test.skip(`Verify Join peers`, async ({context}) => {
-  var pages = [];
+test(`Verify Join peers`, async ({context}) => {
+  var pages = await PageWrapper.openPages(context, 5);
+
   for(let i=0; i<5; i++){
-    pages[i]= new PageWrapper(await context.newPage());
-    await pages[i].gotoMeetingRoom()
-    pages[i].timeout(2000);
-  }
-
-  await pages[0].click(pages[0].topRight.participant_list)
-
-  for(let i=1; i<5; i++){
-    await pages[0].assertVisible(pages[0].topRight.participant_number.replace("?",i))
-
-    const participantName = pages[0].topRight.participant_number.replace("?",i);
-    // expect(pages[0].locator(participantName).toContainText(process.env.peer_name + i));
-    pages[0].hasText(participantName, process.env.peer_name + i);
-
+    await pages[i].click(pages[i].topRight.participant_list)
+    for(let j=0; j<5; j++){
+      const participantName = pages[i].topRight.participant_number.replace("?",pages[j].localName);
+      await pages[i].assertVisible(participantName);
+      pages[i].hasText(participantName, process.env.peer_name + j);
+    }
+    await pages[i].click('html');
   }
   // await pages[0].click(pages[0].topRight.participant_number.replace("?","0"))
-  await pages[0].click('html')
   await pages[0].endRoom();
   await context.close();
 })
 
-test.skip(`Verify network on tile and peerlist`, async ({context}) => {
+test(`Verify network on tile and peerlist`, async ({context}) => {
   var pages = await PageWrapper.openPages(context, 2);
-
-  await pages[0].click(pages[0].topRight.participant_list, pages[0].topRight.peerlist_network.replace("?",1));
-  await pages[0].assertVisible(pages[0].tiles.network_ontile.replace("?",0));
+  for(let i=0; i<2; i++){
+    await pages[i].click(pages[i].topRight.participant_list, pages[i].topRight.peerlist_network.replace("?",pages[i].localName));
+    await pages[i].assertVisible(pages[i].tiles.network_ontile.replace("?",pages[i].localName));
+  }
   await pages[0].endRoom();
   await context.close();
 })

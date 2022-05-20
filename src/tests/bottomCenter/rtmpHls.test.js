@@ -12,6 +12,8 @@ test.afterEach(async () => {
     await page.close()
 });
 
+
+test.describe('Beam tests @beam', () => {
 //webhook implementation
 test(`Start and Stop Browser Recording`, async () => {
 
@@ -76,3 +78,4 @@ test(`Start and Stop HLS Recording`, async () => {
   await page.click(page.topRight.record_status_dropdown, page.topRight.streaming_hls, page.topRight.record_status_dropdown, page.topRight.hls_recording, page.bottomCenter.more_settings_btn, page.bottomCenter.streaming_recording_btn, page.bottomCenter.rtmp_recording_stop_btn)
   
 })  
+})

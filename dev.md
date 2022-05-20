@@ -22,3 +22,4 @@
 - move to typscript(add this rule - no-floating-promises)
 - update branch corresponding to env for which test was run
 - common workflow file
+- prod should not 

@@ -36,8 +36,8 @@ exports.PreviewPage = class PreviewPage {
   }
 
 
-  async gotoPreviewPage(url) {
-    await this.page.goto(url)
+  async gotoPreviewPage() {
+    await this.page.goto();
   }
 
   async gotoMeetingRoom(url, name, mic, cam) {

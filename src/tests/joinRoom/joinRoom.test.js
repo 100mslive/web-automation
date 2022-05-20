@@ -11,7 +11,7 @@ test.afterEach(async () => {
     await page.close()
 });
 
-
+test.describe('verify join', () => {
 test(`Verify Join Mic-On Cam-On`, async ({page: nativePage}) => {
   page = await PageWrapper.openMeetingPage(nativePage, {mic:true, cam:true});
   
@@ -80,7 +80,7 @@ test(`Measure Join Time`, async ({page: nativePage}) => {
   console.log("Join Time Difference = "+ diff);
   expect(diff).toBeLessThan(5000);
 });
-
+})
 
 // test.skip(`Verify Join Room `, async ({page}) => {
   

@@ -44,12 +44,15 @@ exports.TopRight = class TopRight {
 
   async assertPeerInPeerList(peerName, present) {
     await this.openParticipantList();
-    if (present) {
-      await this.page.assertVisible(this.participant_name.replace("?", peerName));
-    } else {
-      await this.page.assertNotVisible(this.participant_name.replace("?", peerName));
+    try {
+      if (present) {
+        await this.page.assertVisible(this.participant_name.replace("?", peerName));
+      } else {
+        await this.page.assertNotVisible(this.participant_name.replace("?", peerName));
+      }
+    } finally {
+      await this.closeParticipantList();
     }
-    await this.closeParticipantList();
   }
 
   /**

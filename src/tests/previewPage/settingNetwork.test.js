@@ -1,11 +1,11 @@
 const { test } = require('@playwright/test');
 const PageWrapper = require('../../utils/PageWrapper.js');
+
 let page;
-let url=process.env.audio_video_screenshare_url;
 
 test.beforeEach(async ({page: nativePage}) => {
   page = new PageWrapper(nativePage);
-  await page.preview.gotoPreviewPage(url)
+  await page.preview.gotoPreviewPage();
 });
 
 test.afterEach(async () => {
