@@ -9,7 +9,7 @@ test.beforeEach(async ({page: nativePage}) => {
 
 test.afterEach(async () => {
     await page.endRoom();
-    await page.close()
+    await page.close();
 });
 
 test(`Change name check`, async () => {

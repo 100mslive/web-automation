@@ -155,6 +155,9 @@ const setupEnv = () => {
     process.env.video_url = getUrl("video");
     process.env.viewer_url = getUrl("viewer");
     process.env.hls_viewer_url = getUrl("hls-viewer");
+
+    const randomNumber = Math.floor(Math.random() * 10000);
+    process.env.peer_name = `peer_${randomNumber}_`
   }
 }
 

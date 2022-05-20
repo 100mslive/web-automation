@@ -50,7 +50,7 @@ class PageWrapper{
 
     async gotoMeetingRoom({url, name, mic, cam} = {}) {
         url = url || process.env.audio_video_screenshare_url;
-        name = name || "peer_0";
+        name = name || `${process.env.peer_name}0`;
         if (mic === undefined) {
             mic = true;
         }
@@ -114,7 +114,11 @@ class PageWrapper{
     }
 
     async endRoom() {
-        await this.bottomCenter.endRoom();
+        try {
+            await this.bottomCenter.endRoom();
+        } catch (e) {
+            console.log("No room to end", e);
+        }
     }
 
     async getUrl() {

@@ -18,7 +18,7 @@ test(`Verify Number & Name in Participant list`, async ({page: nativePage}) => {
   const participant = page.topRight.participant_name.replace("?",page.localName);
 
   await page.assertVisible(participant);
-  await page.hasText(participant, name);
+  await page.hasText(participant, page.localName);
   await page.click('html');
   await page.endRoom();
   await page.close();
