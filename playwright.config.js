@@ -38,7 +38,7 @@ const config = {
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   // forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 1 : 0,
+  retries: 1,
   /* Opt out of parallel tests on CI. */
   workers: workers,
   fullyParallel: true,
@@ -132,5 +132,32 @@ const config = {
   //   port: 3000,
   // },
 };
+
+
+const setupEnv = () => {
+  const workerIndex = process.env.TEST_PARALLEL_INDEX;
+  const roomIDsStr = process.env.room_ids;
+  if (roomIDsStr && workerIndex !== undefined) {
+    const roomIds = roomIDsStr.split(",");
+    const roomId = roomIds[workerIndex];
+    const baseUrl = process.env.base_url;
+
+    const getUrl = (role) => {
+        return baseUrl + "/" + roomId + "/" + role;
+    }
+
+    console.log("env setup before all tests for worker - ", workerIndex, baseUrl, roomId);
+
+    process.env.audio_url = getUrl("audio");
+    process.env.audio_video_url = getUrl("audio-video");
+    process.env.audio_video_screenshare_url = getUrl("audio-video-sshare");
+    process.env.screen_share_url = getUrl("screenshare");
+    process.env.video_url = getUrl("video");
+    process.env.viewer_url = getUrl("viewer");
+    process.env.hls_viewer_url = getUrl("hls-viewer");
+  }
+}
+
+setupEnv();
 
 module.exports = config;
