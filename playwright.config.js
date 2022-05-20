@@ -14,9 +14,9 @@ if (process.env.room_ids) {
   // number of workers will be equal to number of room ids given
   // find number of commas and add 1
   workers = (process.env.room_ids.match(/,/g) || []).length + 1;
-  if (process.env.CI) {
-    workers = 2;
-  }
+  // if (process.env.CI) {
+  //   workers = 2;
+  // }
   console.log("using number of workers", workers);
 }
 
@@ -30,13 +30,13 @@ const config = {
 //   testMatch: '**.test.js',
  
   /* Maximum time one test can run for. */
-  timeout: 450 * 1000,
+  timeout: 240 * 1000,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
      * For example in `await expect(locator).toHaveText();`
      */
-    timeout: 10000
+    timeout: 30000
   },
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   // forbidOnly: !!process.env.CI,

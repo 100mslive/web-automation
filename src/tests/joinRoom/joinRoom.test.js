@@ -69,9 +69,10 @@ test(`Verify Join Mic-Off Cam-Off`, async ({page: nativePage}) => {
 })
 
 test(`Measure Join Time`, async ({page: nativePage}) => {
-  page = await PageWrapper.openMeetingPage(nativePage);
+  const url = process.env.audio_video_screenshare_url.replace("meeting", "leave");
+  page = new PageWrapper(nativePage);
+  page.goto({url});
 
-  await page.endRoom();
   await page.click(page.roomLeave.join_again_btn)
   console.log("Calculating Join Time");
   const start = performance.now(); 

@@ -6,7 +6,8 @@ let page;
 test.beforeEach(async () => {
 });
 
-test.afterEach(async () => {
+test.afterEach(async ({context}) => {
+  await context.close();
 });
 
 test(`Verify Number & Name in Participant list`, async ({page: nativePage}) => {
@@ -25,10 +26,9 @@ test(`Verify Number & Name in Participant list`, async ({page: nativePage}) => {
 })  
 
 
-test(`Verify Number of multiple participants`, async ({context}) => {
+test.only(`Verify Number of multiple participants`, async ({context}) => {
   let pages = await PageWrapper.openPages(context, 5);
   for(let i=0; i<5; i++)
     await pages[i].hasText(pages[i].topRight.participant_list, "5");
   await pages[0].endRoom();
-  await context.close();
 })
