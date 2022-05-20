@@ -59,7 +59,7 @@ test(`Start and Stop Rtmp Recording`, async () => {
 
   await page.click(page.bottomCenter.more_settings_btn, page.bottomCenter.streaming_recording_btn, page.bottomCenter.recording_checkbox)
 
-  page.sendText(page.bottomCenter.streaming_rtmp_url_field, process.env.twitch_rtmp_url)
+  page.sendText(page.bottomCenter.streaming_rtmp_url_field, process.env.yt_rtmp_url)
   
   await page.click(page.bottomCenter.rtmp_recording_start_btn)
 
