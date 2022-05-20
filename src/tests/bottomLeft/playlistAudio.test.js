@@ -27,7 +27,7 @@ test(`Playlist Audio`, async () => {
 
 //webhook track added in webhook
 test(`Playlist Audio check TopRight`, async () => {
-
+  await page.timeout(500);
   await page.click(page.bottomLeft.audio_playlist, page.bottomLeft.audio_playlist_item.replace("?","1"));
   await page.click('html');
     
