@@ -150,7 +150,7 @@ class PageWrapper{
      * @private
      */
     async clickOnce(elementId) {
-        await this.assertVisible(elementId);
+        await expect(this.page.locator(elementId)).toBeEnabled();
         await this.page.locator(elementId).click();
         console.log("Clicked: ", elementId);
     }

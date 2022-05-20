@@ -14,6 +14,9 @@ if (process.env.room_ids) {
   // number of workers will be equal to number of room ids given
   // find number of commas and add 1
   workers = (process.env.room_ids.match(/,/g) || []).length + 1;
+  if (process.env.CI) {
+    workers = 2;
+  }
   console.log("using number of workers", workers);
 }
 
@@ -54,7 +57,7 @@ const config = {
     baseURL: process.env.BASE_URL,
     headless: true,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'retain-on-failure',
     // Tell all tests to load signed-in state from 'storageState.json'.
     // storageState: `auth${env}.json`,
     screenshot: 'only-on-failure',
