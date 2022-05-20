@@ -67,6 +67,12 @@ class PageWrapper{
         }
     }
 
+    async clickWithTimeout(timeout, ...elementIds) {
+        for(let element of elementIds) {
+            await this.page.locator(element).click({timeout});
+        }
+    }
+
     async assertVisible(elementId){
         console.log("going to assert visibility", elementId);
         await this.page.waitForSelector(elementId);
