@@ -5,6 +5,7 @@
 - can we parallely run tests for beam/rtmp and everything else.
 - can we parallelize tests which need only one tab making them use different rooms
 - connect API calls, UI, and webhooks
+- should we structure tests by feature
 
 ## Code Improvements
 

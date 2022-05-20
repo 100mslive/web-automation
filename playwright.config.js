@@ -9,6 +9,14 @@ require('dotenv').config({path:envPath});
  */
 // require('dotenv').config();
 
+let workers = 1;
+if (process.env.room_ids) {
+  // number of workers will be equal to number of room ids given
+  // find number of commas and add 1
+  workers = (process.env.room_ids.match(/,/g) || []).length + 1;
+  console.log("using number of workers", workers);
+}
+
 /**
  * @see https://playwright.dev/docs/test-configuration
  * @type {import('@playwright/test').PlaywrightTestConfig}
@@ -32,7 +40,7 @@ const config = {
   /* Retry on CI only */
   retries: process.env.CI ? 1 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: workers,
   // workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: process.env.CI ? 'allure-playwright' : 'github',
