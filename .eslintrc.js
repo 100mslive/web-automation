@@ -41,5 +41,8 @@ module.exports = {
       },
     },
   ],
-  ignorePatterns: ["**/playwright-report/**"],
+  ignorePatterns: ["**/playwright-report/**", "**/build/**"],
+  parserOptions: {
+    project: "./tsconfig.json",
+  },
 };
