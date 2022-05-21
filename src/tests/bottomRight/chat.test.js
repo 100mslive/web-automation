@@ -1,11 +1,11 @@
-const { test } = require('@playwright/test');
-const PageWrapper = require('../../utils/PageWrapper.js');
+const { test } = require("@playwright/test");
+const PageWrapper = require("../../utils/PageWrapper.js");
 let page;
-test.beforeEach(async ({page: nativePage}) => {
+test.beforeEach(async ({ page: nativePage }) => {
   page = await PageWrapper.openMeetingPage(nativePage);
 });
 
 test.afterEach(async () => {
-    await page.endRoom();
-    await page.close()
+  await page.endRoom();
+  await page.close();
 });

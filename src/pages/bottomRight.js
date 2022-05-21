@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 
 exports.BottomRight = class BottomRight {
-   /**
+  /**
    * @param {import('@playwright/test').Page} page
    */
 
@@ -11,5 +11,4 @@ exports.BottomRight = class BottomRight {
     this.brb_btn = '[data-testid="brb_btn"]';
     this.chat_btn = '[data-testid="chat_btn"]';
   }
-
-}
+};

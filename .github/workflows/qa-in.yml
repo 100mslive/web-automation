@@ -38,11 +38,11 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: 'playwright-report'
-          destination-github-username: '100mslive'
-          destination-repository-name: 'automation-reports'
-          target-directory: 'web'
-          user-name: 'github-actions[bot]'
+          source-directory: "playwright-report"
+          destination-github-username: "100mslive"
+          destination-repository-name: "automation-reports"
+          target-directory: "web"
+          user-name: "github-actions[bot]"
           user-email: 41898282+github-actions[bot]@users.noreply.github.com
           target-branch: qa-in
 

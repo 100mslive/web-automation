@@ -1,8 +1,8 @@
 // @ts-check
 // const { devices } = require('@playwright/test');
 // const env = process.env.APP_ENV
-const envPath = process.env.ENV_PATH
-require('dotenv').config({path:envPath});
+const envPath = process.env.ENV_PATH;
+require("dotenv").config({ path: envPath });
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -26,9 +26,9 @@ if (process.env.room_ids) {
  */
 const config = {
   //globalSetup: require.resolve('./global-setup'),
-  testDir: './src/tests',
-//   testMatch: '**.test.js',
- 
+  testDir: "./src/tests",
+  //   testMatch: '**.test.js',
+
   /* Maximum time one test can run for. */
   timeout: 240 * 1000,
   expect: {
@@ -36,7 +36,7 @@ const config = {
      * Maximum time expect() should wait for the condition to be met.
      * For example in `await expect(locator).toHaveText();`
      */
-    timeout: 30000
+    timeout: 30000,
   },
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   // forbidOnly: !!process.env.CI,
@@ -48,7 +48,7 @@ const config = {
   // workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: process.env.CI ? 'allure-playwright' : 'github',
-  reporter: [ ['html', {open: 'never'}] ],
+  reporter: [["html", { open: "never" }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
@@ -57,12 +57,12 @@ const config = {
     baseURL: process.env.BASE_URL,
     headless: true,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'retain-on-failure',
+    trace: "retain-on-failure",
     // Tell all tests to load signed-in state from 'storageState.json'.
     // storageState: `auth${env}.json`,
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
-    permissions: ['microphone', 'camera'],
+    screenshot: "only-on-failure",
+    video: "retain-on-failure",
+    permissions: ["microphone", "camera"],
   },
 
   /* Configure projects for major browsers */
@@ -95,7 +95,7 @@ const config = {
     //     ...devices['Pixel 5'],
     //   },
     // },
-    
+
     // {
     //   name: 'Mobile Safari',
     //   use: {
@@ -109,25 +109,24 @@ const config = {
     //   use: {
     //     channel: 'msedge',
     //   },
-//     },
+    //     },
 
-     {
-      name: 'Google Chrome',
+    {
+      name: "Google Chrome",
       use: {
-        channel: 'chrome',
-        launchOptions:{
-        args:[
-          "--use-fake-device-for-media-stream",
-          "--use-fake-ui-for-media-stream",
-        ]
-      },
+        channel: "chrome",
+        launchOptions: {
+          args: [
+            "--use-fake-device-for-media-stream",
+            "--use-fake-ui-for-media-stream",
+          ],
+        },
       },
     },
-
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-  outputDir: 'ConfigurationsTest/test-results/',
+  outputDir: "ConfigurationsTest/test-results/",
 
   /* Run your local dev server before starting the tests */
   // webServer: {
@@ -135,7 +134,6 @@ const config = {
   //   port: 3000,
   // },
 };
-
 
 const setupEnv = () => {
   const workerIndex = process.env.TEST_PARALLEL_INDEX;
@@ -146,10 +144,15 @@ const setupEnv = () => {
     const baseUrl = process.env.base_url;
 
     const getUrl = (role) => {
-        return baseUrl + "/" + roomId + "/" + role;
-    }
+      return baseUrl + "/" + roomId + "/" + role;
+    };
 
-    console.log("env setup before all tests for worker - ", workerIndex, baseUrl, roomId);
+    console.log(
+      "env setup before all tests for worker - ",
+      workerIndex,
+      baseUrl,
+      roomId
+    );
 
     process.env.audio_url = getUrl("audio");
     process.env.audio_video_url = getUrl("audio-video");
@@ -160,9 +163,9 @@ const setupEnv = () => {
     process.env.hls_viewer_url = getUrl("hls-viewer");
 
     const randomNumber = Math.floor(Math.random() * 10000);
-    process.env.peer_name = `peer_${randomNumber}_`
+    process.env.peer_name = `peer_${randomNumber}_`;
   }
-}
+};
 
 setupEnv();
 
