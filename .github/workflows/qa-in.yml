@@ -17,42 +17,74 @@ on:
     types: [automation]
 
 jobs:
-  test:
-    timeout-minutes: 20
-    runs-on: ubuntu-latest
+#   test:
+#     timeout-minutes: 20
+#     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "17.x"
-      - run: yarn install
-      - run: npx playwright install
-      - name: Test on QA-IN
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-node@v2
+#         with:
+#           node-version: "17.x"
+#       - run: yarn install
+#       - run: npx playwright install
+#       - name: Test on QA-IN
         # run: yarn qa-in
-        e2e-1:
-          steps:
-            - run: yarn qa-in --shard=1/3
-        e2e-2:
-          steps:
-            - run: yarn qa-in --shard=2/3
-        e2e-3:
-          steps:
-            - run: yarn qa-in --shard=3/3
+    e2e-1:
+      timeout-minutes: 20
+      runs-on: ubuntu-latest
+        
+      steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v2
+          with:
+            node-version: "17.x"
+        - run: yarn install
+        - run: npx playwright install
+        - name: Test on QA-IN
+          run: yarn qa-in --shard=1/3
+          
+    e2e-2:
+      timeout-minutes: 20
+      runs-on: ubuntu-latest
+        
+      steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v2
+          with:
+            node-version: "17.x"
+        - run: yarn install
+        - run: npx playwright install
+        - name: Test on QA-IN
+          run: yarn qa-in --shard=2/3
+          
+    e2e-3:
+      timeout-minutes: 20
+      runs-on: ubuntu-latest
+        
+      steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v2
+          with:
+            node-version: "17.x"
+        - run: yarn install
+        - run: npx playwright install
+        - name: Test on QA-IN
+          run: yarn qa-in --shard=1/3
 
-      - name: Push test result
-        if: always()
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-directory: "playwright-report"
-          destination-github-username: "100mslive"
-          destination-repository-name: "automation-reports"
-          target-directory: "web"
-          user-name: "github-actions[bot]"
-          user-email: 41898282+github-actions[bot]@users.noreply.github.com
-          target-branch: qa-in
+        - name: Push test result
+          if: always()
+          uses: cpina/github-action-push-to-another-repository@main
+          env:
+            API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          with:
+            source-directory: "playwright-report"
+            destination-github-username: "100mslive"
+            destination-repository-name: "automation-reports"
+            target-directory: "web"
+            user-name: "github-actions[bot]"
+            user-email: 41898282+github-actions[bot]@users.noreply.github.com
+            target-branch: qa-in
 
       # - name: Send custom test result
       #   if: always()
