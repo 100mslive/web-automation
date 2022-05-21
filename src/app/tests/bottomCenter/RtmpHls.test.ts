@@ -13,7 +13,7 @@ test.afterEach(async () => {
   await page.close();
 });
 
-test.describe.only("Beam tests @beam", () => {
+test.describe("Beam tests @beam", () => {
   test(`Start and Stop Browser Recording`, async () => {
     await page.click(
       page.bottomCenter.more_settings_btn,
