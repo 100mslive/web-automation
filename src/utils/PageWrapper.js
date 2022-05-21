@@ -75,7 +75,6 @@ class PageWrapper{
 
     async assertVisible(elementId){
         console.log("going to assert visibility", elementId);
-        await this.page.waitForSelector(elementId);
         await expect(this.page.locator(elementId)).toBeVisible();
         console.log("asserted visibility for", elementId);
     }
@@ -87,13 +86,11 @@ class PageWrapper{
     }
 
     async sendText(elementId, text){
-        await this.assertVisible(elementId);
         await this.page.locator(elementId).fill(text);
         console.log("Text sent: ", text, "to element", elementId);
     }
 
     async hasText(elementId, text) {
-        await this.assertVisible(elementId);
         await expect(this.page.locator(elementId)).toContainText(text);
     }
 
