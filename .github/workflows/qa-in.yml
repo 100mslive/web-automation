@@ -19,7 +19,7 @@ on:
 jobs:
   test:
     timeout-minutes: 45
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       - run: npm cache clean --force
@@ -46,23 +46,23 @@ jobs:
           user-email: 41898282+github-actions[bot]@users.noreply.github.com
           target-branch: qa-in
 
-      - name: Send custom test result
-        if: always()
-        id: slack
-        uses: slackapi/slack-github-action@v1.18.0
-        with:
-          payload: |
-            {
-              "text": "Web-Automation build result QA-IN: ${{ job.status }}\n https://web-automation-git-qa-in-100mslive.vercel.app/",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "Web-Automation build result QA-IN: ${{ job.status }}\n https://web-automation-git-qa-in-100mslive.vercel.app/"
-                  }
-                }
-              ]
-            }
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      # - name: Send custom test result
+      #   if: always()
+      #   id: slack
+      #   uses: slackapi/slack-github-action@v1.18.0
+      #   with:
+      #     payload: |
+      #       {
+      #         "text": "Web-Automation build result QA-IN: ${{ job.status }}\n https://web-automation-git-qa-in-100mslive.vercel.app/",
+      #         "blocks": [
+      #           {
+      #             "type": "section",
+      #             "text": {
+      #               "type": "mrkdwn",
+      #               "text": "Web-Automation build result QA-IN: ${{ job.status }}\n https://web-automation-git-qa-in-100mslive.vercel.app/"
+      #             }
+      #           }
+      #         ]
+      #       }
+      #   env:
+      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
