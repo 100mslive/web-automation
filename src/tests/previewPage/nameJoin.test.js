@@ -21,9 +21,8 @@ test(`Verify Name Field and Join Button and Room`, async () => {
 });
 
 test(`Verify room URL`, async () => {
-  var currentURL = await page.getUrl();
-  currentURL = currentURL.replace("preview", "meeting");
-  console.log(currentURL);
-  expect(currentURL).toBe(url);
+  const meetingURL = await page.getUrl().replace("preview", "meeting");
+  console.log(meetingURL);
+  expect(meetingURL).toBe(url);
   await page.close();
 });

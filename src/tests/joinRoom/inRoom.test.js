@@ -16,16 +16,15 @@ test(`Verify greeting tile for first participant`, async ({
 
 test(`Verify room URL`, async ({ page: nativePage }) => {
   page = await PageWrapper.openMeetingPage(nativePage);
-  await page.timeout(2000);
-  var currentURL = await page.getUrl();
-  currentURL = currentURL.replace("preview", "meeting");
-  expect(currentURL).toBe(process.env.audio_video_screenshare_url);
+  const currentURL = await page.getUrl();
+  const meetingURL = currentURL.replace("preview", "meeting");
+  expect(meetingURL).toBe(process.env.audio_video_screenshare_url);
   await page.endRoom();
 });
 
 //publishing role and non publishing roll
 test(`Verify Join peers`, async ({ context }) => {
-  var pages = await PageWrapper.openPages(context, 5);
+  const pages = await PageWrapper.openPages(context, 5);
 
   for (let i = 0; i < 5; i++) {
     await pages[i].click(pages[i].topRight.participant_list);
@@ -35,7 +34,7 @@ test(`Verify Join peers`, async ({ context }) => {
         pages[j].localName
       );
       await pages[i].assertVisible(participantName);
-      pages[i].hasText(participantName, process.env.peer_name + j);
+      await pages[i].hasText(participantName, process.env.peer_name + j);
     }
     await pages[i].click("html");
   }
@@ -45,7 +44,7 @@ test(`Verify Join peers`, async ({ context }) => {
 });
 
 test(`Verify network on tile and peerlist`, async ({ context }) => {
-  var pages = await PageWrapper.openPages(context, 2);
+  const pages = await PageWrapper.openPages(context, 2);
   for (let i = 0; i < 2; i++) {
     await pages[i].click(
       pages[i].topRight.participant_list,

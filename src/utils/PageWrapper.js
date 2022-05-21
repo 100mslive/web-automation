@@ -30,7 +30,6 @@ class PageWrapper {
 
   /**
    * open n number of pages and goto meeting room in all of them
-   * @returns {Promise<Page[]>}
    */
   static async openPages(context, n, joinConfig) {
     const pages = [];
@@ -72,7 +71,7 @@ class PageWrapper {
 
   async assertVisible(elementId) {
     console.log("going to assert visibility", elementId);
-    await expect(this.page.locator(elementId)).toBeVisible();
+    await this.page.waitForSelector(elementId, { state: "visible" });
     console.log("asserted visibility for", elementId);
   }
 
