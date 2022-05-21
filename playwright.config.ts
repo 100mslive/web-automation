@@ -17,7 +17,7 @@ if (process.env.room_ids) {
   // find number of commas and add 1
   workers = (process.env.room_ids.match(/,/g) || []).length + 1;
   if (process.env.CI) {
-    workers = 4;
+    workers = 2;
   }
   console.log("using number of workers", workers);
 }
