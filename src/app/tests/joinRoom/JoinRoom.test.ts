@@ -1,5 +1,5 @@
 import { PageWrapper } from "../../PageWrapper";
-import { test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 let page: PageWrapper;
 
@@ -91,7 +91,7 @@ test.describe("verify join", () => {
     await page.gotoMeetingRoom();
     const diff = performance.now() - start;
     console.log(`Join Time Difference = ${diff}`);
-    expect(diff).toBeLessThan(5000);
+    expect(diff).toBeLessThan(10000);
   });
 });
 

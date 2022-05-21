@@ -1,5 +1,5 @@
 import { PageWrapper } from "../../PageWrapper";
-import { test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 let page: PageWrapper;
 
