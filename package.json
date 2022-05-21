@@ -11,7 +11,9 @@
     "prod-us": "APP_ENV=prod ENV_PATH=env/.env.prod-us playwright test --grep-invert @qaonly",
     "prod-eu": "APP_ENV=prod ENV_PATH=env/.env.prod-eu playwright test --grep-invert @qaonly",
     "lint": "eslint src/**",
-    "lint:fix": "eslint src/** --fix"
+    "lint:fix": "eslint src/** --fix",
+    "prepare": "husky install",
+    "format": "prettier --write src/**/*.ts"
   },
   "keywords": [],
   "author": "",
@@ -24,8 +26,13 @@
     "eslint": "^8.15.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
+    "husky": ">=6",
+    "lint-staged": ">=10",
     "playwright-watch": "^1.3.23",
     "prettier": "2.6.2",
     "typescript": "^4.6.4"
+  },
+  "lint-staged": {
+    "*.ts": "format && lint:fix"
   }
 }
