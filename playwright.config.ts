@@ -30,7 +30,7 @@ const config: PlaywrightTestConfig = {
   //   testMatch: '**.test.js',
 
   /* Maximum time one test can run for. */
-  timeout: 240 * 1000,
+  timeout: 180 * 1000,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
@@ -48,7 +48,7 @@ const config: PlaywrightTestConfig = {
   // workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: process.env.CI ? 'allure-playwright' : 'github',
-  reporter: [["html", { open: "never" }]],
+  reporter: [["html", { open: "never" , outputFolder: 'playwright-report' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
@@ -123,7 +123,7 @@ const config: PlaywrightTestConfig = {
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-  outputDir: "ConfigurationsTest/test-results/",
+  // outputDir: "detailed-report",
 
   /* Run your local dev server before starting the tests */
   // webServer: {
