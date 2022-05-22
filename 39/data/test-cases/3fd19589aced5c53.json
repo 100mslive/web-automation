@@ -1,0 +1,365 @@
+{
+  "uid" : "3fd19589aced5c53",
+  "name" : "Verify Network Btn",
+  "fullName" : "Verify Network Btn",
+  "historyId" : "Google Chrome previewPage/settingNetwork.test.js Verify Network Btn",
+  "time" : {
+    "start" : 1653222275716,
+    "stop" : 1653222282429,
+    "duration" : 6713
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Before Hooks",
+      "time" : {
+        "start" : 1653222275716,
+        "stop" : 1653222277424,
+        "duration" : 1708
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "beforeEach hook",
+        "time" : {
+          "start" : 1653222275716,
+          "stop" : 1653222277424,
+          "duration" : 1708
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "browserContext.newPage",
+          "time" : {
+            "start" : 1653222275720,
+            "stop" : 1653222275749,
+            "duration" : 29
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.goto(https://automation.app.100ms.live/meeting/mkk-vqv-tti)",
+          "time" : {
+            "start" : 1653222275750,
+            "stop" : 1653222277424,
+            "duration" : 1674
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "page.waitForTimeout",
+      "time" : {
+        "start" : 1653222277425,
+        "stop" : 1653222278425,
+        "duration" : 1000
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "page.waitForSelector(span[data-testid=\"tile_network\"])",
+      "time" : {
+        "start" : 1653222278426,
+        "stop" : 1653222281352,
+        "duration" : 2926
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1653222281354,
+        "stop" : 1653222281366,
+        "duration" : 12
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "After Hooks",
+      "time" : {
+        "start" : 1653222281356,
+        "stop" : 1653222282429,
+        "duration" : 1073
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "afterEach hook",
+        "time" : {
+          "start" : 1653222281356,
+          "stop" : 1653222282425,
+          "duration" : 1069
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "page.waitForTimeout",
+          "time" : {
+            "start" : 1653222281356,
+            "stop" : 1653222282357,
+            "duration" : 1001
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.waitForSelector(button[data-testid=\"video_btn\"])",
+          "time" : {
+            "start" : 1653222282358,
+            "stop" : 1653222282364,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "locator.click(button[data-testid=\"video_btn\"])",
+          "time" : {
+            "start" : 1653222282365,
+            "stop" : 1653222282421,
+            "duration" : 56
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "page.close",
+          "time" : {
+            "start" : 1653222282422,
+            "stop" : 1653222282425,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 4,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "browserContext.close",
+        "time" : {
+          "start" : 1653222282426,
+          "stop" : 1653222282429,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 6,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "ee4568c260b8820a",
+      "name" : "stdout",
+      "source" : "ee4568c260b8820a.txt",
+      "type" : "text/plain",
+      "size" : 37
+    }, {
+      "uid" : "787bf700af9421b6",
+      "name" : "stdout",
+      "source" : "787bf700af9421b6.txt",
+      "type" : "text/plain",
+      "size" : 37
+    }, {
+      "uid" : "e13c4b4522711409",
+      "name" : "stdout",
+      "source" : "e13c4b4522711409.txt",
+      "type" : "text/plain",
+      "size" : 27
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 14,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Google Chrome"
+  }, {
+    "name" : "suite",
+    "value" : "previewPage/settingNetwork.test.js"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 9
+      },
+      "items" : [ {
+        "uid" : "c988ba7be946ace0",
+        "reportUrl" : "https://100mslive.github.io/web-automation/42//#testresult/c988ba7be946ace0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1653211349932,
+          "stop" : 1653211356315,
+          "duration" : 6383
+        }
+      }, {
+        "uid" : "cd52fbc2dcbe04bd",
+        "reportUrl" : "https://100mslive.github.io/web-automation/42//#testresult/cd52fbc2dcbe04bd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1653201820395,
+          "stop" : 1653201827200,
+          "duration" : 6805
+        }
+      }, {
+        "uid" : "691731a7f939fd04",
+        "reportUrl" : "https://100mslive.github.io/web-automation/114//#testresult/691731a7f939fd04",
+        "status" : "passed",
+        "time" : {
+          "start" : 1653184601619,
+          "stop" : 1653184608764,
+          "duration" : 7145
+        }
+      }, {
+        "uid" : "cd5a3c3279317bb1",
+        "reportUrl" : "https://100mslive.github.io/web-automation/40//#testresult/cd5a3c3279317bb1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1653146681880,
+          "stop" : 1653146688502,
+          "duration" : 6622
+        }
+      }, {
+        "uid" : "1324936b5a001fb7",
+        "reportUrl" : "https://100mslive.github.io/web-automation/38//#testresult/1324936b5a001fb7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1653136009625,
+          "stop" : 1653136016212,
+          "duration" : 6587
+        }
+      }, {
+        "uid" : "da4b7204b5fce2d2",
+        "reportUrl" : "https://100mslive.github.io/web-automation/41//#testresult/da4b7204b5fce2d2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1653125033938,
+          "stop" : 1653125041029,
+          "duration" : 7091
+        }
+      }, {
+        "uid" : "73522dfd7d263c5",
+        "reportUrl" : "https://100mslive.github.io/web-automation/41//#testresult/73522dfd7d263c5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1653115311818,
+          "stop" : 1653115318655,
+          "duration" : 6837
+        }
+      }, {
+        "uid" : "53aac849356592c1",
+        "reportUrl" : "https://100mslive.github.io/web-automation/98//#testresult/53aac849356592c1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1653098218861,
+          "stop" : 1653098226105,
+          "duration" : 7244
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "3fd19589aced5c53.json",
+  "parameterValues" : [ ]
+}
