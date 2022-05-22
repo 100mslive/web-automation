@@ -26,7 +26,7 @@ test(`Playlist Video`, async () => {
       page.bottomLeft.playlist_play_pause_btn,
       page.bottomLeft.playlist_next_btn
     );
-    await page.timeout(2000);
+    await page.timeout(3000);
   }
   for (let j = 1; j <= 2; j++) {
     await page.click(
@@ -34,7 +34,7 @@ test(`Playlist Video`, async () => {
       page.bottomLeft.playlist_play_pause_btn,
       page.bottomLeft.playlist_prev_btn
     );
-    await page.timeout(2000);
+    await page.timeout(3000);
   }
   await page.click(page.bottomLeft.videoplayer_cross_btn);
 });
