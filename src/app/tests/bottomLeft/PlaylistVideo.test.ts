@@ -20,7 +20,7 @@ test(`Playlist Video`, async () => {
   );
 
   for (let i = 1; i <= 2; i++) {
-    await page.clickWithTimeout( timeout,
+    await page.click(
       page.bottomLeft.playlist_play_pause_btn,
       page.bottomLeft.playlist_play_pause_btn,
       page.bottomLeft.playlist_next_btn
@@ -28,7 +28,7 @@ test(`Playlist Video`, async () => {
     await page.timeout(2000);
   }
   for (let j = 1; j <= 2; j++) {
-    await page.clickWithTimeout( timeout,
+    await page.click(
       page.bottomLeft.playlist_play_pause_btn,
       page.bottomLeft.playlist_play_pause_btn,
       page.bottomLeft.playlist_prev_btn
