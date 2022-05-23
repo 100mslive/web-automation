@@ -40,7 +40,7 @@ jobs:
           REGION: 'qa-in'
         run: 
           echo '${{ env.REGION }}'
-          yarn $env.REGION
+          yarn '${{ env.REGION }}'
           
 
       - name: Test on QA-IN
