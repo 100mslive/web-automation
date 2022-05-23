@@ -70,7 +70,7 @@ jobs:
         env:
           REGION: prod-eu
 
-      - name: Run Tests
+      # - name: Run Tests
         run: 
           yarn '${{ env.REGION }}'
       
