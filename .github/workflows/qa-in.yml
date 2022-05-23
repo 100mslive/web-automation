@@ -37,8 +37,9 @@ jobs:
       - name: Test on QA-IN when push
         if: ${{ github.event_name == 'pull_request' || (github.event_name == 'push' && !contains( github.event.head_commit.message, 'Merge pull request')) }}
         run: yarn qa-in
-        env:
-          REGION: qa-in
+      env:
+        REGION: ${{ process.env.APP_ENV }}
+        echo: ${{ github.event_name }}
 
       - name: Test on QA-IN
         if: ${{ github.event.schedule == '0 14 * * *' }}
@@ -64,6 +65,7 @@ jobs:
         env:
           REGION: prod-us
 
+
       - name: Test on PROD-EU
         if: ${{ github.event.schedule == '0 5 * * *' }}
         run: yarn prod-eu
@@ -82,7 +84,7 @@ jobs:
           target-directory: "web"
           user-name: "github-actions[bot]"
           user-email: 41898282+github-actions[bot]@users.noreply.github.com
-          target-branch: "${{ env.REGION }}"
+          target-branch: ${{ env.REGION }}
 
       # - name: Send custom test result
       #   if: always()
