@@ -27,13 +27,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "17.x"
-      - run: yarn install
-      - run: npx playwright install
-
       - name: Test on QA-IN when push
         if: ${{ github.event_name == 'pull_request' || (github.event_name == 'push' && !contains( github.event.head_commit.message, 'Merge pull request')) }}
         env:
@@ -65,7 +58,13 @@ jobs:
         env:
           REGION: prod-eu
           
-        run: yarn '${{ env.REGION }}'
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "17.x"
+      - run: yarn install
+      - run: npx playwright install
+      - run: yarn '${{ env.REGION }}'
       
       - name: Push test result
         if: always()
@@ -79,7 +78,7 @@ jobs:
           target-directory: "web"
           user-name: "github-actions[bot]"
           user-email: 41898282+github-actions[bot]@users.noreply.github.com
-          target-branch: ${{ env.REGION }}
+          target-branch: '${{ env.REGION }}'
 
       # - name: Send custom test result
       #   if: always()
