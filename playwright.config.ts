@@ -39,7 +39,7 @@ const config: PlaywrightTestConfig = {
     timeout: isCI ? 30000 : 10000,
   },
   /* Fail the build on CI if you accidentally left test.only in the source code. */
-  forbidOnly: isCI,
+  // forbidOnly: isCI,
   /* Retry on CI only */
   retries: 1,
   /* Opt out of parallel tests on CI. */
