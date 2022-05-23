@@ -77,6 +77,7 @@ jobs:
         uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          REGION: ${{ env.REGION }}
         with:
           source-directory: "playwright-report"
           destination-github-username: "100mslive"
