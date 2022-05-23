@@ -2,6 +2,7 @@ import { PageWrapper } from "../../PageWrapper";
 import { test } from "@playwright/test";
 
 let page: PageWrapper;
+let timeout : 2000;
 
 test.beforeEach(async ({ page: nativePage }) => {
   page = await PageWrapper.openMeetingPage(nativePage);
@@ -13,9 +14,7 @@ test.afterEach(async () => {
 });
 
 test(`Playlist Video`, async () => {
-  await page.timeout(500);
-
-  await page.click(
+  await page.clickWithTimeout( timeout,
     page.bottomLeft.video_playlist,
     page.bottomLeft.audio_playlist_item.replace("?", "1")
   );

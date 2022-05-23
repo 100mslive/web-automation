@@ -14,7 +14,6 @@ test.afterEach(async () => {
 });
 
 test.describe("Beam tests @beam", () => {
-  //webhook implementation
   test(`Start and Stop Browser Recording`, async () => {
     await page.click(
       page.bottomCenter.more_settings_btn,
