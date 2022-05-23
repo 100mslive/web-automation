@@ -114,6 +114,10 @@ export class PageWrapper {
     return text;
   }
 
+  async gotoPreviewPage() {
+    await this.goto();
+  }
+
   async goto({ url }: { url?: string } = {}) {
     url = url || process.env.audio_video_screenshare_url;
     await this.page.goto(url);

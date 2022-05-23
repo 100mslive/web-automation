@@ -39,7 +39,7 @@ const config: PlaywrightTestConfig = {
     timeout: isCI ? 30000 : 10000,
   },
   /* Fail the build on CI if you accidentally left test.only in the source code. */
-  // forbidOnly: !!process.env.CI,
+  forbidOnly: isCI,
   /* Retry on CI only */
   retries: 1,
   /* Opt out of parallel tests on CI. */
@@ -48,7 +48,7 @@ const config: PlaywrightTestConfig = {
   // workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: process.env.CI ? 'allure-playwright' : 'github',
-  reporter: [["html", { open: "never" , outputFolder: 'playwright-report' }]],
+  reporter: [["html", { open: "never", outputFolder: "playwright-report" }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */

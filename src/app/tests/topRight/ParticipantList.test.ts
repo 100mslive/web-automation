@@ -9,6 +9,8 @@ test.afterEach(async ({ context }) => {
   await context.close();
 });
 
+const peersCount = Number(process.env.multi_peer_count);
+
 test(`Verify Number & Name in Participant list`, async ({ page: nativePage }) => {
   page = await PageWrapper.openMeetingPage(nativePage);
   await page.assertVisible(page.topRight.participant_list);
@@ -25,9 +27,9 @@ test(`Verify Number & Name in Participant list`, async ({ page: nativePage }) =>
 });
 
 test(`Verify Number of multiple participants`, async ({ context }) => {
-  const pages = await PageWrapper.openPages(context, 5);
-  for (let i = 0; i < 5; i++) {
-    await pages[i].hasText(pages[i].topRight.participant_list, "5");
+  const pages = await PageWrapper.openPages(context, peersCount);
+  for (let i = 0; i < peersCount; i++) {
+    await pages[i].hasText(pages[i].topRight.participant_list, `${peersCount}`);
   }
   await pages[0].endRoom();
 });

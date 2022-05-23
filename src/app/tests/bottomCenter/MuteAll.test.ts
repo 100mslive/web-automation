@@ -5,19 +5,21 @@ test.beforeEach(async () => {});
 
 test.afterEach(async () => {});
 
+const peersCount = Number(process.env.multi_peer_count);
+
 test(`Mute All`, async ({ context }) => {
-  const pages = await PageWrapper.openPages(context, 5);
+  const pages = await PageWrapper.openPages(context, peersCount);
   await pages[0].timeout(5000);
   await pages[0].bottomCenter.muteAll();
 
   // peer tile has muted
-  for (let i = 1; i < 5; i++) {
+  for (let i = 1; i < peersCount; i++) {
     // my footer is showing me muted
     await pages[i].assertLocalAudioState(false);
     await pages[i].assertLocalVideoState(false);
 
     // others are seeing me as muted on video tile
-    for (let j = 0; j < 5; j++) {
+    for (let j = 0; j < peersCount; j++) {
       await pages[j].tiles.assertAudioState(pages[i].localName, false);
     }
   }

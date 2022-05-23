@@ -5,21 +5,17 @@ test.beforeEach(async () => {});
 
 test.afterEach(async () => {});
 
+const peersCount = Number(process.env.multi_peer_count);
+
 test(`Verify Peerlist in Preview Page`, async ({ context }) => {
-  const pages = await PageWrapper.openPages(context, 5);
+  const pages = await PageWrapper.openPages(context, peersCount);
 
-  pages[5] = new PageWrapper(await context.newPage());
-  await pages[5].preview.gotoPreviewPage();
-  await pages[5].click(pages[5].topRight.participant_list);
+  const newPage = new PageWrapper(await context.newPage());
+  await newPage.gotoPreviewPage();
+  await newPage.topRight.openParticipantList();
 
-  for (let i = 0; i < 5; i++) {
-    await pages[5].assertVisible(
-      pages[5].topRight.participant_number.replace("?", pages[i].localName)
-    );
-    await pages[5].hasText(
-      pages[5].topRight.participant_number.replace("?", pages[i].localName),
-      process.env.peer_name + i
-    );
+  for (let i = 0; i < peersCount; i++) {
+    await newPage.topRight.assertPeerInOpenPeerList(pages[i].localName, true);
   }
   await pages[0].endRoom();
   await context.close();

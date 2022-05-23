@@ -22,14 +22,16 @@ test(`Verify room URL`, async ({ page: nativePage }) => {
   await page.endRoom();
 });
 
+const peersCount = Number(process.env.multi_peer_count);
+
 //publishing role and non publishing roll
 test(`Verify Join peers`, async ({ context }) => {
-  const pages = await PageWrapper.openPages(context, 5);
+  const pages = await PageWrapper.openPages(context, peersCount);
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < peersCount; i++) {
     await pages[i].click(pages[i].topRight.participant_list);
-    for (let j = 0; j < 5; j++) {
-      const participantName = pages[i].topRight.participant_number.replace("?", pages[j].localName);
+    for (let j = 0; j < peersCount; j++) {
+      const participantName = pages[i].topRight.participant_name.replace("?", pages[j].localName);
       await pages[i].assertVisible(participantName);
       await pages[i].hasText(participantName, process.env.peer_name + j);
     }

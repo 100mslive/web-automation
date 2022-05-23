@@ -14,7 +14,6 @@ export class TopRight {
   streaming_hls = 'div[role="menuitem"]:has-text("Streaming (HLS)")';
   browser_recording = 'div[role="menuitem"]:has-text("Recording (Browser)")';
   hls_recording = 'div[role="menuitem"]:has-text("Recording (HLS)")';
-  participant_number = 'div[data-testid="participant_?"]';
   participant_name = 'div[data-testid="participant_?"]';
   participant_setting = 'div[data-testid="participant_?"] button';
   participant_role_heading = 'p[data-testid="role_?"]';
@@ -40,13 +39,17 @@ export class TopRight {
   async assertPeerInPeerList(peerName: string, present: boolean) {
     await this.openParticipantList();
     try {
-      if (present) {
-        await this.page.assertVisible(this.participant_name.replace("?", peerName));
-      } else {
-        await this.page.assertNotVisible(this.participant_name.replace("?", peerName));
-      }
+      await this.assertPeerInOpenPeerList(peerName, present);
     } finally {
       await this.closeParticipantList();
+    }
+  }
+
+  async assertPeerInOpenPeerList(peerName: string, present: boolean) {
+    if (present) {
+      await this.page.assertVisible(this.participant_name.replace("?", peerName));
+    } else {
+      await this.page.assertNotVisible(this.participant_name.replace("?", peerName));
     }
   }
 
