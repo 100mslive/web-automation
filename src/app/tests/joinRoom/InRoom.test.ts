@@ -14,7 +14,7 @@ test(`Verify greeting tile for first participant`, async ({ page: nativePage }) 
   await page.close();
 });
 
-test.only(`Verify room URL`, async ({ page: nativePage }) => {
+test(`Verify room URL`, async ({ page: nativePage }) => {
   page = await PageWrapper.openMeetingPage(nativePage);
   const currentURL = await page.getUrl();
   const meetingURL = currentURL.replace("preview", "meeting");

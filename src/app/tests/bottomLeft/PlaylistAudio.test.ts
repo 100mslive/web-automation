@@ -2,7 +2,7 @@ import { PageWrapper } from "../../PageWrapper";
 import { test } from "@playwright/test";
 
 let page: PageWrapper;
-let timeout : 2000;
+let timeout: 2000;
 
 test.beforeEach(async ({ page: nativePage }) => {
   page = await PageWrapper.openMeetingPage(nativePage);
@@ -14,13 +14,15 @@ test.afterEach(async () => {
 });
 
 test(`Playlist Audio`, async () => {
-  await page.clickWithTimeout( timeout,
+  await page.clickWithTimeout(
+    timeout,
     page.bottomLeft.audio_playlist,
     page.bottomLeft.audio_playlist_item.replace("?", "1")
   );
 
   for (let i = 1; i <= 5; i++) {
-    await page.clickWithTimeout( timeout,
+    await page.clickWithTimeout(
+      timeout,
       page.bottomLeft.playlist_play_pause_btn,
       page.bottomLeft.playlist_play_pause_btn,
       page.bottomLeft.playlist_next_btn
@@ -28,7 +30,8 @@ test(`Playlist Audio`, async () => {
     await page.timeout(2000);
   }
   for (let j = 1; j <= 5; j++) {
-    await page.clickWithTimeout( timeout,
+    await page.clickWithTimeout(
+      timeout,
       page.bottomLeft.playlist_play_pause_btn,
       page.bottomLeft.playlist_play_pause_btn,
       page.bottomLeft.playlist_prev_btn
@@ -41,7 +44,8 @@ test(`Playlist Audio`, async () => {
 //webhook track added in webhook
 test(`Playlist Audio check TopRight`, async () => {
   // await page.timeout(500);
-  await page.clickWithTimeout( timeout,
+  await page.clickWithTimeout(
+    timeout,
     page.bottomLeft.audio_playlist,
     page.bottomLeft.audio_playlist_item.replace("?", "1")
   );
