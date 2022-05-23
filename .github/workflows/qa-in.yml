@@ -8,8 +8,8 @@ on:
         required: true
         default: "warning"
   schedule:
-    - cron: "10 13 * * *"
-    - cron: "20 13 * * *"
+    - cron: "0 14 * * *"
+    - cron: "15 14 * * *"
     - cron: "0 3 * * *"
     - cron: "0 4 * * *"
     - cron: "0 5 * * *"
@@ -36,68 +36,37 @@ jobs:
 
       - name: Test on QA-IN when push
         if: ${{ github.event_name == 'pull_request' || (github.event_name == 'push' && !contains( github.event.head_commit.message, 'Merge pull request')) }}
-        run: yarn qa-in
+        env:
+          REGION: qa-in
 
       - name: Test on QA-IN
-        if: ${{ github.event.schedule == '10 13 * * *' }}
-        run: yarn qa-in
+        if: ${{ github.event.schedule == '0 14 * * *' }}
+        env:
+          REGION: qa-in
       
       - name: Test on QA-EU
-        if: ${{ github.event.schedule == '20 13 * * *' }}
-        run: yarn qa-eu
+        if: ${{ github.event.schedule == '15 14 * * *' }}
+        env:
+          REGION: qa-eu
 
       - name: Test on PROD-IN
         if: ${{ github.event.schedule == '0 3 * * *' }}
-        run: yarn prod-in
+        env:
+          REGION: prod-in
 
       - name: Test on PROD-US
         if: ${{ github.event.schedule == '0 4 * * *' }}
-        run: yarn prod-us
+        env:
+          REGION: prod-us
 
       - name: Test on PROD-EU
         if: ${{ github.event.schedule == '0 5 * * *' }}
         run: yarn prod-eu
-#     e2e-1:
-#       timeout-minutes: 20
-#       runs-on: ubuntu-latest
-        
-#       steps:
-#         - uses: actions/checkout@v2
-#         - uses: actions/setup-node@v2
-#           with:
-#             node-version: "17.x"
-#         - run: yarn install
-#         - run: npx playwright install
-#         - name: Test on QA-IN
-#           run: yarn qa-in --shard=1/3
-          
-#     e2e-2:
-#       timeout-minutes: 20
-#       runs-on: ubuntu-latest
-        
-#       steps:
-#         - uses: actions/checkout@v2
-#         - uses: actions/setup-node@v2
-#           with:
-#             node-version: "17.x"
-#         - run: yarn install
-#         - run: npx playwright install
-#         - name: Test on QA-IN
-#           run: yarn qa-in --shard=2/3
-          
-#     e2e-3:
-#       timeout-minutes: 20
-#       runs-on: ubuntu-latest
-        
-#       steps:
-#         - uses: actions/checkout@v2
-#         - uses: actions/setup-node@v2
-#           with:
-#             node-version: "17.x"
-#         - run: yarn install
-#         - run: npx playwright install
-#         - name: Test on QA-IN
-#           run: yarn qa-in --shard=1/3
+        env:
+          REGION: prod-eu
+
+      - name: Run tests
+        run: yarn ${{ env.REGION }}
 
       - name: Push test result
         if: always()
