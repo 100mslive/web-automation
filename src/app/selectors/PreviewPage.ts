@@ -23,20 +23,26 @@ export class PreviewPage {
     this.page = page;
   }
 
-  async gotoPreviewPage(url?: string) {
-    await this.page.goto({ url });
+  async gotoPreviewPage() {
+    await this.page.goto();
   }
 
   async gotoMeetingRoom(url: string, name: string, mic: boolean, cam: boolean) {
-    await this.gotoPreviewPage(url);
-    if (!cam) {
-      await this.page.click(this.preview_video_btn);
+    if (!mic && !cam) {
+      url = url.replace("meeting", "preview");
+      url += `?skip_preview_headful=true&name=${name}`;
+      await this.page.goto({ url });
+    } else {
+      await this.page.goto({ url });
+      if (!cam) {
+        await this.page.click(this.preview_video_btn);
+      }
+      if (!mic) {
+        await this.page.click(this.preview_audio_btn);
+      }
+      await this.page.sendText(this.preview_name_field, name);
+      await this.page.click(this.preview_join_btn);
     }
-    if (!mic) {
-      await this.page.click(this.preview_audio_btn);
-    }
-    await this.page.sendText(this.preview_name_field, name);
-    await this.page.click(this.preview_join_btn);
     console.log("Joined room with : ", "mic:", mic, " cam:", cam);
   }
 }
