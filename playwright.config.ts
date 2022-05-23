@@ -116,7 +116,11 @@ const config: PlaywrightTestConfig = {
       use: {
         channel: "chrome",
         launchOptions: {
-          args: ["--use-fake-device-for-media-stream", "--use-fake-ui-for-media-stream"],
+          args: [
+            "--use-fake-device-for-media-stream",
+            "--use-fake-ui-for-media-stream",
+            "--autoplay-policy=no-user-gesture-required",
+          ],
         },
       },
     },
@@ -133,14 +137,14 @@ const config: PlaywrightTestConfig = {
 };
 
 const setupEnv = () => {
-  const workerIndex = process.env.TEST_PARALLEL_INDEX;
+  const workerIndex = Number(process.env.TEST_PARALLEL_INDEX);
   const roomIDsStr = process.env.room_ids;
   if (roomIDsStr && workerIndex !== undefined) {
     const roomIds = roomIDsStr.split(",");
     const roomId = roomIds[workerIndex];
     const baseUrl = process.env.base_url;
 
-    const getUrl = (role) => {
+    const getUrl = (role: string) => {
       return baseUrl + "/" + roomId + "/" + role;
     };
 

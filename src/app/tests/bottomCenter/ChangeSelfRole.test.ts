@@ -20,8 +20,6 @@ test(`Change self Role`, async () => {
 
     const changeRole = page.bottomCenter.change_to_role_.replace("?", page.topRight.role_list[i]);
 
-    //getting Text Found-  Promise { <pending> }
-    //needs improvement
     const bottom_center_role = await page.getText(changeRole);
     await page.click(changeRole);
 

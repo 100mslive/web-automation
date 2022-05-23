@@ -63,10 +63,10 @@ export class PageWrapper {
     url = url || process.env.audio_video_screenshare_url;
     name = name || `${process.env.peer_name}0`;
     if (mic === undefined) {
-      mic = true;
+      mic = false;
     }
     if (cam === undefined) {
-      cam = true;
+      cam = false;
     }
     await this.preview.gotoMeetingRoom(url, name, mic, cam);
     this.localName = name;
@@ -109,7 +109,7 @@ export class PageWrapper {
    * @returns {String}
    */
   async getText(elementId: string) {
-    const text = this.page.locator(elementId).textContent();
+    const text = await this.page.locator(elementId).textContent();
     console.log("Text Found- ", text);
     return text;
   }
