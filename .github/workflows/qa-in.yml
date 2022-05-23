@@ -36,9 +36,9 @@ jobs:
 
       - name: Test on QA-IN when push
         if: ${{ github.event_name == 'pull_request' || (github.event_name == 'push' && !contains( github.event.head_commit.message, 'Merge pull request')) }}
+        run: yarn '{{ env.REGION }}'
         env:
           REGION: 'qa-in'
-          run: yarn '{{ env.REGION }}'
         
       - name: Test on QA-IN
         if: ${{ github.event.schedule == '0 14 * * *' }}
