@@ -8,7 +8,12 @@ on:
         required: true
         default: "warning"
   schedule:
-    - cron: "0 1 * * *"
+    - cron: "20 17 * * *"
+    - cron: "30 17 * * *"
+    - cron: "0 3 * * *"
+    - cron: "0 4 * * *"
+    - cron: "0 5 * * *"
+
   push:
     branches: [main]
   pull_request:
@@ -28,8 +33,26 @@ jobs:
           node-version: "17.x"
       - run: yarn install
       - run: npx playwright install
+
       - name: Test on QA-IN
+        if: github.event.schedule == '0 1 * * *'
         run: yarn qa-in
+      
+      - name: Test on QA-EU
+        if: github.event.schedule == '0 2 * * *'
+        run: yarn qa-eu
+
+      - name: Test on PROD-IN
+        if: github.event.schedule == '0 3 * * *'
+        run: yarn prod-in
+
+      - name: Test on PROD-US
+        if: github.event.schedule == '0 4 * * *'
+        run: yarn prod-us
+
+      - name: Test on PROD-EU
+        if: github.event.schedule == '0 5 * * *'
+        run: yarn prod-eu
 #     e2e-1:
 #       timeout-minutes: 20
 #       runs-on: ubuntu-latest
