@@ -39,7 +39,7 @@ jobs:
         run: yarn qa-in
         env:
           REGION: 'qa-in'
-          echo "${{ env.REGION }}"
+          echo: ${{ env.REGION }}
 
       - name: Test on QA-IN
         if: ${{ github.event.schedule == '0 14 * * *' }}
