@@ -39,7 +39,11 @@ jobs:
         run: yarn qa-in
         env:
           REGION: 'qa-in'
+<<<<<<< HEAD
           echo: ${{ env.REGION }}
+=======
+        run: echo '${{ env.REGION }}'
+>>>>>>> 2abde425 (env)
 
       - name: Test on QA-IN
         if: ${{ github.event.schedule == '0 14 * * *' }}
@@ -72,6 +76,7 @@ jobs:
         env:
           REGION: prod-eu
 
+      
       - name: Push test result
         if: always()
         uses: cpina/github-action-push-to-another-repository@main
