@@ -14,11 +14,11 @@ test(`Verify greeting tile for first participant`, async ({ page: nativePage }) 
   await page.close();
 });
 
-test(`Verify room URL`, async ({ page: nativePage }) => {
+test.only(`Verify room URL`, async ({ page: nativePage }) => {
   page = await PageWrapper.openMeetingPage(nativePage);
   const currentURL = await page.getUrl();
   const meetingURL = currentURL.replace("preview", "meeting");
-  expect(meetingURL).toBe(process.env.audio_video_screenshare_url);
+  expect(meetingURL).toContain(process.env.audio_video_screenshare_url);
   await page.endRoom();
 });
 
@@ -41,7 +41,7 @@ test(`Verify Join peers`, async ({ context }) => {
 });
 
 test(`Verify network on tile and peerlist`, async ({ context }) => {
-  const pages = await PageWrapper.openPages(context, 2);
+  const pages = await PageWrapper.openPages(context, 2, { mic: true, cam: true });
   for (let i = 0; i < 2; i++) {
     await pages[i].click(
       pages[i].topRight.participant_list,
