@@ -9,15 +9,15 @@ on:
         default: "qa-in"
   schedule:
     # qa-in
-    - cron: "0 7 * * *"
+    - cron: "0 9 * * *"
     # qa-us
-    - cron: "10 7 * * *"
+    - cron: "10 9 * * *"
     # prod-in
-    - cron: "0 3 * * *"
+    - cron: "20 9 * * *"
     # prod-us
-    - cron: "0 4 * * *"
+    - cron: "30 9 * * *"
     # prod-eu
-    - cron: "0 5 * * *"
+    - cron: "40 9 * * *"
 
   push:
     branches: [main]
@@ -28,7 +28,7 @@ on:
 
 jobs:
   test:
-    timeout-minutes: 20
+    timeout-minutes: 10
     runs-on: ubuntu-latest
 
     steps:
@@ -43,23 +43,23 @@ jobs:
         run: echo "REGION=qa-in" >> $GITHUB_ENV
         
       - name: (From Cron) QA-IN
-        if: github.event.schedule == '0 7 * * *'
+        if: github.event.schedule == '0 9 * * *'
         run: echo "REGION=qa-in" >> $GITHUB_ENV
       
       - name: (From Cron) QA-US
-        if: github.event.schedule == '10 7 * * *'
+        if: github.event.schedule == '10 9 * * *'
         run: echo "REGION=qa-us" >> $GITHUB_ENV
 
       - name: (From Cron) PROD-IN
-        if: github.event.schedule == '0 3 * * *'
+        if: github.event.schedule == '20 9 * * *'
         run: echo "REGION=prod-in" >> $GITHUB_ENV
 
       - name: (From Cron) PROD-US
-        if: github.event.schedule == '0 4 * * *'
+        if: github.event.schedule == '30 9 * * *'
         run: echo "REGION=prod-us" >> $GITHUB_ENV
 
       - name: (From Cron) PROD-EU
-        if: github.event.schedule == '0 5 * * *'
+        if: github.event.schedule == '40 9 * * *'
         run: echo "REGION=prod-eu" >> $GITHUB_ENV
 
       - name: print selected region
@@ -91,23 +91,23 @@ jobs:
           user-name: "github-actions[bot]"
           user-email: 41898282+github-actions[bot]@users.noreply.github.com
 
-      # - name: Send custom test result
-      #   if: always()
-      #   id: slack
-      #   uses: slackapi/slack-github-action@v1.18.0
-      #   with:
-      #     payload: |
-      #       {
-      #         "text": "Web-Automation build result QA-IN: ${{ job.status }}\n https://web-automation-git-qa-in-100mslive.vercel.app/",
-      #         "blocks": [
-      #           {
-      #             "type": "section",
-      #             "text": {
-      #               "type": "mrkdwn",
-      #               "text": "Web-Automation build result QA-IN: ${{ job.status }}\n https://web-automation-git-qa-in-100mslive.vercel.app/"
-      #             }
-      #           }
-      #         ]
-      #       }
-      #   env:
-      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      - name: Send custom test result
+        if: always()
+        id: slack
+        uses: slackapi/slack-github-action@v1.18.0
+        with:
+          payload: |
+            {
+              "text": "Web-Automation build result ${{ env.REGION }}: ${{ job.status }}\n https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Web-Automation build result "${{ env.REGION }}": ${{ job.status }}\n https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
