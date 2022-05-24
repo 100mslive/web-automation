@@ -61,7 +61,8 @@ const config: PlaywrightTestConfig = {
     // Tell all tests to load signed-in state from 'storageState.json'.
     // storageState: `auth${env}.json`,
     screenshot: "only-on-failure",
-    video: "retain-on-failure",
+    // capturing and discarding video takes CPU, avoid it on CI
+    video: isCI ? "on-first-retry" : "retain-on-failure",
     permissions: ["microphone", "camera"],
   },
 
