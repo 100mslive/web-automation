@@ -136,7 +136,7 @@ export class PageWrapper {
   }
 
   async close() {
-    await this.page.close();
+    await this.page.close({ runBeforeUnload: true });
   }
 
   async endRoom() {
