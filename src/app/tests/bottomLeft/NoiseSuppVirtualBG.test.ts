@@ -12,7 +12,7 @@ test.afterEach(async () => {
   await page.close();
 });
 
-test.only(`Verify noise supp and virtual background`, async () => {
+test(`Verify noise supp and virtual background`, async () => {
   const virtualBg = page.locator(page.bottomLeft.virtual_bg_btn);
   const noiseSupp = page.locator(page.bottomLeft.noise_supp_btn);
   const btnDisabled = /active-true/;

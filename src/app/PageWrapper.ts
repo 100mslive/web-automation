@@ -17,6 +17,10 @@ export class PageWrapper {
   bottomCenter: BottomCenter;
   bottomLeft: BottomLeft;
   bottomRight: BottomRight;
+  // TODO: refactor and move to header, footer conferencing files
+  header = 'div[data-testid="header"]';
+  footer = 'div[data-testid="footer"]';
+  conferencing = 'div[data-testid="conferencing"]';
 
   constructor(page: PlaywrightPage) {
     this.page = page;
