@@ -1,10 +1,10 @@
 import { PageWrapper } from "../../PageWrapper";
-import { test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 let page: PageWrapper;
 
 test.beforeEach(async ({ page: nativePage }) => {
-  page = await PageWrapper.openMeetingPage(nativePage);
+  page = await PageWrapper.openMeetingPage(nativePage, { cam: true });
 });
 
 test.afterEach(async () => {
@@ -12,13 +12,19 @@ test.afterEach(async () => {
   await page.close();
 });
 
-test(`Verify noise supp and virtual bg visibility`, async () => {
-  await page.assertVisible(page.bottomLeft.virtual_bg_btn);
-  await page.assertVisible(page.bottomLeft.noise_supp_btn);
-});
-
-test(`Verify noise supp`, async () => {
-  for (let i = 0; i < 3; i++) {
-    await page.click(page.bottomLeft.noise_supp_btn, page.bottomLeft.virtual_bg_btn);
-  }
+test.only(`Verify noise supp and virtual background`, async () => {
+  const virtualBg = page.locator(page.bottomLeft.virtual_bg_btn);
+  const noiseSupp = page.locator(page.bottomLeft.noise_supp_btn);
+  const btnDisabled = /active-true/;
+  const btnEnabled = /active-false/;
+  await expect(virtualBg).toHaveClass(btnDisabled);
+  await expect(noiseSupp).toHaveClass(btnDisabled);
+  await virtualBg.click();
+  await noiseSupp.click();
+  await expect(virtualBg).toHaveClass(btnEnabled);
+  await expect(noiseSupp).toHaveClass(btnEnabled);
+  await virtualBg.click();
+  await noiseSupp.click();
+  await expect(virtualBg).toHaveClass(btnDisabled);
+  await expect(noiseSupp).toHaveClass(btnDisabled);
 });

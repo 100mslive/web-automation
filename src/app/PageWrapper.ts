@@ -90,6 +90,10 @@ export class PageWrapper {
     console.log("asserted visibility for", elementId);
   }
 
+  locator(elementSelector: string) {
+    return this.page.locator(elementSelector);
+  }
+
   async assertNotVisible(elementId: string) {
     console.log("going to assert non visibility", elementId);
     await expect(this.page.locator(elementId)).not.toBeVisible();

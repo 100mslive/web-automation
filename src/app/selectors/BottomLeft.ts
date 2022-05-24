@@ -14,7 +14,7 @@ export class BottomLeft {
 
   white_board_btn = 'button[data-testid="white_board_btn"]';
   virtual_bg_btn = 'button[data-testid="virtual_bg_btn"]';
-  noise_supp_btn = "button:nth-child(6) >> nth=0";
+  noise_supp_btn = 'button[data-testid="noise_suppression_btn"]';
 
   audio_playlist_item = 'div[role="menuitem"]:nth-child(?)';
 
