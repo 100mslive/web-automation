@@ -68,7 +68,6 @@ test.describe("verify join", () => {
       mic: false,
       cam: false,
     });
-
     await page.assertVisible(page.bottomCenter.meeting_audio_off_btn);
     await page.click(page.bottomCenter.meeting_audio_btn);
     await page.assertVisible(page.bottomCenter.meeting_audio_on_btn);

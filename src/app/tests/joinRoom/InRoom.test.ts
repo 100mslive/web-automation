@@ -54,3 +54,13 @@ test(`Verify network on tile and peerlist`, async ({ context }) => {
   await pages[0].endRoom();
   await context.close();
 });
+
+test(`Beam Url check`, async ({ page: nativePage }) => {
+  let url = process.env.audio_video_screenshare_url+'/?skip_preview=true' ;
+  url = url.replace("meeting", "preview");
+  console.log(url);
+  page = new PageWrapper(nativePage);
+  await page.goto({url});
+  await page.assertVisible(page.tiles.name_onTile.replace("?", "Beam"));
+  await page.close();
+});

@@ -14,8 +14,10 @@ test.afterEach(async () => {
 });
 
 test(`Playlist Audio`, async () => {
-  await page.clickWithTimeout(
-    timeout,
+  await page.timeout(5000);
+
+  await page.click(
+    // timeout,
     page.bottomLeft.audio_playlist,
     page.bottomLeft.audio_playlist_item.replace("?", "1")
   );

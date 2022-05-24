@@ -115,7 +115,7 @@ export class PageWrapper {
   }
 
   async gotoPreviewPage() {
-    await this.goto();
+    await this.preview.gotoPreviewPage();
   }
 
   async goto({ url }: { url?: string } = {}) {
