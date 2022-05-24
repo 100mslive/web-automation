@@ -15,7 +15,7 @@ test.afterEach(async () => {
   await page.close();
 });
 
-test.only(`Verify Name Field and Join Button and Room`, async () => {
+test(`Verify Name Field and Join Button and Room`, async () => {
   await page.sendText(page.preview.preview_name_field, name);
   await page.click(page.preview.preview_join_btn);
   await page.endRoom();
