@@ -14,7 +14,7 @@ if (process.env.room_ids) {
   // find number of commas and add 1
   workers = (process.env.room_ids.match(/,/g) || []).length + 1;
   if (process.env.CI) {
-    workers = 6;
+    workers = 8;
   }
   console.log("using number of workers", workers);
 }
@@ -39,7 +39,7 @@ const config: PlaywrightTestConfig = {
     timeout: isCI ? 30000 : 10000,
   },
   /* Fail the build on CI if you accidentally left test.only in the source code. */
-  // forbidOnly: isCI,
+  forbidOnly: isCI,
   /* Retry on CI only */
   retries: 1,
   /* Opt out of parallel tests on CI. */
