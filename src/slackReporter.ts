@@ -11,41 +11,41 @@ import { writeFileSync } from "fs";
 const slackText = {
   type: "mrkdwn",
   text: "",
-}
+};
 
 const slackPayload = {
-  "text": "Web-Automation build result ${{ env.REGION }}: ${{ job.status }}\n https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/",
-  "blocks": [
+  text: "Web-Automation build result ${{ env.REGION }}: ${{ job.status }}\n https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/",
+  blocks: [
     {
-      "type": "section",
-      "text": {
-        "type": "mrkdwn",
-        "text": "Web-Automation build result ${{ env.REGION }}: ${{ job.status }}\n https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/"
-      }
+      type: "section",
+      text: {
+        type: "mrkdwn",
+        text: "Web-Automation build result ${{ env.REGION }}: ${{ job.status }}\n https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/",
+      },
     },
     {
       type: "section",
       text: slackText,
     },
     {
-      "type": "divider"
+      type: "divider",
     },
     {
-      "type": "actions",
-      "elements": [
+      type: "actions",
+      elements: [
         {
-          "type": "button",
-          "text": {
-            "type": "plain_text",
-            "text": "Build",
-            "emoji": true
+          type: "button",
+          text: {
+            type: "plain_text",
+            text: "Build",
+            emoji: true,
           },
-          "url": "${{ env.REPO_URL }}/actions/runs/${{ github.run_id }}"
-        }
-      ]
-    }
-  ]
-}
+          url: "${{ env.REPO_URL }}/actions/runs/${{ github.run_id }}",
+        },
+      ],
+    },
+  ],
+};
 
 let message = "";
 let passedtest = "";
