@@ -32,6 +32,20 @@ const slackPayload = {
         {
           type: "divider",
         },
+        {
+          type: "actions",
+          elements: [
+            {
+              type: "button",
+              text: {
+                type: "plain_text",
+                text: "Results",
+                emoji: true,
+              },
+              url: "https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/",
+            },
+          ],
+        },
       ],
     },
   ],
