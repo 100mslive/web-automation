@@ -54,4 +54,3 @@ test(`Verify network on tile and peerlist`, async ({ context }) => {
   await pages[0].endRoom();
   await context.close();
 });
-
