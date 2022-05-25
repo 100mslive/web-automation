@@ -22,7 +22,7 @@ const slackPayload = {
           type: "section",
           text: {
             type: "mrkdwn",
-            text: "Web-Automation build result for ${{env.REGION}}: ${{job.status}}",
+            text: "Web-Automation build result for ${{github.env.REGION}}: ${{github.job.status}} - ${{github.actor}}",
           },
         },
         {
@@ -42,7 +42,7 @@ const slackPayload = {
                 text: "Results",
                 emoji: true,
               },
-              url: "https://web-automation-git-${{env.REGION}}-100mslive.vercel.app/",
+              url: "https://web-automation-git-${{github.env.REGION}}-100mslive.vercel.app/",
             },
           ],
         },
