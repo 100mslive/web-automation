@@ -14,20 +14,21 @@ const slackText = {
 };
 
 const slackPayload = {
-  blocks: [
+  attachments: [
     {
-      type: "section",
-      text: {
-        type: "mrkdwn",
-        text: "Web-Automation build result ${{ env.REGION }}: ${{ job.status }}\n https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/",
-      },
-    },
-    {
-      type: "divider",
-    },
-    {
-      type: "section",
-      text: slackText,
+      color: "#d90000",
+      blocks: [
+        {
+          type: "section",
+          text: {
+            type: "mrkdwn",
+            text: "${{ github.workflow }} workflow ran on ${{ env.DEFAULT_BRANCH }} branch in the ${{ github.event.repository.name }} repository!",
+          },
+        },
+        {
+          type: "divider",
+        },
+      ],
     },
   ],
 };
