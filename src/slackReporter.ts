@@ -7,6 +7,7 @@ import {
   TestResult,
 } from "@playwright/test/reporter";
 import { writeFileSync } from "fs";
+const github = require("@actions/github");
 
 const slackText = {
   type: "mrkdwn",
@@ -50,6 +51,8 @@ const slackPayload = {
     },
   ],
 };
+
+console.log("github context", github.context);
 
 let message = "";
 let passedtest = "";
