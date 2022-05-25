@@ -8,6 +8,45 @@ import {
 } from "@playwright/test/reporter";
 import { writeFileSync } from "fs";
 
+const slackText = {
+  type: "mrkdwn",
+  text: "",
+}
+
+const slackPayload = {
+  "text": "Web-Automation build result ${{ env.REGION }}: ${{ job.status }}\n https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/",
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "Web-Automation build result ${{ env.REGION }}: ${{ job.status }}\n https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/"
+      }
+    },
+    {
+      type: "section",
+      text: slackText,
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Build",
+            "emoji": true
+          },
+          "url": "${{ env.REPO_URL }}/actions/runs/${{ github.run_id }}"
+        }
+      ]
+    }
+  ]
+}
+
 let message = "";
 let passedtest = "";
 let failedtest = "";
@@ -47,7 +86,8 @@ class slackReporter implements Reporter {
 
     console.log(`Finished the run: ${result.status}`);
     console.log(message);
-    writeFileSync("slackMessage.txt", message);
+    slackText.text = message;
+    writeFileSync("slackMessage.json", JSON.stringify(slackPayload));
   }
 }
 export default slackReporter;
