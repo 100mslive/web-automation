@@ -96,18 +96,6 @@ jobs:
         id: slack
         uses: slackapi/slack-github-action@v1.18.0
         with:
-          payload: |
-            {
-              "text": "Web-Automation build result ${{ env.REGION }}: ${{ job.status }}\n https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "Web-Automation build result ${{ env.REGION }}: ${{ job.status }}\n https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/"
-                  }
-                }
-              ]
-            }
+          payload-file-path: "./slackMessage.txt"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
