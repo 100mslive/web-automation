@@ -23,25 +23,11 @@ const slackPayload = {
       },
     },
     {
-      type: "section",
-      text: slackText,
-    },
-    {
       type: "divider",
     },
     {
-      type: "actions",
-      elements: [
-        {
-          type: "button",
-          text: {
-            type: "plain_text",
-            text: "Build",
-            emoji: true,
-          },
-          url: "${{ env.REPO_URL }}/actions/runs/${{ github.run_id }}",
-        },
-      ],
+      type: "section",
+      text: slackText,
     },
   ],
 };
