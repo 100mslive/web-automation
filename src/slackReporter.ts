@@ -16,17 +16,44 @@ const slackText = {
 const slackPayload = {
   attachments: [
     {
-      color: "#d90000",
+      color: "#1cba2c",
       blocks: [
         {
           type: "section",
           text: {
             type: "mrkdwn",
-            text: "${{ github.workflow }} workflow ran on ${{ env.DEFAULT_BRANCH }} branch in the ${{ github.event.repository.name }} repository!",
+            text: "Web-Automation build result for ${{ env.REGION }}: ${{ job.status }}",
           },
         },
         {
+          type: "section",
+          text: slackText,
+        },
+        {
           type: "divider",
+        },
+        {
+          type: "actions",
+          elements: [
+            {
+              type: "button",
+              text: {
+                type: "plain_text",
+                text: "Test Run",
+                emoji: true,
+              },
+              url: "${{ env.REPO_URL }}/actions/runs/${{ github.run_id }}",
+            },
+            {
+              type: "button",
+              text: {
+                type: "plain_text",
+                text: "Results",
+                emoji: true,
+              },
+              url: "https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/",
+            },
+          ],
         },
       ],
     },
@@ -65,6 +92,7 @@ class slackReporter implements Reporter {
     if (result.status === "failed") {
       message += `\nFailed --> ${failedtest.length}`;
       message += `\nFailed tests: \n${failedtest.length > 0 ? failedtest : "None"}`;
+      slackPayload.attachments[0].color = "#af0e20";
     }
     if (result.status === "passed") {
       message += `\nPassed --> ${passedtest}`;
@@ -73,7 +101,6 @@ class slackReporter implements Reporter {
     console.log(`Finished the run: ${result.status}`);
     slackText.text = message;
     const slackJson = JSON.stringify(slackPayload, null, 2);
-    console.log(slackJson);
     writeFileSync("slackMessage.json", slackJson);
   }
 }
