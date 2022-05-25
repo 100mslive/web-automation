@@ -11,7 +11,7 @@ test.afterEach(async () => {
   await page.close();
 });
 
-test.describe("verify join", () => {
+test.describe.only("verify join", () => {
   test(`Verify Join Mic-On Cam-On`, async ({ page: nativePage }) => {
     page = await PageWrapper.openMeetingPage(nativePage, {
       mic: true,

@@ -14,33 +14,37 @@ const slackText = {
 };
 
 const slackPayload = {
-  text: "Web-Automation build result ${{ env.REGION }}: ${{ job.status }}\n https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/",
-  blocks: [
+  attachments: [
     {
-      type: "section",
-      text: {
-        type: "mrkdwn",
-        text: "Web-Automation build result ${{ env.REGION }}: ${{ job.status }}\n https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/",
-      },
-    },
-    {
-      type: "section",
-      text: slackText,
-    },
-    {
-      type: "divider",
-    },
-    {
-      type: "actions",
-      elements: [
+      color: "#d90000",
+      blocks: [
         {
-          type: "button",
+          type: "section",
           text: {
-            type: "plain_text",
-            text: "Build",
-            emoji: true,
+            type: "mrkdwn",
+            text: "Web-Automation build result ${{ env.REGION }}: ${{ job.status }}\n https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/",
           },
-          url: "${{ env.REPO_URL }}/actions/runs/${{ github.run_id }}",
+        },
+        {
+          type: "section",
+          text: slackText,
+        },
+        {
+          type: "divider",
+        },
+        {
+          type: "actions",
+          elements: [
+            {
+              type: "button",
+              text: {
+                type: "plain_text",
+                text: "Build",
+                emoji: true,
+              },
+              url: "${{ env.REPO_URL }}/actions/runs/${{ github.run_id }}",
+            },
+          ],
         },
       ],
     },
