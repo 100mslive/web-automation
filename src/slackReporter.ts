@@ -14,7 +14,6 @@ const slackText = {
 };
 
 const slackPayload = {
-  text: "Web Automation report",
   blocks: [
     {
       type: "section",
