@@ -14,37 +14,33 @@ const slackText = {
 };
 
 const slackPayload = {
-  attachments: [
+  text: "Web Automation report",
+  blocks: [
     {
-      color: "#d90000",
-      blocks: [
+      type: "section",
+      text: {
+        type: "mrkdwn",
+        text: "Web-Automation build result ${{ env.REGION }}: ${{ job.status }}\n https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/",
+      },
+    },
+    {
+      type: "section",
+      text: slackText,
+    },
+    {
+      type: "divider",
+    },
+    {
+      type: "actions",
+      elements: [
         {
-          type: "section",
+          type: "button",
           text: {
-            type: "mrkdwn",
-            text: "Web-Automation build result ${{ env.REGION }}: ${{ job.status }}\n https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/",
+            type: "plain_text",
+            text: "Build",
+            emoji: true,
           },
-        },
-        {
-          type: "section",
-          text: slackText,
-        },
-        {
-          type: "divider",
-        },
-        {
-          type: "actions",
-          elements: [
-            {
-              type: "button",
-              text: {
-                type: "plain_text",
-                text: "Build",
-                emoji: true,
-              },
-              url: "${{ env.REPO_URL }}/actions/runs/${{ github.run_id }}",
-            },
-          ],
+          url: "${{ env.REPO_URL }}/actions/runs/${{ github.run_id }}",
         },
       ],
     },
