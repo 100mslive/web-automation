@@ -99,7 +99,7 @@ const slackPayload = {
                 text: "Test Run",
                 emoji: true,
               },
-              url: "${{env.REPO_URL}}/actions/runs/${{env.GITHUB_RUN_ID}}",
+              url: "${{env.GITHUB_SERVER_URL}}/${{env.GITHUB_REPOSITORY}}/actions/runs/${{env.GITHUB_RUN_ID}}",
             },
             {
               type: "button",

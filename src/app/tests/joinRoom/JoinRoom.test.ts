@@ -79,7 +79,7 @@ test.describe("verify join", () => {
     await page.click(page.bottomCenter.meeting_video_btn);
   });
 
-  test.only(`Measure Join Time`, async ({ page: nativePage }) => {
+  test(`Measure Join Time`, async ({ page: nativePage }) => {
     const url = process.env.audio_video_screenshare_url.replace("meeting", "leave");
     page = new PageWrapper(nativePage);
     await page.goto({ url });
