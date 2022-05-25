@@ -32,29 +32,6 @@ const slackPayload = {
         {
           type: "divider",
         },
-        {
-          type: "actions",
-          elements: [
-            {
-              type: "button",
-              text: {
-                type: "plain_text",
-                text: "Test Run",
-                emoji: true,
-              },
-              url: "${{ env.REPO_URL }}/actions/runs/${{ github.run_id }}",
-            },
-            {
-              type: "button",
-              text: {
-                type: "plain_text",
-                text: "Results",
-                emoji: true,
-              },
-              url: "https://web-automation-git-${{ env.REGION }}-100mslive.vercel.app/",
-            },
-          ],
-        },
       ],
     },
   ],
@@ -101,6 +78,7 @@ class slackReporter implements Reporter {
     console.log(`Finished the run: ${result.status}`);
     slackText.text = message;
     const slackJson = JSON.stringify(slackPayload, null, 2);
+    console.log(slackJson);
     writeFileSync("slackMessage.json", slackJson);
   }
 }
