@@ -11,7 +11,7 @@ test.afterEach(async () => {
   await page.close();
 });
 
-test.describe.only("verify join", () => {
+test.describe("verify join", () => {
   test(`Verify Join Mic-On Cam-On`, async ({ page: nativePage }) => {
     page = await PageWrapper.openMeetingPage(nativePage, {
       mic: true,
@@ -79,7 +79,7 @@ test.describe.only("verify join", () => {
     await page.click(page.bottomCenter.meeting_video_btn);
   });
 
-  test(`Measure Join Time`, async ({ page: nativePage }) => {
+  test.only(`Measure Join Time`, async ({ page: nativePage }) => {
     const url = process.env.audio_video_screenshare_url.replace("meeting", "leave");
     page = new PageWrapper(nativePage);
     await page.goto({ url });

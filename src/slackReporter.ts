@@ -70,9 +70,10 @@ class slackReporter implements Reporter {
     }
 
     console.log(`Finished the run: ${result.status}`);
-    console.log(message);
     slackText.text = message;
-    writeFileSync("slackMessage.json", JSON.stringify(slackPayload));
+    const slackJson = JSON.stringify(slackPayload, null, 2);
+    console.log(slackJson);
+    writeFileSync("slackMessage.json", slackJson);
   }
 }
 export default slackReporter;
