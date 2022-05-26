@@ -12,48 +12,49 @@ import * as HandleBars from "handlebars";
 
 class slackReporter implements Reporter {
   private message = "";
-  private counters: Record<TestStatus, number> = { failed: 0, passed: 0, skipped: 0, timedOut: 0 };
-  private flakycounter = 0;
-  private failedcounter = 1;
-  private flaky = "";
-  private failures = "";
+  private counters: Record<TestStatus | "flaky", number> = {
+    failed: 0,
+    passed: 0,
+    skipped: 0,
+    timedOut: 0,
+    flaky: 0,
+  };
+  private flaky: string[] = [];
+  private failures: string[] = [];
 
   onBegin(config: FullConfig, suite: Suite): void {
     this.addCountToMessage("Total", suite.allTests().length);
   }
 
   onTestEnd(test: TestCase, result: TestResult): void {
-    this.counters[result.status]++;
-    if (
-      result.status === "failed" ||
-      (result.status === "timedOut" && test.outcome() !== "flaky")
-    ) {
-      if (this.failures.includes(test.title)) {
-        this.counters.failed--;
-      } else {
-        this.failures += `${test.title} \n`;
-      }
-    }
+    // test is flaky when it had some failures but passed in retries
     if (test.outcome() === "flaky") {
-      this.flakycounter++;
-      this.flaky += `${test.title} \n`;
       this.counters.failed--;
-      this.counters.passed--;
+      this.failures = this.failures.filter((title) => title !== test.title);
+      this.counters.flaky++;
+      this.flaky.push(test.title);
+    } else if (result.status === "failed" && !this.failures.includes(test.title)) {
+      this.counters.failed++;
+      this.failures.push(test.title);
+    } else if (result.status !== "failed") {
+      this.counters[result.status]++;
     }
     console.log(`Finished test ${test.title}: ${result.status}`);
   }
 
   onEnd(result: FullResult): void {
-    this.addCountToMessage("Passed", this.counters.passed);
-    this.addCountToMessage("Failed", this.counters.failed);
-    this.addCountToMessage("Timed Out", this.counters.timedOut);
-    this.addCountToMessage("Skipped", this.counters.skipped);
-    this.addCountToMessage("Flaky", this.flakycounter);
+    Object.entries(this.counters).forEach(([status, statusCount]) => {
+      this.addCountToMessage(status, statusCount);
+    });
 
-    if (result.status === "failed") {
+    if (this.counters["failed"] > 0) {
       slackPayload.attachments[0].color = "#af0e20";
       this.message += "\n*Failed Tests - *\n";
-      this.message += this.failures;
+      this.message += this.failures.join("/n") + "\n";
+    }
+    if (this.counters["flaky"] > 0) {
+      this.message += "\n*Flaky Tests - *\n";
+      this.message += this.flaky.join("/n") + "\n";
     }
 
     console.log(`Finished the run: ${result.status}`);
