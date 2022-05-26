@@ -33,18 +33,6 @@ class slackReporter implements Reporter {
       } else {
         this.failures += `${test.title} \n`;
       }
-
-      //   if(this.failures.includes(test.title))
-      //     {
-      //         this.failedcounter++;
-      //     }
-      //   if(this.failedcounter > 1)
-      //     {
-      //         this.failures += (this.failures.replace(`${test.title}`, "\n"));
-      //         this.counters.failed--;
-      //     }
-      //   this.failures += `${test.title} \n`;
-      //   this.failedcounter=1;
     }
     if (test.outcome() === "flaky") {
       this.flakycounter++;
