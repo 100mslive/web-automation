@@ -13,6 +13,9 @@ import * as HandleBars from "handlebars";
 class slackReporter implements Reporter {
   private message = "";
   private counters: Record<TestStatus, number> = { failed: 0, passed: 0, skipped: 0, timedOut: 0 };
+  private flakycounter= 0;
+  private failedcounter= 1;
+  private flaky = "";
   private failures = "";
 
   onBegin(config: FullConfig, suite: Suite): void {
@@ -21,8 +24,31 @@ class slackReporter implements Reporter {
 
   onTestEnd(test: TestCase, result: TestResult): void {
     this.counters[result.status]++;
-    if (result.status === "failed" || result.status === "timedOut") {
-      this.failures += `${test.title} \n`;
+    if (result.status === "failed" || result.status === "timedOut" && test.outcome() !== "flaky") {
+        if(this.failures.includes(test.title)){
+            this.counters.failed--;
+        }
+        else{
+            this.failures += `${test.title} \n`;
+        }
+
+    //   if(this.failures.includes(test.title))
+    //     {
+    //         this.failedcounter++;
+    //     }
+    //   if(this.failedcounter > 1)
+    //     {
+    //         this.failures += (this.failures.replace(`${test.title}`, "\n"));
+    //         this.counters.failed--;
+    //     }
+    //   this.failures += `${test.title} \n`;
+    //   this.failedcounter=1;
+    }
+    if (test.outcome() === "flaky") {
+        this.flakycounter++;
+        this.flaky += `${test.title} \n`;
+        this.counters.failed--;
+        this.counters.passed--;
     }
     console.log(`Finished test ${test.title}: ${result.status}`);
   }
@@ -32,6 +58,8 @@ class slackReporter implements Reporter {
     this.addCountToMessage("Failed", this.counters.failed);
     this.addCountToMessage("Timed Out", this.counters.timedOut);
     this.addCountToMessage("Skipped", this.counters.skipped);
+    this.addCountToMessage("Flaky", this.flakycounter);
+
 
     if (result.status === "failed") {
       slackPayload.attachments[0].color = "#af0e20";
