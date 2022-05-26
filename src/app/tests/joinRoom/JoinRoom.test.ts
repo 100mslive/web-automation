@@ -11,16 +11,16 @@ test.afterEach(async () => {
   await page.close();
 });
 
-test.describe.only("verify join", () => {
+test.describe("verify join", () => {
   test(`Verify Join Mic-On Cam-On`, async ({ page: nativePage }) => {
     page = await PageWrapper.openMeetingPage(nativePage, {
       mic: true,
       cam: true,
     });
 
-    await page.assertNotVisible(page.bottomCenter.meeting_audio_on_btn);
+    await page.assertVisible(page.bottomCenter.meeting_audio_on_btn);
     await page.click(page.bottomCenter.meeting_audio_btn);
-    await page.assertNotVisible(page.bottomCenter.meeting_audio_off_btn);
+    await page.assertVisible(page.bottomCenter.meeting_audio_off_btn);
     await page.click(page.bottomCenter.meeting_audio_btn);
 
     await page.assertVisible(page.bottomCenter.meeting_video_on_btn);
@@ -35,9 +35,9 @@ test.describe.only("verify join", () => {
       cam: false,
     });
 
-    await page.assertNotVisible(page.bottomCenter.meeting_audio_on_btn);
+    await page.assertVisible(page.bottomCenter.meeting_audio_on_btn);
     await page.click(page.bottomCenter.meeting_audio_btn);
-    await page.assertNotVisible(page.bottomCenter.meeting_audio_off_btn);
+    await page.assertVisible(page.bottomCenter.meeting_audio_off_btn);
     await page.click(page.bottomCenter.meeting_audio_btn);
 
     await page.assertVisible(page.bottomCenter.meeting_video_off_btn);
