@@ -50,11 +50,11 @@ class slackReporter implements Reporter {
     if (this.counters["failed"] > 0) {
       slackPayload.attachments[0].color = "#af0e20";
       this.message += "\n*Failed Tests - *\n";
-      this.message += this.failures.join("/n") + "\n";
+      this.message += `${this.failures.join("\n")}\n`;
     }
     if (this.counters["flaky"] > 0) {
       this.message += "\n*Flaky Tests - *\n";
-      this.message += this.flaky.join("/n") + "\n";
+      this.message += `${this.flaky.join("\n")}\n`;
     }
 
     console.log(`Finished the run: ${result.status}`);
