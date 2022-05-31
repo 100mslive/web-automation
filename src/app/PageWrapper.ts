@@ -161,6 +161,11 @@ export class PageWrapper {
     await this.page.locator(elementId).click();
     console.log("Clicked: ", elementId);
   }
+
+  async hover(elementId: string) {
+    await this.page.hover(elementId);
+    console.log("Hovered: ", elementId);
+  }
 }
 
 export interface JoinConfig {

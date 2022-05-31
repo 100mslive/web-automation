@@ -17,12 +17,11 @@ test(`Playlist Audio`, async () => {
   await page.timeout(5000);
 
   await page.click(
-    // timeout,
     page.footer.audio_playlist,
     page.footer.audio_playlist_item.replace("?", "1")
   );
 
-  for (let i = 1; i <= 5; i++) {
+  for (let i = 0; i < 3; i++) {
     await page.click(
       page.footer.playlist_play_pause_btn,
       page.footer.playlist_play_pause_btn,
@@ -30,7 +29,7 @@ test(`Playlist Audio`, async () => {
     );
     await page.timeout(2000);
   }
-  for (let j = 1; j <= 5; j++) {
+  for (let j = 0; j < 3; j++) {
     await page.click(
       page.footer.playlist_play_pause_btn,
       page.footer.playlist_play_pause_btn,
@@ -43,7 +42,6 @@ test(`Playlist Audio`, async () => {
 
 //webhook track added in webhook
 test(`Playlist Audio check header`, async () => {
-  // await page.timeout(500);
   await page.clickWithTimeout(
     timeout,
     page.footer.audio_playlist,

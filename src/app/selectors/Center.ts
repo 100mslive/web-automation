@@ -14,7 +14,17 @@ export class Center {
   mute_ontile =
     'div[data-testid="participant_tile_?"] div[data-testid="participant_audio_mute_icon"]';
 
-  //after end room  
+  participant_tile_menu_btn = 'div[data-testid="participant_tile_?"] button[data-testid="participant_menu_btn"]';
+  tile_menu_remove_participant = 'button[data-testid="remove_participant_btn"]';
+  tile_menu_mute_video = 'button[data-testid="mute_video_participant_btn"]';
+  tile_menu_unmute_video = 'button[data-testid="unmute_video_participant_btn"]';
+  tile_menu_mute_audio = 'button[data-testid="mute_audio_participant_btn"]';
+  tile_menu_unmute_audio = 'button[data-testid="unmute_audio_participant_btn"]';
+
+
+
+
+  //after end room
   join_again_btn = 'button[data-testid="join_again_btn"]';
   go_to_dashboard_btn = 'button[data-testid="go_to_dashboard_btn"]';
 

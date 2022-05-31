@@ -50,7 +50,6 @@ export class Footer {
 
   dialoge_cross_icon = 'button[data-testid="dialoge_cross_icon"]';
 
-
 //bottom right corner
   raise_hand_btn = '[data-testid="raise_hand_btn"]';
   brb_btn = '[data-testid="brb_btn"]';
@@ -75,14 +74,6 @@ export class Footer {
   constructor(page: PageWrapper) {
     this.page = page;
   }
-
-  // async gotoPreviewPage(url) {
-  //   // this.page = await this.browser();
-  //   await this.page.goto(url);
-  //   const context = await browser.newContext();
-  //   const page = await context.newPage();
-  //   page.goto(url);
-  // }
 
   async leaveRoom() {
     await this.page.click(this.leave_room_btn, this.just_leave_btn);

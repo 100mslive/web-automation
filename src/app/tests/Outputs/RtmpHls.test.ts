@@ -52,10 +52,7 @@ test.describe("Beam tests @beam", () => {
   });
 
   test(`Start and Stop Rtmp`, async () => {
-    await page.click(
-      page.footer.more_settings_btn,
-      page.footer.streaming_recording_btn
-    );
+    await page.click(page.footer.more_settings_btn, page.footer.streaming_recording_btn);
 
     await page.sendText(page.footer.streaming_rtmp_url_field, process.env.twitch_rtmp_url);
 
