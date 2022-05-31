@@ -8,9 +8,9 @@ test.afterEach(async () => {});
 const peersCount = Number(process.env.multi_peer_count);
 
 test(`Mute All`, async ({ context }) => {
-  const pages = await PageWrapper.openPages(context, peersCount,{
-    mic: false,
-    cam: false,
+  const pages = await PageWrapper.openPages(context, peersCount, {
+    mic: true,
+    cam: true,
   });
   await pages[0].timeout(5000);
   await pages[0].bottomCenter.muteAll();
