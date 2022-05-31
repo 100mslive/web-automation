@@ -1,8 +1,9 @@
 import { PageWrapper } from "../PageWrapper";
 
-export class Tiles {
+export class Center {
   private page: PageWrapper;
 
+  conferencing = 'div[data-testid="conferencing"]';
   participant_tile = 'div[data-testid="participant_tile_?"]';
   audio_mute_icon_onTile = 'div[data-testid="participant_audio_mute_icon"]';
   raiseHand_icon_onTile = 'div[data-testid="raiseHand_icon_onTile"]';
@@ -12,6 +13,10 @@ export class Tiles {
   network_ontile = 'div[data-testid="participant_tile_?"] span[data-testid="tile_network"]';
   mute_ontile =
     'div[data-testid="participant_tile_?"] div[data-testid="participant_audio_mute_icon"]';
+
+  //after end room  
+  join_again_btn = 'button[data-testid="join_again_btn"]';
+  go_to_dashboard_btn = 'button[data-testid="go_to_dashboard_btn"]';
 
   constructor(page: PageWrapper) {
     this.page = page;

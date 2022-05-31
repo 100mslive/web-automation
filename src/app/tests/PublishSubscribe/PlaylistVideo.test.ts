@@ -16,21 +16,21 @@ test.afterEach(async () => {
 test(`Playlist Video`, async () => {
   await page.clickWithTimeout(
     timeout,
-    page.bottomLeft.video_playlist,
-    page.bottomLeft.audio_playlist_item.replace("?", "1")
+    page.footer.video_playlist,
+    page.footer.audio_playlist_item.replace("?", "1")
   );
 
   await page.click(
-    page.bottomLeft.playlist_play_pause_btn,
-    page.bottomLeft.playlist_play_pause_btn,
-    page.bottomLeft.playlist_next_btn
+    page.footer.playlist_play_pause_btn,
+    page.footer.playlist_play_pause_btn,
+    page.footer.playlist_next_btn
   );
   await page.timeout(2000);
 
   await page.click(
-    page.bottomLeft.playlist_play_pause_btn,
-    page.bottomLeft.playlist_play_pause_btn,
-    page.bottomLeft.playlist_prev_btn
+    page.footer.playlist_play_pause_btn,
+    page.footer.playlist_play_pause_btn,
+    page.footer.playlist_prev_btn
   );
-  await page.click(page.bottomLeft.videoplayer_cross_btn);
+  await page.click(page.footer.videoplayer_cross_btn);
 });

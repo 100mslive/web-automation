@@ -1,37 +1,24 @@
 import { BrowserContext, Dialog, expect, Page as PlaywrightPage } from "@playwright/test";
 import { PreviewPage } from "./selectors/PreviewPage";
-import { TopRight } from "./selectors/TopRight";
-import { LeavePage } from "./selectors/LeavePage";
-import { Tiles } from "./selectors/Tiles";
-import { BottomCenter } from "./selectors/BottomCenter";
-import { BottomLeft } from "./selectors/BottomLeft";
-import { BottomRight } from "./selectors/BottomRight";
+import { Header } from "./selectors/Header";
+import { Center } from "./selectors/Center";
+import { Footer } from "./selectors/Footer";
 
 export class PageWrapper {
   private page: PlaywrightPage;
   localName: string;
   preview: PreviewPage;
-  topRight: TopRight;
-  leavePage: LeavePage;
-  tiles: Tiles;
-  bottomCenter: BottomCenter;
-  bottomLeft: BottomLeft;
-  bottomRight: BottomRight;
-  // TODO: refactor and move to header, footer conferencing files
-  header = 'div[data-testid="header"]';
-  footer = 'div[data-testid="footer"]';
-  conferencing = 'div[data-testid="conferencing"]';
+  header: Header;
+  center: Center;
+  footer: Footer;
 
   constructor(page: PlaywrightPage) {
     this.page = page;
     this.localName = "";
     this.preview = new PreviewPage(this);
-    this.topRight = new TopRight(this);
-    this.bottomCenter = new BottomCenter(this);
-    this.tiles = new Tiles(this);
-    this.bottomLeft = new BottomLeft(this);
-    this.bottomRight = new BottomRight(this);
-    this.leavePage = new LeavePage(this);
+    this.header = new Header(this);
+    this.footer = new Footer(this);
+    this.center = new Center(this);
   }
 
   static async openMeetingPage(nativePage: PlaywrightPage, joinConfig?: JoinConfig) {
@@ -141,7 +128,7 @@ export class PageWrapper {
 
   async endRoom() {
     try {
-      await this.bottomCenter.endRoom();
+      await this.footer.endRoom();
     } catch (e) {
       console.log("No room to end", e);
     }
@@ -158,11 +145,11 @@ export class PageWrapper {
   }
 
   async assertLocalAudioState(enabled?: boolean) {
-    await this.bottomCenter.assertLocalAudioState(enabled);
+    await this.footer.assertLocalAudioState(enabled);
   }
 
   async assertLocalVideoState(enabled?: boolean) {
-    await this.bottomCenter.assertLocalVideoState(enabled);
+    await this.footer.assertLocalVideoState(enabled);
   }
 
   /**

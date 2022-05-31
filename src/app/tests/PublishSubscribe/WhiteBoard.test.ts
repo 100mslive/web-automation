@@ -15,12 +15,12 @@ test.afterEach(async () => {
 //not present in prod
 test.skip(`white board check`, async () => {
   await page.click(
-    page.bottomLeft.white_board_btn,
-    page.bottomLeft.white_board_btn,
-    page.bottomLeft.white_board_btn
+    page.footer.white_board_btn,
+    page.footer.white_board_btn,
+    page.footer.white_board_btn
   );
 
-  await page.click(page.topRight.record_status_dropdown);
-  await page.assertVisible(page.topRight.whiteboard_owner);
-  await page.click(page.topRight.whiteboard_stop);
+  await page.click(page.header.record_status_dropdown);
+  await page.assertVisible(page.header.whiteboard_owner);
+  await page.click(page.header.whiteboard_stop);
 });

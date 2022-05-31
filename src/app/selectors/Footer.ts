@@ -1,7 +1,8 @@
 import { PageWrapper } from "../PageWrapper";
 
-export class BottomCenter {
+export class Footer {
   private page: PageWrapper;
+  footer = 'div[data-testid="footer"]';
 
   meeting_audio_btn = 'button[data-testid="audio_btn"]';
   meeting_audio_on_btn = 'button[data-testid="audio_btn"] > svg[data-testid="audio_on_btn"]';
@@ -48,6 +49,28 @@ export class BottomCenter {
   change_to_role_ = 'div[data-testid="change_to_role_?"]';
 
   dialoge_cross_icon = 'button[data-testid="dialoge_cross_icon"]';
+
+
+//bottom right corner
+  raise_hand_btn = '[data-testid="raise_hand_btn"]';
+  brb_btn = '[data-testid="brb_btn"]';
+  chat_btn = '[data-testid="chat_btn"]';
+//bottom left corner
+  screenshare_audio = 'button[data-testid="screenshare_audio"]';
+  audio_playlist = 'button[data-testid="audio_playlist"]';
+  video_playlist = 'button[data-testid="video_playlist"]';
+
+  playlist_play_pause_btn = 'button[data-testid="playlist_play_pause_btn"]';
+  playlist_next_btn = 'button[data-testid="playlist_next_btn"]';
+  playlist_prev_btn = 'button[data-testid="playlist_prev_btn"]';
+  playlist_cross_btn = "text=Audio PlayerBrowse >> button";
+  videoplayer_cross_btn = 'button[data-testid="videoplaylist_cross_btn"]';
+
+  white_board_btn = 'button[data-testid="white_board_btn"]';
+  virtual_bg_btn = 'button[data-testid="virtual_bg_btn"]';
+  noise_supp_btn = 'button[data-testid="noise_suppression_btn"]';
+
+  audio_playlist_item = 'div[role="menuitem"]:nth-child(?)';
 
   constructor(page: PageWrapper) {
     this.page = page;

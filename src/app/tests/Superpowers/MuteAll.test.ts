@@ -13,7 +13,7 @@ test(`Mute All`, async ({ context }) => {
     cam: true,
   });
   await pages[0].timeout(5000);
-  await pages[0].bottomCenter.muteAll();
+  await pages[0].footer.muteAll();
 
   // peer tile has muted
   for (let i = 1; i < peersCount; i++) {
@@ -23,7 +23,7 @@ test(`Mute All`, async ({ context }) => {
 
     // others are seeing me as muted on video tile
     for (let j = 0; j < peersCount; j++) {
-      await pages[j].tiles.assertAudioState(pages[i].localName, false);
+      await pages[j].center.assertAudioState(pages[i].localName, false);
     }
   }
 

@@ -12,10 +12,10 @@ test(`Verify Peerlist in Preview Page`, async ({ context }) => {
 
   const newPage = new PageWrapper(await context.newPage());
   await newPage.gotoPreviewPage();
-  await newPage.topRight.openParticipantList();
+  await newPage.header.openParticipantList();
 
   for (let i = 0; i < peersCount; i++) {
-    await newPage.topRight.assertPeerInOpenPeerList(pages[i].localName, true);
+    await newPage.header.assertPeerInOpenPeerList(pages[i].localName, true);
   }
   await pages[0].endRoom();
   await context.close();

@@ -8,13 +8,12 @@ test.beforeEach(async ({ page: nativePage }) => {
 });
 
 test.afterEach(async () => {
-  await page.endRoom();
   await page.close();
 });
 
-// doesn't work in headless mode
-test.skip(`Screenshare check`, async () => {
-  page.acceptDialogWhenPrompted(); // for screenshare
-  await page.click(page.bottomCenter.screen_share_btn);
-  await page.click(page.bottomCenter.stop_screen_share_btn);
-});
+test(`Verify End room for all`, async () => {
+    await page.footer.endRoom();
+    await page.assertVisible(page.center.go_to_dashboard_btn);
+    await page.click(page.center.join_again_btn);
+    await page.assertVisible(page.preview.preview_join_btn);
+  });
