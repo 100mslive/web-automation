@@ -15,6 +15,6 @@ test.afterEach(async () => {
 // doesn't work in headless mode
 test.skip(`Screenshare check`, async () => {
   page.acceptDialogWhenPrompted(); // for screenshare
-  await page.click(page.bottomCenter.screen_share_btn);
-  await page.click(page.bottomCenter.stop_screen_share_btn);
+  await page.click(page.footer.screen_share_btn);
+  await page.click(page.footer.stop_screen_share_btn);
 });

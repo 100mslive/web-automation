@@ -16,16 +16,16 @@ test(`Change self Role`, async () => {
     if (i === 3) {
       continue;
     }
-    await page.click(page.bottomCenter.more_settings_btn, page.bottomCenter.change_my_role_btn);
+    await page.click(page.footer.more_settings_btn, page.footer.change_my_role_btn);
 
-    const changeRole = page.bottomCenter.change_to_role_.replace("?", page.topRight.role_list[i]);
+    const changeRole = page.footer.change_to_role_.replace("?", page.header.role_list[i]);
 
     const bottom_center_role = await page.getText(changeRole);
     await page.click(changeRole);
 
-    await page.click(page.topRight.participant_list);
+    await page.click(page.header.participant_list);
     await page.assertVisible(
-      page.topRight.participant_role_heading.replace("?", bottom_center_role!)
+      page.header.participant_role_heading.replace("?", bottom_center_role!)
     );
     await page.click("html");
   }

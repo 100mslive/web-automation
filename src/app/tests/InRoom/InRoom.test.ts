@@ -9,7 +9,7 @@ test.afterEach(async () => {});
 
 test(`Verify greeting tile for first participant`, async ({ page: nativePage }) => {
   page = await PageWrapper.openMeetingPage(nativePage);
-  await page.assertVisible(page.tiles.first_person_img);
+  await page.assertVisible(page.center.first_person_img);
   await page.endRoom();
   await page.close();
 });
@@ -29,15 +29,15 @@ test(`Verify Join peers`, async ({ context }) => {
   const pages = await PageWrapper.openPages(context, peersCount);
 
   for (let i = 0; i < peersCount; i++) {
-    await pages[i].click(pages[i].topRight.participant_list);
+    await pages[i].click(pages[i].header.participant_list);
     for (let j = 0; j < peersCount; j++) {
-      const participantName = pages[i].topRight.participant_name.replace("?", pages[j].localName);
+      const participantName = pages[i].header.participant_name.replace("?", pages[j].localName);
       await pages[i].assertVisible(participantName);
       await pages[i].hasText(participantName, process.env.peer_name + j);
     }
     await pages[i].click("html");
   }
-  // await pages[0].click(pages[0].topRight.participant_number.replace("?","0"))
+  // await pages[0].click(pages[0].header.participant_number.replace("?","0"))
   await pages[0].endRoom();
   await context.close();
 });
@@ -46,10 +46,10 @@ test(`Verify network on tile and peerlist`, async ({ context }) => {
   const pages = await PageWrapper.openPages(context, 2, { mic: true, cam: true });
   for (let i = 0; i < 2; i++) {
     await pages[i].click(
-      pages[i].topRight.participant_list,
-      pages[i].topRight.peerlist_network.replace("?", pages[i].localName)
+      pages[i].header.participant_list,
+      pages[i].header.peerlist_network.replace("?", pages[i].localName)
     );
-    await pages[i].assertVisible(pages[i].tiles.network_ontile.replace("?", pages[i].localName));
+    await pages[i].assertVisible(pages[i].center.network_ontile.replace("?", pages[i].localName));
   }
   await pages[0].endRoom();
   await context.close();

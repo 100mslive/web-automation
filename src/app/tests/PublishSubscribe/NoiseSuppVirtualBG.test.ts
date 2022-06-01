@@ -13,8 +13,8 @@ test.afterEach(async () => {
 });
 
 test(`Verify noise supp and virtual background`, async () => {
-  const virtualBg = page.locator(page.bottomLeft.virtual_bg_btn);
-  const noiseSupp = page.locator(page.bottomLeft.noise_supp_btn);
+  const virtualBg = page.locator(page.footer.virtual_bg_btn);
+  const noiseSupp = page.locator(page.footer.noise_supp_btn);
   const btnDisabled = /active-true/;
   const btnEnabled = /active-false/;
   await expect(virtualBg).toHaveClass(btnDisabled);

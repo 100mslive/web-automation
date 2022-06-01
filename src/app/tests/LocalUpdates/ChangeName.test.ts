@@ -16,18 +16,18 @@ test(`Change name check`, async () => {
   const oldName = page.localName;
   const newName = "peer_new_name";
 
-  await page.tiles.assertTilePresence(oldName, true);
-  await page.topRight.assertPeerInPeerList(oldName, true);
+  await page.center.assertTilePresence(oldName, true);
+  await page.header.assertPeerInPeerList(oldName, true);
 
-  await page.bottomCenter.changeName(newName);
+  await page.footer.changeName(newName);
 
   // name changed for both tile and participant list
-  await page.topRight.assertPeerInPeerList(oldName, false);
-  await page.tiles.assertTilePresence(oldName, false);
+  await page.header.assertPeerInPeerList(oldName, false);
+  await page.center.assertTilePresence(oldName, false);
 
-  await page.topRight.assertPeerInPeerList(newName, true);
-  await page.tiles.assertTilePresence(newName, true);
+  await page.header.assertPeerInPeerList(newName, true);
+  await page.center.assertTilePresence(newName, true);
 
-  // const peerTileName = page.tiles.getNameOnTile(0);
+  // const peerTileName = page.center.getNameOnTile(0);
   // await page.hasText(peerTileName, "peer_2");
 });
