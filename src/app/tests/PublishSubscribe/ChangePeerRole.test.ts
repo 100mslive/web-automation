@@ -16,11 +16,11 @@ test(`Change peer Role`, async ({ context }) => {
     );
 
     await pages[0].selectPopupOption(pages[0].header.role_list[i]);
-    await pages[0].click(pages[0].header.dialog_confirm);
+    await pages[0].click(pages[0].center.dialog_confirm);
 
     //page2 check
     await pages[1].timeout(2000);
-    await pages[1].click(pages[1].header.dialog_accept, pages[1].header.participant_list);
+    await pages[1].click(pages[1].center.dialog_accept, pages[1].header.participant_list);
     await pages[1].assertVisible(
       pages[1].header.participant_role_heading.replace("?", pages[1].header.role_list[i])
     );
@@ -35,10 +35,10 @@ test(`Change peer Role`, async ({ context }) => {
     );
 
     await pages[0].selectPopupOption(pages[0].header.role_list[2]);
-    await pages[0].click(pages[0].header.dialog_confirm);
+    await pages[0].click(pages[0].center.dialog_confirm);
 
     //page2 click Accept
-    await pages[1].click(pages[1].header.dialog_accept);
+    await pages[1].click(pages[1].center.dialog_accept);
   }
 
   await pages[0].endRoom();

@@ -36,9 +36,6 @@ export class Header {
   setting_role_peer = 'div[role="group"]:nth-child(?) button';
   peerlist_network = 'div[data-testid="participant_?"] span[data-testid="tile_network"]';
 
-  dialog_confirm = "text=Confirm";
-  dialog_accept = "text=Accept";
-
   constructor(page: PageWrapper) {
     this.page = page;
   }

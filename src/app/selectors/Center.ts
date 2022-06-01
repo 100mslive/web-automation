@@ -20,11 +20,14 @@ export class Center {
   tile_menu_mute_video = 'button[data-testid="mute_video_participant_btn"]';
   tile_menu_unmute_video = 'button[data-testid="unmute_video_participant_btn"]';
   tile_menu_mute_audio = 'button[data-testid="mute_audio_participant_btn"]';
-  tile_menu_unmute_audio = 'button[data-testid="unmute_audio_participant_btn"]';
 
   //after end room
   join_again_btn = 'button[data-testid="join_again_btn"]';
   go_to_dashboard_btn = 'button[data-testid="go_to_dashboard_btn"]';
+
+  //dialoge
+  dialog_confirm = "text=Confirm";
+  dialog_accept = "text=Accept";
 
   constructor(page: PageWrapper) {
     this.page = page;
