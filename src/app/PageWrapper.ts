@@ -166,6 +166,21 @@ export class PageWrapper {
     await this.page.hover(elementId);
     console.log("Hovered: ", elementId);
   }
+
+   /**
+   * accepts string values like F1 - F12, Digit0- Digit9, KeyA- KeyZ, Backquote, Minus, Equal,
+   *  Backslash, Backspace, Tab, Delete, Escape, ArrowDown, End, Enter, Home, Insert, PageDown, PageUp, ArrowRight, ArrowUp
+   */
+    async pressKey(key: string) {
+      await this.page.keyboard.press(key);
+    }
+  
+    async sendMessageToEveryone(msg: string){
+      await this.page.click(this.footer.chat_btn);
+      await this.sendText(this.footer.chat_placeholder,msg);
+      await this.pressKey('Enter');
+    }
+  
 }
 
 export interface JoinConfig {

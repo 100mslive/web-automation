@@ -53,7 +53,9 @@ export class Footer {
   //bottom right corner
   raise_hand_btn = '[data-testid="raise_hand_btn"]';
   brb_btn = '[data-testid="brb_btn"]';
-  chat_btn = '[data-testid="chat_btn"]';
+  chat_btn = '[data-testid="chat_btn"] >> visible=true';
+  chat_placeholder = 'css=[placeholder="Write something here"]';
+  first_chat_msg = 'p:below(:text("Everyone")) >> nth=0';
   //bottom left corner
   screenshare_audio = 'button[data-testid="screenshare_audio"]';
   audio_playlist = 'button[data-testid="audio_playlist"]';
