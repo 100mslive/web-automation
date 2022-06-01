@@ -5,7 +5,7 @@ test.beforeEach(async () => {});
 
 test.afterEach(async () => {});
 
-test.only(`Remote Mute/Unmute Audio`, async ({ context }) => {
+test(`Remote Mute/Unmute Audio`, async ({ context }) => {
   const pages = await PageWrapper.openPages(context, 2, {
     mic: true,
     cam: true,
@@ -26,7 +26,7 @@ test.only(`Remote Mute/Unmute Audio`, async ({ context }) => {
   await context.close();
 });
 
-test.only(`Remote Mute/Unmute Video`, async ({ context }) => {
+test(`Remote Mute/Unmute Video`, async ({ context }) => {
   const pages = await PageWrapper.openPages(context, 2, {
     mic: true,
     cam: true,
