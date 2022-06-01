@@ -16,10 +16,7 @@ test.afterEach(async () => {
 test(`Playlist Audio`, async () => {
   await page.timeout(5000);
 
-  await page.click(
-    page.footer.audio_playlist,
-    page.footer.audio_playlist_item.replace("?", "1")
-  );
+  await page.click(page.footer.audio_playlist, page.footer.audio_playlist_item.replace("?", "1"));
 
   for (let i = 0; i < 3; i++) {
     await page.click(

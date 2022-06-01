@@ -50,11 +50,11 @@ export class Footer {
 
   dialoge_cross_icon = 'button[data-testid="dialoge_cross_icon"]';
 
-//bottom right corner
+  //bottom right corner
   raise_hand_btn = '[data-testid="raise_hand_btn"]';
   brb_btn = '[data-testid="brb_btn"]';
   chat_btn = '[data-testid="chat_btn"]';
-//bottom left corner
+  //bottom left corner
   screenshare_audio = 'button[data-testid="screenshare_audio"]';
   audio_playlist = 'button[data-testid="audio_playlist"]';
   video_playlist = 'button[data-testid="video_playlist"]';
