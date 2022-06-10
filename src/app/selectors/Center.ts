@@ -29,6 +29,10 @@ export class Center {
   dialog_confirm = "text=Confirm";
   dialog_accept = "text=Accept";
 
+  //network
+  network_offline_notification = "text=You are offline for now. while we try to reconnect, please check your internet connection.";
+  network_connected_notification = "text=You are now connected";
+
   constructor(page: PageWrapper) {
     this.page = page;
   }
