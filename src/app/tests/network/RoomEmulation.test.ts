@@ -25,7 +25,7 @@ test(`Verify you are now connected notification @network`, async ({ page: native
   await page.close();
 });
 
-test.only(`Verify local peer room state is updated for remote peer after network is restored`, async ({
+test(`Verify local peer room state is updated for remote peer after network is restored`, async ({
   context,
 }) => {
   const pages = await PageWrapper.openPages(context, 2, {
