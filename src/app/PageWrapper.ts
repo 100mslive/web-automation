@@ -1,4 +1,4 @@
-import { BrowserContext, Dialog, expect, Page as PlaywrightPage } from "@playwright/test";
+import { BrowserContext, ChromiumBrowserContext, Dialog, expect, Page as PlaywrightPage} from "@playwright/test";
 import { PreviewPage } from "./selectors/PreviewPage";
 import { Header } from "./selectors/Header";
 import { Center } from "./selectors/Center";
@@ -165,6 +165,17 @@ export class PageWrapper {
   async hover(elementId: string) {
     await this.page.hover(elementId);
     console.log("Hovered: ", elementId);
+  }
+
+  /**
+   * function to emulate network traffic 
+   * pass offline : true for making page offline
+   */
+   async emulateNetwork(offline: boolean, latency: number, downloadThroughput: number, uploadThroughput: number){
+    const context = await this.page.context() as ChromiumBrowserContext;
+    const client = await context.newCDPSession(this.page);
+    await client.send('Network.emulateNetworkConditions', 
+    { 'offline': offline, 'latency':latency, 'downloadThroughput': downloadThroughput, 'uploadThroughput': uploadThroughput});
   }
 }
 
