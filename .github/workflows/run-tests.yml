@@ -12,10 +12,7 @@ jobs:
   test:
     timeout-minutes: 10
     runs-on: ubuntu-latest
-    defaults:
-      runs:
-        working-directory: playwright
-
+    
     steps:
       # Figure out the region where test needs to be run
 
