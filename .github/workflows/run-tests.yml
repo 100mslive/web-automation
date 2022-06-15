@@ -7,29 +7,14 @@ on:
         description: "Region to run the test for"
         required: true
         default: "qa-in"
-  schedule:
-    # qa-in
-    - cron: "0 9 * * *"
-    # qa-us
-    - cron: "10 9 * * *"
-    # prod-in
-    - cron: "20 9 * * *"
-    # prod-us
-    - cron: "30 9 * * *"
-    # prod-eu
-    - cron: "40 9 * * *"
-
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-  repository_dispatch:
-    types: [automation]
 
 jobs:
   test:
     timeout-minutes: 10
     runs-on: ubuntu-latest
+    defaults:
+      runs:
+        working-directory: playwright
 
     steps:
       # Figure out the region where test needs to be run
