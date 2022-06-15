@@ -46,11 +46,6 @@ jobs:
 
       - name: print selected region
         run: echo "selected region for test = ${{ env.REGION }}"
-        
-      - name: print selected webhook
-        run: |
-          echo "WEBHOOK= ${{ secrets.SLACK_WEBHOOK_URL }}" >> $GITHUB_ENV
-          echo "${{ env.WEBHOOK }}"
 
       # Run test in the above selected region
 
